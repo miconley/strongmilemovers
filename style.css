@@ -196,7 +196,18 @@ a { color: #f7941d; }
 
 .ml { margin-left: 30px; }
 
+@media screen and (max-width: 768px) {
 
+	#container { width: 98%; margin-left: -377px; }
+
+	body {
+		
+		background-size: cover;
+
+		background-position-y: 55px;
+	}
+
+}
 
 @media screen and (max-width: 460px) {
 

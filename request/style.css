@@ -451,6 +451,19 @@ textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo {
 	.captcha, .submit, .add_address { display: none; }
 }
 
+@media screen and (max-width: 768px) {
+
+	#container { width: 100%; margin-left: -384px; }
+
+	body {
+		
+		background-size: cover;
+
+		background-position-y: 55px;
+	}
+	
+}
+
 @media screen and (max-width: 460px) {
 
 	#container { position: absolute; width: 100%; height: auto; top: 0px; left: 0px; margin: 0px; }
