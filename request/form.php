@@ -10,7 +10,7 @@
 	</div>
 	<div id="headerMobile">
 		<img src="../images/header_mobile.jpg" />
-		Going the distance isn't enough<br/>
+		Professional Moving With A Modern Twist<br/>
 		732-754-3626<br/><br/>
 		PLEASE FILL IN AS MUCH INFORMATION AS POSSIBLE TO RECEIVE AN ACCURATE QUOTE:
 	</div>
