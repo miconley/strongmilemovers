@@ -456,9 +456,10 @@
 		date_default_timezone_set('America/New_York');
 
 		if(isset($_POST['itshuman'])) {
-			mail($to, 'QUOTE - '. $_SAFE_POST['date_of_service'] . ' - ' .$_SAFE_POST['cust_name'] .' - '. $_SAFE_POST['cust_phone'],  stripcslashes($message), $headers);
-			//save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
 			$refId = save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
+			mail($to, '#'. $refId .' - '. $_SAFE_POST['date_of_service'] . ' - ' .$_SAFE_POST['cust_name'] .' - '. $_SAFE_POST['cust_phone'],  stripcslashes($message), $headers);
+			//save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
+			//$refId = save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
 			include('thankyou.php');
 		}
 		//echo $message;
