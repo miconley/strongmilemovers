@@ -8,7 +8,7 @@
 		<meta name="keywords" content="Strongmile, Strong Mile, Moving, labor-only moving, labor only movers, moving service, New Jersey moving, New York moving, Pennsylvania moving" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta property="og:site_name" content="Strongmile Movers"/>
-		<meta property="og:title" content="Strongmile Movers | Going the Distance is not Enough"/>
+		<meta property="og:title" content="Strongmile Movers | Professional Moving With A Modern Twist"/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:url" content="http://www.strongmilemovers.com/request"/>
 		<meta property="og:description" content="Let us work for you! Strongmile movers is the most reliable labor-only moving service provider in NJ/NY/PA" />
@@ -103,7 +103,7 @@
 		$message .="<br />\r\n"; 
 		
 		if($_SAFE_POST['cust_phone_alt'] != "") $message .="<b>Alt Phone:</b> ". $_SAFE_POST['cust_phone_alt'] ."<br />\r\n"; 
-		if($_SAFE_POST['cust_email'] != "") $message .="<b>Email:</b> ". $_SAFE_POST['cust_email'] ."<br />\r\n"; 
+		if($_SAFE_POST['cust_email'] != "") $message .="<b>Email:</b> ". strtolower($_SAFE_POST['cust_email']) ."<br />\r\n"; 
 
 
 		$message .="<br /><br />\r\n"; 
