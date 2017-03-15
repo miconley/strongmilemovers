@@ -122,7 +122,7 @@
 			//$message .="<b>Requested Start Time Of Service:</b> ". $tos ."<br /><br />\r\n"; 
 		} 
 
-		if($_SAFE_POST['date_of_service'] != "") $message .="<b>Requested Date and Time Of Service:</b> ". $_SAFE_POST['date_of_service'] ." " .$tos ."<br /><br />\r\n"; 
+		if($_SAFE_POST['date_of_service'] != "") $message .="<b>Requested Date and Time Of Service:</b> ". $tos ." " .$_SAFE_POST['date_of_service'] ."<br /><br />\r\n"; 
 
 		if($_SAFE_POST['date_of_service_alt'] != "") $message .="<b>Alternate Date Of Service:</b> ". $_SAFE_POST['date_of_service_alt'] ."<br /><br />\r\n"; 
 
@@ -326,18 +326,13 @@
 		$furnMessage[1]['title'] = "Living / Family room:";
 		$furnMessage[1]['items'] = "";
 		if($_SAFE_POST['cust_furniture_secsofa'] != "" && $_SAFE_POST['cust_furniture_secsofa'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="Sectional Sofa: ". $_SAFE_POST['cust_furniture_secsofa'] ."<br />\r\n"; }
-		if($_SAFE_POST['cust_furniture_secsofa_sections'] != "" && $_SAFE_POST['cust_furniture_secsofa_sections'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="Sections: ". $_SAFE_POST['cust_furniture_secsofa'] ."<br />\r\n"; }
-	    if($_SAFE_POST['cust_furniture_secsofa_chaise'] != "" && strtolower($_SAFE_POST['cust_furniture_secsofa_chaise']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" w/chaise<br />\r\n" ;} 
-	    else {
-	    	$furnMessage[1]['items'] .= "<br />\r\n" ;
-	    }
 	    if($_SAFE_POST['cust_furniture_3seatcouch'] != "" && $_SAFE_POST['cust_furniture_3seatcouch'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="3-Seat Couch: ". $_SAFE_POST['cust_furniture_3seatcouch'] ."\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_3seatcouch_sleeper'] != "" && strtolower($_SAFE_POST['cust_furniture_3seatcouch_sleeper']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" sleeper sofa<br />\r\n" ;} 
+	    if(strtolower($_SAFE_POST['cust_furniture_3seatcouch_sleeper']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" sleeper sofa<br />\r\n" ;} 
 	    else {
 	    	$furnMessage[1]['items'] .= "<br />\r\n" ;
 	    }
 	    if($_SAFE_POST['cust_furniture_2seatcouch'] != "" && $_SAFE_POST['cust_furniture_2seatcouch'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="2-Seat Sofa: ". $_SAFE_POST['cust_furniture_2seatcouch'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_2seatcouch_sleeper'] != "" && strtolower($_SAFE_POST['cust_furniture_2seatcouch_sleeper']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" sleeper sofa<br />\r\n" ;}  
+	    if(strtolower($_SAFE_POST['cust_furniture_2seatcouch_sleeper']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" sleeper sofa<br />\r\n" ;}  
 	    else {
 	    	$furnMessage[1]['items'] .= "<br />\r\n" ;
 	    }
@@ -448,7 +443,7 @@
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
 		$headers .= "From: Strongmile Quote <info@strongmilemovers.com>" . "\r\n";
-
+		$headers .= "Cc: " . $_SAFE_POST['cust_email']."\r\n";
 		$to = "strongmilemovers@gmail.com";
 
 		//$to = "michaeljconley@gmail.com";

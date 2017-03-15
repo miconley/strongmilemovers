@@ -30,11 +30,13 @@ $(function() {
 
 	thisVal = obj.val();
 
-	var numbers =thisVal.replace(/\D/g, ''),
+	var numbers = thisVal.replace(/\D/g, ''),
 
-	    char = {0:'(',3:') ',6:' - '};
+		char = {0:'(',3:') ',6:' - '};
 
 	newVal = '';
+
+	if(numbers[0] == 1) numbers = numbers.substr(1);
 
 	for (var i = 0; i < numbers.length; i++) {
 
@@ -343,6 +345,10 @@ function show_element_alt(selectedName, selectedAddr){
 
 		addr.find('.home_brs_alt').val('# of bedrooms?');
 
+		addr.find('.home_garage_size_alt').val('Garage Size (ie 10x10)');
+
+		addr.find('.home_shed_size_alt').val('Shed Size (ie 10x10)');
+
 		addr.find('.home_attic_alt').prop('checked', false);
 
 		addr.find('.home_basement_alt').prop('checked', false);
@@ -362,6 +368,10 @@ function show_element_alt(selectedName, selectedAddr){
 		addr.find('.ths_floor_alt').val('How many floors?');
 
 		addr.find('.ths_brs_alt').val('# of bedrooms?');
+
+		addr.find('.ths_garage_alt').val('Garage Size (ie 10x10)');
+
+		addr.find('.ths_shed_alt').val('Shed Size (ie 10x10)');
 
 		addr.find('.ths_attic_alt').prop('checked', false);
 
@@ -487,7 +497,7 @@ function fSubmit()
 
 	  	if(validateTick()) {
 
-	  		if($('#date_of_service_alt').val() == "Please select") $('#date_of_service_alt').val("");
+	  		if($("#date_of_service_alt").val() == "Please select") $("#date_of_service_alt").val("");
 
 			if(findObj("cust_addr_2_from").value == "Unit #") $("#cust_addr_2_from").val("");
 
@@ -1314,6 +1324,56 @@ function ValidateForm()
 
 		//if($('#date_of_service').val() == "Please select") $('#date_of_service').val("");
 
+
+// CHECK ADDRESSES ARE PRESENT FOR HELP TYPE
+
+		if($('#help_loading_all').is(":checked") || $('#help_incomplex').is(":checked") || $('#help_inapt').is(":checked")) {
+
+			if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address" || findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
+
+				alert("You must enter both a loading and unloading address.");
+
+				if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
+					var focusTo = "cust_addr_from";
+				} else {
+					var focusTo = "cust_addr";
+				}
+
+				setTimeout(function(){findObj(focusTo).focus();}, 500);
+
+				return false;
+
+			}	
+
+		} else if($('#help_loading').is(":checked")) {
+
+			if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
+
+				alert("You must enter a loading address.");
+				
+				var focusTo = "cust_addr_from";
+				
+				setTimeout(function(){findObj(focusTo).focus();}, 500);
+
+				return false;
+
+			}	
+
+		} else if($('#help_unloading').is(":checked")) {
+
+			if(findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
+
+				alert("You must enter a unloading address.");
+				
+				var focusTo = "cust_addr";
+				
+				setTimeout(function(){findObj(focusTo).focus();}, 500);
+
+				return false;
+
+			}	
+
+		}
 
 
 		var itemNaN = "false";
