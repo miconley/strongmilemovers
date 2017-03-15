@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow: /request/dev/
+Disallow: /request/requests/

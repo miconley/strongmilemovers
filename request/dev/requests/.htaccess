@@ -1,0 +1,7 @@
+AuthUserFile /home/content/28/10746628/html/request/requests/.htpasswd
+
+AuthName "Restricted Area"
+
+AuthType Basic
+
+Require valid-user
