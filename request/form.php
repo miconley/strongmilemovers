@@ -390,6 +390,7 @@ REFERRAL
 		<select class="cust_referral" name="cust_referral" onchange="show_element(this.name, this.selectedIndex);">
 			<option value="">Please Select</option>
 			<option value="">----------------</option>
+			<option value="previouscustomer">Previous Customer</option>
 			<option value="yelp">Yelp</option>
 			<option value="angieslist">Angie's List</option>
 			<option value="movingstaffers">Moving Staffers</option>

@@ -143,6 +143,11 @@
 			// <option value="other">Other</option>
 
 			switch($_SAFE_POST['cust_referral']){
+
+					case "previouscustomer":
+						$message .="Is a previous customer";
+						break;
+
 					case "movinghelper":
 						$message .="<b>Website:</b> Moving Helper";
 						break;
