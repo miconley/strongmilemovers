@@ -1,6 +1,6 @@
 	<div id="header">
 		<div id="byline" class="top">
-			Going the distance is not enough
+			Professional Moving With A Modern Twist
 		</div>
 		<div class="headerhome"><a href="http://www.strongmilemovers.com" target="_self"><img src="../images/spacer.gif" width="100%" height="100%" border="0"/></a></div>
 
