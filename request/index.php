@@ -457,7 +457,7 @@
 
 		if(isset($_POST['itshuman'])) {
 			$refId = save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
-			mail($to, '#'. $refId .' - '. $_SAFE_POST['date_of_service'] . ' - ' .$_SAFE_POST['cust_name'] .' - '. $_SAFE_POST['cust_phone'],  stripcslashes($message), $headers);
+			mail($to, '#'. $refId .' - '. $_SAFE_POST['date_of_service'] . ' - ' . stripslashes($_SAFE_POST['cust_name']) .' - '. $_SAFE_POST['cust_phone'],  stripcslashes($message), $headers);
 			//save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
 			//$refId = save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
 			include('thankyou.php');
