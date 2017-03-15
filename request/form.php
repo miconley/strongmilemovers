@@ -417,9 +417,10 @@ HELP TYPE
 		<div class="help_checkbox"><input type="checkbox" class="help_cb" id="help_loading" name="help_loading" value="1"><label for="help_loading">Loading Only</label></div>
 		<div class="help_checkbox"><input type="checkbox" class="help_cb" id="help_unloading" name="help_unloading" value="1"><label for="help_unloading">Unloading Only</label></div>			
 		<div class="help_checkbox"><input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Box Packing</label></div>
-		<div class="help_checkbox"><input type="checkbox" class="help_cb" id="help_inhome" name="help_inhome" value="1"><label for="help_inhome">In-Home Furniture Assistance ONLY</label></div>
 		<div class="help_checkbox"><input type="checkbox" class="help_cb" id="help_incomplex" name="help_incomplex" value="1"><label for="help_incomplex">In-Complex Move</label></div>
-		<div class="help_checkbox"><input type="checkbox" class="help_cb" id="help_inapt" name="help_inapt" value="1"><label for="help_inapt">In-Apartment Building</label></div>
+		<div class="help_checkbox wide"><input type="checkbox" class="help_cb" id="help_inapt" name="help_inapt" value="1"><label for="help_inapt">In-Apartment Building</label></div>
+		<div class="help_checkbox wide"><input type="checkbox" class="help_cb" id="help_inhome" name="help_inhome" value="1"><label for="help_inhome">In-Home Furniture Assistance ONLY</label></div>
+
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Specify other help needed not listed above" placeholder="Specify other help needed not listed above" type="text" class="other_text" name="other_text" maxlength="255" />
 
 <!--
