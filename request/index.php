@@ -311,10 +311,14 @@
 		$helpCount = 0;
 
 		if(isset($_SAFE_POST['help_loading_all'])) { $helpCount = 1; $helpMessage .="Full Transport Move<br />\r\n"; }		
-		if(isset($_SAFE_POST['help_loading'])) { $helpCount = 1; $helpMessage .="Loading Only<br />\r\n"; }
-		if(isset($_SAFE_POST['help_unloading'])) { $helpCount = 1; $helpMessage .="Unloading Only<br />\r\n"; }		
-		if(isset($_SAFE_POST['help_packing'])) { $helpCount = 1; $helpMessage .="Packing Boxes<br />\r\n"; }
-		if(isset($_SAFE_POST['help_inhome'])) { $helpCount = 1; $helpMessage .="In-home furniture assistance<br />\r\n"; }		
+		if(isset($_SAFE_POST['help_loading'])) { $helpCount = 1; $helpMessage .="Load Only<br />\r\n"; }
+		if(isset($_SAFE_POST['help_unloading'])) { $helpCount = 1; $helpMessage .="Unload Only<br />\r\n"; }	
+		if(isset($_SAFE_POST['help_inhome'])) { $helpCount = 1; $helpMessage .="In-Home<br />\r\n"; }
+		if(isset($_SAFE_POST['help_inapt'])) { $helpCount = 1; $helpMessage .="In-Building<br />\r\n"; }
+		if(isset($_SAFE_POST['help_incomplex'])) { $helpCount = 1; $helpMessage .="In-Complex<br />\r\n"; }	
+		if(isset($_SAFE_POST['help_packing'])) { $helpCount = 1; $helpMessage .="Packing (complete)<br />\r\n"; }
+		if(isset($_SAFE_POST['help_packing_partial'])) { $helpCount = 1; $helpMessage .="Packing (partial)<br />\r\n"; }
+		
 
 		if($_SAFE_POST['other_text'] !="" ) { $helpCount = 1; $helpMessage .="Other help: ". $_SAFE_POST['other_text'] ."<br />\r\n"; }
 		if($helpCount > 0) {
