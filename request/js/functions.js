@@ -73,7 +73,11 @@ $(function() {
 
 				$(".home").slideUp();
 
+				$(".apt_studio").slideUp();
+
 				$(".apt").slideUp();
+
+				$(".condo").slideUp();
 
 				$(".ths").slideUp();
 
@@ -87,7 +91,11 @@ $(function() {
 
 				$(".home").slideUp();
 
+				$(".apt_studio").slideUp();
+
 				$(".apt").slideUp();
+
+				$(".condo").slideUp();
 
 				$(".ths").slideUp();
 
@@ -104,6 +112,18 @@ $(function() {
 				$('.home_attic').prop('checked', false);
 
 				$('.home_basement').prop('checked', false);
+				
+				$('.home_garage').prop('checked', false);
+
+				$('.home_shed').prop('checked', false);
+
+
+
+				$('.apt_studio_floor').val('What floor?');
+
+				$('.apt_studio_elevator').prop('checked', false);
+
+				$('.apt_studio_stairs').prop('checked', false);
 
 
 
@@ -115,17 +135,37 @@ $(function() {
 
 				$('.apt_stairs').prop('checked', false);
 
+				$('.apt_multilevel').prop('checked', false);
+
+
+				$('.condo_floor').val('What floor?');
+
+				$('.condo_brs').val('# of bedrooms?');
+
+				$('.condo_elevator').prop('checked', false);
+
+				$('.condo_stairs').prop('checked', false);
+
+				$('.condo_multilevel').prop('checked', false);
 
 
 				$('.ths_floor').val('How many floors?');
 
 				$('.ths_brs').val('# of bedrooms?');
 
+				$('.ths_multilevel').prop('checked', false);
+
 				$('.ths_attic').prop('checked', false);
 
 				$('.ths_basement').prop('checked', false);
 
+				$('.ths_garage').prop('checked', false);
 
+				$('.ths_shed').prop('checked', false);
+
+
+
+				$('.office_rooms').val('# of rooms?');
 
 				$('.office_floor').val('What floor?');
 
@@ -137,9 +177,9 @@ $(function() {
 
 				$('.storage_size').val('Unit Size (ie 10x10)');
 
-				$('.storage_unit').val('What floor?');
+				$('.storage_elevator').prop('checked', false);
 
-
+				$('.storage_stairs').prop('checked', false);
 
 			}
 
@@ -159,11 +199,15 @@ $(function() {
 
 				$(".home_from").slideUp();
 
+				$(".apt_studio_from").slideUp();
+
 				$(".apt_from").slideUp();
+
+				$(".condo_from").slideUp();
 
 				$(".ths_from").slideUp();
 
-				$(".office_from").slideUp();						
+				$(".office_from").slideUp();
 
 				$(".storage_from").slideUp();
 
@@ -173,11 +217,15 @@ $(function() {
 
 				$(".home_from").slideUp();
 
+				$(".apt_studio_from").slideUp();
+
 				$(".apt_from").slideUp();
+
+				$(".condo_from").slideUp();
 
 				$(".ths_from").slideUp();
 
-				$(".office_from").slideUp();							
+				$(".office_from").slideUp();						
 
 				$(".storage_from").slideUp();
 
@@ -191,6 +239,18 @@ $(function() {
 
 				$('.home_basement_from').prop('checked', false);
 
+				$('.home_garage_from').prop('checked', false);
+
+				$('.home_shed_from').prop('checked', false);
+
+
+
+				$('.apt_studio_floor_from').val('What floor?');
+
+				$('.apt_studio_elevator_from').prop('checked', false);
+
+				$('.apt_studio_stairs_from').prop('checked', false);
+
 
 
 				$('.apt_floor_from').val('What floor?');
@@ -201,17 +261,37 @@ $(function() {
 
 				$('.apt_stairs_from').prop('checked', false);
 
+				$('.apt_multilevel_from').prop('checked', false);
+
+
+				$('.condo_floor_from').val('What floor?');
+
+				$('.condo_brs_from').val('# of bedrooms?');
+
+				$('.condo_elevator_from').prop('checked', false);
+
+				$('.condo_stairs_from').prop('checked', false);
+
+				$('.condo_multilevel_from').prop('checked', false);
 
 
 				$('.ths_floor_from').val('How many floors?');
 
 				$('.ths_brs_from').val('# of bedrooms?');
 
+				$('.ths_multilevel_from').prop('checked', false);
+
 				$('.ths_attic_from').prop('checked', false);
 
 				$('.ths_basement_from').prop('checked', false);
 
+				$('.ths_garage_from').prop('checked', false);
 
+				$('.ths_shed_from').prop('checked', false);
+
+
+
+				$('.office_rooms_from').val('# of rooms?');
 
 				$('.office_floor_from').val('What floor?');
 
@@ -223,9 +303,9 @@ $(function() {
 
 				$('.storage_size_from').val('Unit Size (ie 10x10)');
 
-				$('.storage_unit_from').val('What floor?');
+				$('.storage_elevator_from').prop('checked', false);
 
-
+				$('.storage_stairs_from').prop('checked', false);
 
 			}
 
@@ -252,6 +332,8 @@ $(function() {
 				case "angieslist":
 
 				case "search":
+
+				case "previouscustomer":
 
 					$(".referral").slideUp();
 
@@ -317,7 +399,11 @@ function show_element_alt(selectedName, selectedAddr){
 
 		addr.find(".home_alt").slideUp();
 
+		addr.find(".apt_studio_alt").slideUp();
+
 		addr.find(".apt_alt").slideUp();
+
+		addr.find(".condo_alt").slideUp();
 
 		addr.find(".ths_alt").slideUp();
 
@@ -331,7 +417,11 @@ function show_element_alt(selectedName, selectedAddr){
 
 		addr.find(".home_alt").slideUp();
 
+		addr.find(".apt_studio_alt").slideUp();
+
 		addr.find(".apt_alt").slideUp();
+
+		addr.find(".condo_alt").slideUp();
 
 		addr.find(".ths_alt").slideUp();
 
@@ -345,14 +435,20 @@ function show_element_alt(selectedName, selectedAddr){
 
 		addr.find('.home_brs_alt').val('# of bedrooms?');
 
-		addr.find('.home_garage_size_alt').val('Garage Size (ie 10x10)');
+		addr.find('.home_attic_alt').prop('checked', false);
 
-		addr.find('.home_shed_size_alt').val('Shed Size (ie 10x10)');
+		addr.find('.home_basement_alt').prop('checked', false);
 
 		addr.find('.home_attic_alt').prop('checked', false);
 
 		addr.find('.home_basement_alt').prop('checked', false);
 
+
+		addr.find('.apt_studio_floor_alt').val('What floor?');
+
+		addr.find('.apt_studio_elevator_alt').prop('checked', false);
+
+		addr.find('.apt_studio_stairs_alt').prop('checked', false);
 
 
 		addr.find('.apt_floor_alt').val('What floor?');
@@ -363,21 +459,25 @@ function show_element_alt(selectedName, selectedAddr){
 
 		addr.find('.apt_stairs_alt').prop('checked', false);
 
+		addr.find('.apt_multilevel_alt').prop('checked', false);
 
 
 		addr.find('.ths_floor_alt').val('How many floors?');
 
 		addr.find('.ths_brs_alt').val('# of bedrooms?');
 
-		addr.find('.ths_garage_alt').val('Garage Size (ie 10x10)');
+		addr.find('.ths_multilevel_alt').prop('checked', false);
 
-		addr.find('.ths_shed_alt').val('Shed Size (ie 10x10)');
+		addr.find('.ths_garage_alt').prop('checked', false);
+
+		addr.find('.ths_shed_alt').prop('checked', false);
 
 		addr.find('.ths_attic_alt').prop('checked', false);
 
 		addr.find('.ths_basement_alt').prop('checked', false);
 
 
+		addr.find('.office_rooms_alt').val('# of rooms?');
 
 		addr.find('.office_floor_alt').val('What floor?');
 
@@ -389,7 +489,9 @@ function show_element_alt(selectedName, selectedAddr){
 
 		addr.find('.storage_size_alt').val('Unit Size (ie 10x10)');
 
-		addr.find('.storage_unit_alt').val('What floor?');
+		addr.find('.storage_elevator_alt').prop('checked', false);
+
+		addr.find('.storage_stairs_alt').prop('checked', false);
 
 	}
 
@@ -637,8 +739,6 @@ function ValidateForm()
 
 						if (findObj("home_floor_from").value == "" || findObj("home_floor_from").value == "How many floors?") {
 
-
-
 								alert("Please specify how many floors you have in your home.");
 
 								setTimeout(function(){findObj("home_floor_from").focus();}, 500);
@@ -651,8 +751,6 @@ function ValidateForm()
 
 						if (findObj("home_brs_from").value == "" || findObj("home_brs_from").value == "# of bedrooms?") {
 
-
-
 								alert("Please specify how many bedrooms you have in your home.");
 
 								setTimeout(function(){findObj("home_brs_from").focus();}, 500);
@@ -663,6 +761,21 @@ function ValidateForm()
 
 						break;	
 
+
+					case "apt_studio_from":
+
+						if (findObj("apt_studio_floor_from").value == "" || findObj("apt_studio_floor_from").value == "What floor?") {
+
+								alert("Please specify what floor your studio apartment is on.");
+
+								setTimeout(function(){findObj("apt_studio_floor_from").focus();}, 500);
+
+								return false;
+
+						}
+									
+
+						break;	
 
 
 					case "apt_from":
@@ -683,8 +796,6 @@ function ValidateForm()
 
 						if (findObj("apt_brs_from").value == "" || findObj("apt_brs_from").value == "# of bedrooms?") {
 
-
-
 								alert("Please specify how many bedrooms you have in your apartment.");
 
 								setTimeout(function(){findObj("apt_brs_from").focus();}, 500);
@@ -696,14 +807,38 @@ function ValidateForm()
 						break;										
 
 
+					case "condo_from":
+
+						if (findObj("condo_floor_from").value == "" || findObj("condo_floor_from").value == "What floor?") {
+
+								alert("Please specify what floor your condominium is on.");
+
+								setTimeout(function(){findObj("condo_floor_from").focus();}, 500);
+
+								return false;
+
+						}
+
+
+
+						if (findObj("condo_brs_from").value == "" || findObj("condo_brs_from").value == "# of bedrooms?") {
+
+								alert("Please specify how many bedrooms you have in your condominium.");
+
+								setTimeout(function(){findObj("condo_brs_from").focus();}, 500);
+
+								return false;
+
+						}										
+
+						break;	
+
 
 					case "ths_from":
 
 						if (findObj("ths_floor_from").value == "" || findObj("ths_floor_from").value == "How many floors?") {
 
-
-
-								alert("Please specify how many bedrooms you have in your townhouse.");
+								alert("Please specify how many floors you have in your townhouse.");
 
 								setTimeout(function(){findObj("ths_floor_from").focus();}, 500);
 
@@ -714,8 +849,6 @@ function ValidateForm()
 
 
 						if (findObj("ths_brs_from").value == "" || findObj("ths_brs_from").value == "# of bedrooms?") {
-
-
 
 								alert("Please specify how many bedrooms you have in your townhouse.");
 
@@ -731,9 +864,17 @@ function ValidateForm()
 
 					case "office_from":
 
+						if (findObj("office_rooms_from").value == "" || findObj("office_rooms_from").value == "# of rooms?") {
+
+								alert("Please specify how many rooms your office has.");
+
+								setTimeout(function(){findObj("office_rooms_from").focus();}, 500);
+
+								return false;
+
+						}
+
 						if (findObj("office_floor_from").value == "" || findObj("office_floor_from").value == "What floor?") {
-
-
 
 								alert("Please specify what floor your office is on.");
 
@@ -751,29 +892,11 @@ function ValidateForm()
 
 					case "storage_from":
 
-
-
 						if (findObj("storage_size_from").value == "" || findObj("storage_size_from").value == "Unit size (ie 10x10)") {
-
-
 
 								alert("Please approximate how large your storage unit is.  For example 10x10");
 
 								setTimeout(function(){findObj("storage_size_from").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("storage_floor_from").value == "" || findObj("storage_floor_from").value == "What floor?") {
-
-
-
-								alert("Please specify what floor your storage unit is on.");
-
-								setTimeout(function(){findObj("storage_floor_from").focus();}, 500);
 
 								return false;
 
@@ -851,8 +974,6 @@ function ValidateForm()
 
 						if (findObj("home_floor").value == "" || findObj("home_floor").value == "How many floors?") {
 
-
-
 								alert("Please specify how many floors you have in your home.");
 
 								setTimeout(function(){findObj("home_floor").focus();}, 500);
@@ -865,18 +986,31 @@ function ValidateForm()
 
 						if (findObj("home_brs").value == "" || findObj("home_brs").value == "# of bedrooms?") {
 
-
-
 								alert("Please specify how many bedrooms you have in your home.");
 
 								setTimeout(function(){findObj("home_brs").focus();}, 500);
 
 								return false;
 
-						}											
+						}								
 
 						break;	
 
+
+					case "apt_studio":
+
+						if (findObj("apt_studio_floor").value == "" || findObj("apt_studio_floor").value == "What floor?") {
+
+								alert("Please specify what floor your studio apartment is on.");
+
+								setTimeout(function(){findObj("apt_studio_floor").focus();}, 500);
+
+								return false;
+
+						}
+									
+
+						break;	
 
 
 					case "apt":
@@ -897,25 +1031,47 @@ function ValidateForm()
 
 						if (findObj("apt_brs").value == "" || findObj("apt_brs").value == "# of bedrooms?") {
 
-
-
 								alert("Please specify how many bedrooms you have in your apartment.");
 
 								setTimeout(function(){findObj("apt_brs").focus();}, 500);
 
 								return false;
 
-						}											
+						}										
 
 						break;										
 
+
+					case "condo":
+
+						if (findObj("condo_floor").value == "" || findObj("condo_floor").value == "What floor?") {
+
+								alert("Please specify what floor your condominium is on.");
+
+								setTimeout(function(){findObj("condo_floor").focus();}, 500);
+
+								return false;
+
+						}
+
+
+
+						if (findObj("condo_brs").value == "" || findObj("condo_brs").value == "# of bedrooms?") {
+
+								alert("Please specify how many bedrooms you have in your condominium.");
+
+								setTimeout(function(){findObj("condo_brs").focus();}, 500);
+
+								return false;
+
+						}										
+
+						break;	
 
 
 					case "ths":
 
 						if (findObj("ths_floor").value == "" || findObj("ths_floor").value == "How many floors?") {
-
-
 
 								alert("Please specify how many floors you have in your townhouse.");
 
@@ -928,8 +1084,6 @@ function ValidateForm()
 
 
 						if (findObj("ths_brs").value == "" || findObj("ths_brs").value == "# of bedrooms?") {
-
-
 
 								alert("Please specify how many bedrooms you have in your townhouse.");
 
@@ -945,9 +1099,17 @@ function ValidateForm()
 
 					case "office":
 
+						if (findObj("office_rooms").value == "" || findObj("office_rooms").value == "# of rooms?") {
+
+								alert("Please specify how many rooms your office has.");
+
+								setTimeout(function(){findObj("office_rooms").focus();}, 500);
+
+								return false;
+
+						}
+
 						if (findObj("office_floor").value == "" || findObj("office_floor").value == "What floor?") {
-
-
 
 								alert("Please specify what floor your office is on.");
 
@@ -959,17 +1121,13 @@ function ValidateForm()
 
 						
 
-						break;
+						break;		
 
 
 
 					case "storage":
 
-
-
 						if (findObj("storage_size").value == "" || findObj("storage_size").value == "Unit size (ie 10x10)") {
-
-
 
 								alert("Please approximate how large your storage unit is.  For example 10x10");
 
@@ -979,21 +1137,7 @@ function ValidateForm()
 
 						}
 
-
-
-						if (findObj("storage_floor").value == "" || findObj("storage_floor").value == "What floor?") {
-
-
-
-								alert("Please specify what floor your storage unit is on.");
-
-								setTimeout(function(){findObj("storage_floor").focus();}, 500);
-
-								return false;
-
-						}
-
-						break;		
+						break;	
 
 				}
 
@@ -1096,6 +1240,20 @@ function ValidateForm()
 					break;	
 
 
+				case "apt_studio_alt":
+
+					if ($(this).find(".apt_studio_floor_alt").val() == "" || $(this).find(".apt_studio_floor_alt").val() == "What floor?") {
+
+							alert("Please specify what floor your studio apartment is on.");
+
+							findFocus($(this), '.apt_studio_floor_alt');
+
+							return false;
+
+					}
+
+					break;
+
 
 				case "apt_alt":
 
@@ -1124,6 +1282,31 @@ function ValidateForm()
 					break;										
 
 
+				case "condo_alt":
+
+					if ($(this).find(".condo_floor_alt").val() == "" || $(this).find(".condo_floor_alt").val() == "What floor?") {
+
+							alert("Please specify what floor your condominium is on.");
+
+							findFocus($(this), '.condo_floor_alt');
+
+							return false;
+
+					}
+
+
+					if ($(this).find(".condo_brs_alt").val() == "" || $(this).find(".condo_brs_alt").val() == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your condominium.");
+
+							findFocus($(this), '.condo_brs_alt');
+
+							return false;
+
+					}	
+
+					break;
+
 
 				case "ths_alt":
 
@@ -1131,7 +1314,7 @@ function ValidateForm()
 
 
 
-							alert("Please specify how many floors you have in your townhouse.");
+							alert("Please specify how many floors you have in your townhouse/duplex.");
 
 							findFocus($(this), '.ths_brs_alt');
 
@@ -1144,8 +1327,7 @@ function ValidateForm()
 					if ($(this).find(".ths_brs_alt").val() == "" || $(this).find(".ths_brs_alt").val() == "# of bedrooms?") {
 
 
-
-							alert("Please specify how many bedrooms you have in your townhouse.");
+							alert("Please specify how many bedrooms you have in your townhouse/duplex.");
 
 							findFocus($(this), '.ths_brs_alt');
 
@@ -1158,6 +1340,17 @@ function ValidateForm()
 
 
 				case "office_alt":
+
+					if ($(this).find(".office_rooms_alt").val() == "" || $(this).find(".office_rooms_alt").val() == "# of rooms?") {
+
+
+							alert("Please specify how many rooms you have in your office.");
+
+							findFocus($(this), '.office_rooms_alt');
+
+							return false;
+
+					}		
 
 					if ($(this).find(".office_floor_alt").val() == "" || $(this).find(".office_floor_alt").val() == "What floor?") {
 
@@ -1172,7 +1365,6 @@ function ValidateForm()
 					}
 
 					
-
 					break;
 
 
@@ -1193,18 +1385,6 @@ function ValidateForm()
 
 					}
 
-
-
-					if ($(this).find(".storage_floor_alt").val() == "" || $(this).find(".storage_floor_alt").val() == "What floor?") {
-
-
-							alert("Please specify what floor your storage unit is on.");
-
-							findFocus($(this), '.storage_floor_alt');
-
-							return false;
-
-					}
 
 					break;		
 

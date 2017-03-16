@@ -67,9 +67,11 @@
 		<select class="cust_res_type_alt" name="cust_residence_type_alt[]" onchange="show_element_alt('cust_res_type_alt', this.parentNode.className);">
 			<option value="">Select Residence Type / Storage Unit</option>
 			<option value="">----------------</option>
-			<option value="home_alt">Home</option>
+			<option value="apt_studio_alt">Studio Apartment</option>
 			<option value="apt_alt">Apartment</option>
-			<option value="ths_alt">Townhouse</option> 
+			<option value="condo_alt">Condominium</option>
+			<option value="ths_alt">Townhouse / Duplex</option>
+			<option value="home_alt">Single Family Home</option>
 			<option value="office_alt">Office</option>
 			<option value="storage_alt">Storage Unit</option>
 		</select>
@@ -78,44 +80,102 @@
 		<div class="home_alt">
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="text" class="home_floor_alt" name="home_floor_alt[]" maxlength="10" />
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="home_brs_alt" name="home_brs_alt[]" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Garage Size (ie 10x10)" placeholder="Garage Size (ie 10x10)" type="text" class="home_garage_size" name="home_garage_size_alt[]" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Shed Size (ie 10x10)" placeholder="Shed Size (ie 10x10)" type="text" class="home_shed_size" name="home_shed_size_alt[]" maxlength="10" />
+			<input type="checkbox" class="home_garage_alt" name="home_garage_alt[]" value="1">Garage&nbsp;
+			<input type="checkbox" class="home_shed_alt" name="home_shed_alt[]" value="1">Shed&nbsp;
 			<input type="checkbox" class="home_attic_alt" name="home_attic_alt[]" value="1">Attic&nbsp;
 			<input type="checkbox" class="home_basement_alt" name="home_basement_alt[]" value="1">Basement
 		</div>
+
+<!-- 
+
+STUDIO APT  
+
+-->
+
+		<div class="apt_studio_alt">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="apt_studio_floor_alt" name="apt_studio_floor_alt[]" maxlength="10" />
+			<input type="checkbox" class="apt_studio_elevator_alt" name="apt_studio_elevator_alt[]" value="1">Elevator&nbsp;
+			<input type="checkbox" class="apt_studio_stairs_alt" name="apt_studio_stairs_alt[]" value="1">Stairs
+		</div>
+
+<!--
+
+APT From 
+
+-->
+
 		<div class="apt_alt">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What Floor?" placeholder="What floor?" type="text" class="apt_floor_alt" name="apt_floor_alt[]" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="apt_brs_alt" name="apt_brs_alt[]" maxlength="10" />			
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="apt_floor_alt" name="apt_floor_alt[]" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="apt_brs_alt" name="apt_brs_alt[]" maxlength="10" />
 			<input type="checkbox" class="apt_elevator_alt" name="apt_elevator_alt[]" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs_alt" name="apt_stairs_alt[]" value="1">Stairs
 		</div>
+
+<!-- 
+
+CONDO
+
+-->
+
+		<div class="condo_alt">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="condo_floor_alt" name="condo_floor_alt[]" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="condo_brs_alt" name="condo_brs_alt[]" maxlength="10" />
+			<input type="checkbox" class="condo_elevator_alt" name="condo_elevator_alt[]" value="1">Elevator&nbsp;
+			<input type="checkbox" class="condo_stairs_alt" name="condo_stairs_alt[]" value="1">Stairs<br/>
+			<input type="checkbox" class="condo_mulitlevel_alt" name="condo_mulitlevel_alt[]" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+		</div>
+
+<!-- 
+
+THS 
+
+-->
+
 		<div class="ths_alt">
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="text" class="ths_floor_alt" name="ths_floor_alt[]" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="ths_brs_alt" name="ths_brs_alt[]" maxlength="10" />	
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Garage Size (ie 10x10)" placeholder="Garage Size (ie 10x10)" type="text" class="ths_garage_size" name="ths_garage_size_alt[]" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Shed Size (ie 10x10)" placeholder="Shed Size (ie 10x10)" type="text" class="ths_shed_size" name="ths_shed_size_alt[]" maxlength="10" />		
-			<input type="checkbox" class="ths_attic" name="ths_attic_alt[]" value="1">Attic&nbsp;
-			<input type="checkbox" class="ths_basement" name="ths_basement_alt[]" value="1">Basement
-		</div>		
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="ths_brs_alt" name="ths_brs_alt[]" maxlength="10" />
+			<input type="checkbox" class="ths_multilevel_alt" name="ths_multilevel_alt[]" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font><br/>
+			<input type="checkbox" class="tha_attic_alt" name="ths_attic_alt[]" value="1">Attic&nbsp;
+			<input type="checkbox" class="ths_basement_alt" name="ths_basement_alt[]" value="1">Basement&nbsp;
+			<input type="checkbox" class="ths_garage_alt" name="ths_garage_alt[]" value="1">Garage&nbsp;
+			<input type="checkbox" class="ths_shed_alt" name="ths_shed_alt[]" value="1">Shed&nbsp;
+		</div>	
+<!-- 
+
+OFFICE 
+
+-->
+
 		<div class="office_alt">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of rooms?" placeholder="# of rooms?" type="text" class="office_rooms_alt" name="office_rooms_alt[]" maxlength="10" />
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="office_floor_alt" name="office_floor_alt[]" maxlength="10" />
 			<input type="checkbox" class="office_elevator_alt" name="office_elevator_alt[]" value="1">Elevator&nbsp;
 			<input type="checkbox" class="office_stairs_alt" name="office_stairs_alt[]" value="1">Stairs
 		</div>			
+
+<!-- 
+
+STORAGE 
+
+-->
+
 		<div class="storage_alt">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit Size (ie 10x10)" placeholder="Unit Size (ie 10x10)" type="text" class="storage_size_alt" name="storage_size_alt[]" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What Floor?" placeholder="What Floor?" type="text" class="storage_floor_alt" name="storage_floor_alt[]" maxlength="10" />
-		</div>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit Size (ie 10x10)" placeholder="Unit Size (ie 10x10)" type="text" class="storage_size_alt" name="storage_size_alt[]v" maxlength="30" />
+			<input type="checkbox" class="storage_elevator_alt" name="storage_elevator_alt[]v" value="1">Elevator&nbsp;
+			<input type="checkbox" class="storage_stairs_alt" name="storage_stairs_alt[]v" value="1">Stairs
+		</div>		
 <!--
 
 		Walking distance info
 
 -->
-		<div class="formText nomargin">Check if:</div>
+		<div class="formText">Check if:</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="misc_walk_alt" name="misc_walk_alt" value="1"><label for="misc_walk_alt">LONG WALK (200 FT. +) From residence/unit to truck/POD</label>
+			<input type="checkbox" class="help_cb" id="misc_walk_alt" name="misc_walk_alt[]" value="1"><label for="misc_walk_alt">LONG WALK (200 FT. +) From residence/unit to truck/POD</label>
 		</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="misc_insurance_alt" name="misc_insurance_alt" value="1"><label for="misc_insurance_alt">Building management requires Certificate of Insurance</label>
-		</div>			
+			<input type="checkbox" class="help_cb" id="misc_insurance_alt" name="misc_insurance_alt[]" value="1"><label for="misc_insurance_alt">Building management requires Certificate of Insurance</label>
+		</div>		
+		<div class="formText nomargin"><font color="#a3a3a3">Anything else we need to know about this residence? (optional)</font></div>	
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="" type="text" class="other_text" name="misc_text_alt[]" />	
 		<br/>

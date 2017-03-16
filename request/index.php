@@ -107,6 +107,7 @@
 
 
 		$message .="<br /><br />\r\n"; 
+		$tos = "";
 
 		if($_SAFE_POST['time_of_service'] != "") {
 			switch($_SAFE_POST['time_of_service']) {
@@ -193,23 +194,31 @@
 
 		if($_SAFE_POST['cust_addr_from'] != "") {
 			$gmap_href = "https://maps.google.com/?q=". gmapclean($_SAFE_POST['cust_addr_from']) .",+". gmapclean($_SAFE_POST['cust_city_from']) .",+". gmapclean($_SAFE_POST['cust_state_from']); 
-			$message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;\">Loading Address:</h1><span style=\"color: #000000; font-size: 15px;\"><a href=\"". $gmap_href ."\" target=\"blank\">". $_SAFE_POST['cust_addr_from'] ." ";  
+			$message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;\">Loading Address:</h1><span style=\"color: #000000; font-size: 15px;\"><a href=\"". $gmap_href ."\" target=\"blank\">". $_SAFE_POST['cust_addr_from'] ." "; 
+			$message .= "<br/>"; 
 			if($_SAFE_POST['cust_city_from'] != "") $message .= $_SAFE_POST['cust_city_from'] .", "; 
 			if($_SAFE_POST['cust_state_from'] != "") $message .= $_SAFE_POST['cust_state_from'];
 			$message .= "</a><br />\r\n";
-			if($_SAFE_POST['cust_addr_2_from'] != "") $message .="Unit ". $_SAFE_POST['cust_addr_2_from'];
+			if($_SAFE_POST['cust_addr_2_from'] != "") $message .="<br />Unit ". $_SAFE_POST['cust_addr_2_from'];
 			$message .= "<br /><br />\r\n";
 			if($_SAFE_POST['cust_residence_type_from'] != "") {
 
 				switch($_SAFE_POST['cust_residence_type_from']){
 						case "home_from":
-							$message .="<b>Loading Residence Type:</b> Home<br />\r\n";
+							$message .="<b>Loading Residence Type:</b> Single Family Home<br />\r\n";
 							$message .="<b>Floors:</b> ". $_SAFE_POST['home_floor_from'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['home_brs_from']."<br />\r\n";
-							if($_SAFE_POST['home_garage_size_from'] != "" && $_SAFE_POST['home_garage_size_from'] != "Garage Size (ie 10x10)") $message .="<b>Garage:</b> ".$_SAFE_POST['home_garage_size_from'] ."<br />\r\n";
-							if($_SAFE_POST['home_shed_size_from'] != "" && $_SAFE_POST['home_shed_size_from'] != "Shed Size (ie 10x10)") $message .="<b>Shed:</b> ".$_SAFE_POST['home_shed_size_from'] ."<br />\r\n";
 							if(isset($_SAFE_POST['home_attic_from'])) $message .="<b>Attic:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['home_basement_from'])) $message .="<b>Basement:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['home_garage_from'])) $message .="<b>Garage:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['home_shed_from'])) $message .="<b>Shed:</b> Y<br />\r\n";
+							break;
+
+						case "apt_studio_from":
+							$message .="<b>Loading Residence Type:</b> Studio Apartment<br />\r\n";
+							$message .="<b>Floors:</b> ". $_SAFE_POST['apt_studio_floor_from'] ."<br />\r\n";
+							if(isset($_SAFE_POST['apt_studio_elevator_from'])) $message .="<b>Elevator:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['apt_studio_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 
 						case "apt_from":
@@ -220,18 +229,29 @@
 							if(isset($_SAFE_POST['apt_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 
+						case "condo_from":
+							$message .="<b>Loading Residence Type:</b> Condominium<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['condo_floor_from'] ."<br />\r\n";
+							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['condo_brs_from']."<br />\r\n";
+							if(isset($_SAFE_POST['condo_multilevel_from'])) $message .="<b>Multi-level:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['condo_elevator_from'])) $message .="<b>Elevator:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['condo_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
+							break;
+
 						case "ths_from":
-							$message .="<b>Loading Residence Type:</b> Townhouse<br />\r\n";
+							$message .="<b>Loading Residence Type:</b> Townhouse / Duplex<br />\r\n";
 							$message .="<b>Floor:</b> ". $_SAFE_POST['ths_floor_from'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['ths_brs_from']."<br />\r\n";
-							if($_SAFE_POST['ths_garage_size_from'] != "" && $_SAFE_POST['ths_garage_size_from'] != "Garage Size (ie 10x10)") $message .="<b>Garage:</b> ".$_SAFE_POST['ths_garage_size_from'] ."<br />\r\n";
-							if($_SAFE_POST['ths_shed_size_from'] != "" && $_SAFE_POST['ths_shed_size_from'] != "Shed Size (ie 10x10)") $message .="<b>Shed:</b> ".$_SAFE_POST['ths_shed_size_from'] ."<br />\r\n";
+							if(isset($_SAFE_POST['ths_multilevel_from'])) $message .="<b>Multi-level:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['ths_attic_from'])) $message .="<b>Attic:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['ths_basement_from'])) $message .="<b>Basement:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['ths_garage_from'])) $message .="<b>Garage:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['ths_shed_from'])) $message .="<b>Shed:</b> Y<br />\r\n";
 							break;
 
 						case "office_from":
 							$message .="<b>Loading Residence Type:</b> Office<br />\r\n";
+							$message .="<b>Rooms:</b> ". $_SAFE_POST['office_rooms_from'] ."<br />\r\n";
 							$message .="<b>Floor:</b> ". $_SAFE_POST['office_floor_from'] ."<br />\r\n";
 							if(isset($_SAFE_POST['office_elevator_from'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['office_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
@@ -240,13 +260,15 @@
 						case "storage_from":
 							$message .="<b>Loading Residence Type:</b> Storage Unit<br />\r\n";
 							$message .="<b>Size:</b> ". $_SAFE_POST['storage_size_from'] ."<br />\r\n";
-							$message .="<b>Floor:</b> ". $_SAFE_POST['storage_floor_from'] ."<br />\r\n";
+							if(isset($_SAFE_POST['storage_elevator_from'])) $message .="<b>Elevator:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['storage_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 				}
 			}
 			$message .="<br />";
-			if(isset($_POST['misc_walk_from'])) $message .="<b>Long Walk</b> Y<br/>";
-			if(isset($_POST['misc_insurance_from'])) $message .="<b>COI</b> Y<br/>";
+			if(isset($_SAFE_POST['misc_walk_from'])) $message .="<b>Long Walk</b> Y<br/>";
+			if(isset($_SAFE_POST['misc_insurance_from'])) $message .="<b>COI</b> Y<br/>";
+			if($_SAFE_POST['misc_text_from']  != "" ) $message .="<b>Additional information:</b> ". $_SAFE_POST['misc_text_from'] ."<br/>";
 			$message .="<br /></span>";
 		}
 
@@ -254,59 +276,80 @@
 			$gmap_href = "https://maps.google.com/?q=". gmapclean($_SAFE_POST['cust_addr']) .",+". gmapclean($_SAFE_POST['cust_city']) .",+". gmapclean($_SAFE_POST['cust_state']); 			
 			$message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;
 			\">Unloading Address:</h1><span style=\"color: #000000; font-size: 15px;\"><a href=\"". $gmap_href ."\" target=\"blank\">". $_SAFE_POST['cust_addr'] ." ";  
+			$message .= "<br/>";
 			if($_SAFE_POST['cust_city'] != "") $message .= $_SAFE_POST['cust_city'] .", ";
 			if($_SAFE_POST['cust_state'] != "") $message .= $_SAFE_POST['cust_state'];
 			$message .= "</a><br />\r\n";
-			if($_SAFE_POST['cust_addr_2'] != "") $message .=" Unit ". $_SAFE_POST['cust_addr_2'];
+			if($_SAFE_POST['cust_addr_2'] != "") $message .="<br />Unit ". $_SAFE_POST['cust_addr_2'];
 			$message .= "<br /><br />\r\n";
 			if($_SAFE_POST['cust_residence_type'] != "") {
 
 				switch($_SAFE_POST['cust_residence_type']){
 						case "home":
-							$message .="<b>Unloading Residence Type:</b> Home<br />\r\n";
+							$message .="<b>Loading Residence Type:</b> Single Family Home<br />\r\n";
 							$message .="<b>Floors:</b> ". $_SAFE_POST['home_floor'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['home_brs']."<br />\r\n";
-							if($_SAFE_POST['home_garage_size'] != "" && $_SAFE_POST['home_garage_size'] != "Garage Size (ie 10x10)") $message .="<b>Garage:</b> ".$_SAFE_POST['home_garage_size'] ."<br />\r\n";
-							if($_SAFE_POST['home_shed_size'] != "" && $_SAFE_POST['home_shed_size'] != "Shed Size (ie 10x10)") $message .="<b>Shed:</b> ".$_SAFE_POST['home_shed_size'] ."<br />\r\n";
 							if(isset($_SAFE_POST['home_attic'])) $message .="<b>Attic:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['home_basement'])) $message .="<b>Basement:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['home_garage'])) $message .="<b>Garage:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['home_shed'])) $message .="<b>Shed:</b> Y<br />\r\n";
+							break;
+
+						case "apt_studio":
+							$message .="<b>Loading Residence Type:</b> Studio Apartment<br />\r\n";
+							$message .="<b>Floors:</b> ". $_SAFE_POST['apt_studio_floor'] ."<br />\r\n";
+							if(isset($_SAFE_POST['apt_studio_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['apt_studio_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 
 						case "apt":
-							$message .="<b>Unloading Residence Type:</b> Apartment<br />\r\n";
-							$message .="<b>Floor:</b> ". $_SAFE_POST['apt_floor'] ."<br />\r\n";
+							$message .="<b>Loading Residence Type:</b> Apartment<br />\r\n";
+							$message .="<b>Floors:</b> ". $_SAFE_POST['apt_floor'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['apt_brs']."<br />\r\n";
 							if(isset($_SAFE_POST['apt_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['apt_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 
+						case "condo":
+							$message .="<b>Loading Residence Type:</b> Condominium<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['condo_floor'] ."<br />\r\n";
+							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['condo_brs']."<br />\r\n";
+							if(isset($_SAFE_POST['condo_multilevel'])) $message .="<b>Multi-level:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['condo_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['condo_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
+							break;
+
 						case "ths":
-							$message .="<b>Unloading Residence Type:</b> Townhouse<br />\r\n";
-							$message .="<b>Floors:</b> ". $_SAFE_POST['ths_floor'] ."<br />\r\n";
+							$message .="<b>Loading Residence Type:</b> Townhouse / Duplex<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['ths_floor'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['ths_brs']."<br />\r\n";
-							if($_SAFE_POST['ths_garage_size'] != "" && $_SAFE_POST['ths_garage_size'] != "Garage Size (ie 10x10)") $message .="<b>Garage:</b> ".$_SAFE_POST['ths_garage_size'] ."<br />\r\n";
-							if($_SAFE_POST['ths_shed_size'] != "" && $_SAFE_POST['ths_shed_size'] != "Shed Size (ie 10x10)") $message .="<b>Shed:</b> ".$_SAFE_POST['ths_shed_size'] ."<br />\r\n";
+							if(isset($_SAFE_POST['ths_multilevel'])) $message .="<b>Multi-level:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['ths_attic'])) $message .="<b>Attic:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['ths_basement'])) $message .="<b>Basement:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['ths_garage'])) $message .="<b>Garage:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['ths_shed'])) $message .="<b>Shed:</b> Y<br />\r\n";
 							break;
 
 						case "office":
-							$message .="<b>Unloading Residence Type:</b> Office<br />\r\n";
+							$message .="<b>Loading Residence Type:</b> Office<br />\r\n";
+							$message .="<b>Rooms:</b> ". $_SAFE_POST['office_rooms'] ."<br />\r\n";
 							$message .="<b>Floor:</b> ". $_SAFE_POST['office_floor'] ."<br />\r\n";
 							if(isset($_SAFE_POST['office_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['office_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 
 						case "storage":
-							$message .="<b>UNLOADING Residence Type:</b> Storage Unit<br />\r\n";
-							$message .="<b>Size:</b> ". $_SAFE_POST['storage_size'] ." sq/ft<br />\r\n";
-							$message .="<b>Floor:</b> ". $_SAFE_POST['storage_floor'] ."<br />\r\n";
+							$message .="<b>Loading Residence Type:</b> Storage Unit<br />\r\n";
+							$message .="<b>Size:</b> ". $_SAFE_POST['storage_size'] ."<br />\r\n";
+							if(isset($_SAFE_POST['storage_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['storage_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 				}
 			}
 			$message .="<br />";
-			if(isset($_POST['misc_walk_to'])) $message .="<b>Long Walk</b> Y<br/>";
-			if(isset($_POST['misc_insurance_to'])) $message .="<b>COI</b> Y<br/>";
+			if(isset($_SAFE_POST['misc_walk_to'])) $message .="<b>Long Walk</b> Y<br/>";
+			if(isset($_SAFE_POST['misc_insurance_to'])) $message .="<b>COI</b> Y<br/>";
+			if($_SAFE_POST['misc_text_to'] != "") $message .="<b>Additional information:</b> ". $_SAFE_POST['misc_text_to'] ."<br/>";
 			$message .="<br /></span>";
 		}
 
@@ -343,19 +386,18 @@
 		if($_SAFE_POST['cust_furniture_secsofa'] != "" && $_SAFE_POST['cust_furniture_secsofa'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="Sectional Sofa: ". $_SAFE_POST['cust_furniture_secsofa'] ."<br />\r\n"; }
 		if($_SAFE_POST['cust_furniture_secsofa_sections'] != "" && $_SAFE_POST['cust_furniture_secsofa_sections'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="Sections: ". $_SAFE_POST['cust_furniture_secsofa'] ."<br />\r\n"; }
 	    if($_SAFE_POST['cust_furniture_secsofa_chaise'] != "" && strtolower($_SAFE_POST['cust_furniture_secsofa_chaise']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" w/chaise<br />\r\n" ;} 
-	    else {
-	    	$furnMessage[1]['items'] .= "<br />\r\n" ;
-	    }
-	    if($_SAFE_POST['cust_furniture_3seatcouch'] != "" && $_SAFE_POST['cust_furniture_3seatcouch'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="3-Seat Couch: ". $_SAFE_POST['cust_furniture_3seatcouch'] ."\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_3seatcouch_sleeper'] != "" && strtolower($_SAFE_POST['cust_furniture_3seatcouch_sleeper']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" sleeper sofa<br />\r\n" ;} 
-	    else {
-	    	$furnMessage[1]['items'] .= "<br />\r\n" ;
-	    }
-	    if($_SAFE_POST['cust_furniture_2seatcouch'] != "" && $_SAFE_POST['cust_furniture_2seatcouch'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="2-Seat Sofa: ". $_SAFE_POST['cust_furniture_2seatcouch'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_2seatcouch_sleeper'] != "" && strtolower($_SAFE_POST['cust_furniture_2seatcouch_sleeper']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" sleeper sofa<br />\r\n" ;}  
-	    else {
-	    	$furnMessage[1]['items'] .= "<br />\r\n" ;
-	    }
+	    if($_SAFE_POST['cust_furniture_3seatcouch'] != "" && $_SAFE_POST['cust_furniture_3seatcouch'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="3-Seat Couch: ". $_SAFE_POST['cust_furniture_3seatcouch'] ."\r\n" ; 
+		    if($_SAFE_POST['cust_furniture_3seatcouch_sleeper'] != "" && strtolower($_SAFE_POST['cust_furniture_3seatcouch_sleeper']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" sleeper sofa<br />\r\n" ;} 
+		    else {
+		    	$furnMessage[1]['items'] .= "<br />\r\n" ;
+		    }
+		}
+	    if($_SAFE_POST['cust_furniture_2seatcouch'] != "" && $_SAFE_POST['cust_furniture_2seatcouch'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="2-Seat Sofa: ". $_SAFE_POST['cust_furniture_2seatcouch'] ."<br />\r\n" ;
+		    if($_SAFE_POST['cust_furniture_2seatcouch_sleeper'] != "" && strtolower($_SAFE_POST['cust_furniture_2seatcouch_sleeper']) == "y") { $furnCount = 1;  $furnMessage[1]['items'] .=" sleeper sofa<br />\r\n" ;}  
+		    else {
+		    	$furnMessage[1]['items'] .= "<br />\r\n" ;
+		    }
+		}
 	    if($_SAFE_POST['cust_furniture_recliner'] != "" && $_SAFE_POST['cust_furniture_recliner'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="Recliner: ". $_SAFE_POST['cust_furniture_recliner'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_simplechair'] != "" && $_SAFE_POST['cust_furniture_simplechair'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="Arm Chair: ". $_SAFE_POST['cust_furniture_simplechair'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_futon'] != "" && $_SAFE_POST['cust_furniture_futon'] != "0") { $furnCount = 1;  $furnMessage[1]['items'] .="Futon: ". $_SAFE_POST['cust_furniture_futon'] ."<br />\r\n" ;} 
@@ -473,8 +515,7 @@
 		if(isset($_POST['itshuman'])) {
 			$refId = save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
 			mail($to, '#'. $refId .' - '. $_SAFE_POST['date_of_service'] . ' - ' . stripslashes($_SAFE_POST['cust_name']) .' - '. $_SAFE_POST['cust_phone'],  stripcslashes($message), $headers);
-			//save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
-			//$refId = save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
+
 			include('thankyou.php');
 		}
 		//echo $message;

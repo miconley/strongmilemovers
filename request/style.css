@@ -303,7 +303,7 @@ a { color: #f7941d; }
 
 .help_desc { position: relative; color: #a3a3a3; }
 
-.home, .apt, .ths, .office, .storage, .home_from, .apt_from, .ths_from, .office_from, .storage_from, .home_alt, .apt_alt, .ths_alt, .office_alt, .storage_alt, .referral { display: none }
+.home, .apt_studio, .apt, .condo, .ths, .office, .storage, .home_from, .apt_studio_from, .apt_from, .condo_from, .ths_from, .office_from, .storage_from, .home_alt, .apt_studio_alt, .apt_alt, .condo_alt, .ths_alt, .office_alt, .storage_alt, .referral { display: none }
 
 
 
