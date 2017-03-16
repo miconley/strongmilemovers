@@ -365,6 +365,8 @@ input[type="checkbox"] {
 
     line-height: 18px;
 
+    background-color: #000000;
+
 }
 
 .other_text, .cust_furniture_other, .cust_furniture_glass, .cust_addr_other { width: 98%;}
