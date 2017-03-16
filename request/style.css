@@ -301,7 +301,7 @@ a { color: #f7941d; }
 
 .help_checkbox.wide { width: 100%;}
 
-.help_desc { position: relative; display: block; width: 100%; margin: 0px 0px 10px 28px; color: #a3a3a3; line-height: 15px; }
+.help_desc { position: relative; color: #a3a3a3; }
 
 .home, .apt, .ths, .office, .storage, .home_from, .apt_from, .ths_from, .office_from, .storage_from, .home_alt, .apt_alt, .ths_alt, .office_alt, .storage_alt, .referral { display: none }
 
@@ -502,6 +502,5 @@ textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo {
 
 	textarea.cust_otherinfo, textarea.cust_importantinfo { font-family: 'Ropa Sans', sans-serif; font-size: 18px; line-height: 20px; width: 97%; height: 200px; resize:none;}
 
-	.help_desc { width: 90%; }
 }
 

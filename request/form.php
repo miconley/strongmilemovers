@@ -440,35 +440,35 @@ HELP TYPE
 		<div class="formText">What are you looking for help with?</div>
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_loading_all" name="help_loading_all" value="1"><label for="help_loading_all">Full Transport Move</label>
-			<span class="help_desc">Load truck, transport & unload truck</span>
+			<span class="help_desc"> - Load truck, transport & unload truck</span>
 		</div>		
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_loading" name="help_loading" value="1"><label for="help_loading">Load Only</label>
-			<span class="help_desc">Truck, POD, trailer or similar</span>
+			<span class="help_desc"> - Truck, POD, trailer or similar</span>
 		</div>
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_unloading" name="help_unloading" value="1"><label for="help_unloading">Unload Only</label>
-			<span class="help_desc">Truck, POD, trailer or similar</span>
+			<span class="help_desc"> - Truck, POD, trailer or similar</span>
 		</div>		
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_inhome" name="help_inhome" value="1"><label for="help_inhome">In-Home Assistance</label>
-			<span class="help_desc">Relocating furniture on-site, room to room only</span>
+			<span class="help_desc"> - Relocating furniture on-site, room to room only</span>
 		</div>	
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_inapt" name="help_inapt" value="1"><label for="help_inapt">In-Building</label>
-			<span class="help_desc">Apartment, condo or office move floor to floor or within the same building</span>
+			<span class="help_desc"> - Apartment, condo or office move floor to floor or within the same building</span>
 		</div>
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_incomplex" name="help_incomplex" value="1"><label for="help_incomplex">In-Complex</label>
-			<span class="help_desc">Building to building, walking distance moves less than 200 ft. that don't require a truck</span>
+			<span class="help_desc"> - Building to building, walking distance moves less than 200 ft. that don't require a truck</span>
 		</div>
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Packing services (complete)</label>
-			<span class="help_desc">Packing of ALL loose items throughout your home</span>
+			<span class="help_desc"> - Packing of ALL loose items throughout your home</span>
 		</div>
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing">Packing services (partial)</label>
-			<span class="help_desc">Packing of SOME loose items throughout your home</span>
+			<span class="help_desc"> - Packing of SOME loose items throughout your home</span>
 		</div>
 
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="Other" type="text" class="other_text" name="other_text" maxlength="30" />
