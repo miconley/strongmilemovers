@@ -175,6 +175,19 @@ STORAGE From
 		</div>		
 
 
+<!--
+
+		Walking distance info
+
+-->
+		<div class="formText nomargin">Check if:</div>
+		<div class="help_checkbox wide">
+			<input type="checkbox" class="help_cb" id="misc_walk_from" name="misc_walk_from" value="1"><label for="misc_walk_from">LONG WALK (200 FT. +) From residence/unit to truck/POD</label>
+		</div>
+		<div class="help_checkbox wide">
+			<input type="checkbox" class="help_cb" id="misc_insurance_from" name="misc_insurance_from" value="1"><label for="misc_insurance_from">Building management requires Certificate of Insurance</label>
+		</div>	
+
 <!-- 
 
 UNLOADING INFO 
@@ -326,6 +339,18 @@ STORAGE To
 
 		<br/>
 
+<!--
+
+		Walking distance info
+
+-->
+		<div class="formText nomargin">Check if:</div>
+		<div class="help_checkbox wide">
+			<input type="checkbox" class="help_cb" id="misc_walk_to" name="misc_walk_to" value="1"><label for="misc_walk_to">LONG WALK (200 FT. +) From residence/unit to truck/POD</label>
+		</div>
+		<div class="help_checkbox wide">
+			<input type="checkbox" class="help_cb" id="misc_insurance_to" name="misc_insurance_to" value="1"><label for="misc_insurance_to">Building management requires Certificate of Insurance</label>
+		</div>	
 <!-- 
 
 ALTERNATE ADDRESSES 
@@ -446,7 +471,7 @@ HELP TYPE
 			<span class="help_desc">Packing of SOME loose items throughout your home</span>
 		</div>
 
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Other" placeholder="Other" type="text" class="other_text" name="other_text" maxlength="30" />
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="Other" type="text" class="other_text" name="other_text" maxlength="30" />
 		<div class="formText nomargin"><font color="#a3a3a3">Only brief explanation here.  Further explanation allowed in open box at bottom of this page labeled "Tell us more important information about your move?"</font></div>
 <!--
 

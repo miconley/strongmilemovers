@@ -244,7 +244,10 @@
 							break;
 				}
 			}
-			$message .="<br /><br /></span>";
+			$message .="<br />";
+			if(isset($_POST['misc_walk_from'])) $message .="<b>Long Walk</b> Y<br/>";
+			if(isset($_POST['misc_insurance_from'])) $message .="<b>COI</b> Y<br/>";
+			$message .="<br /></span>";
 		}
 
 		if($_SAFE_POST['cust_addr'] != "") {
@@ -301,7 +304,10 @@
 							break;
 				}
 			}
-			$message .="<br /><br /></span>";
+			$message .="<br />";
+			if(isset($_POST['misc_walk_to'])) $message .="<b>Long Walk</b> Y<br/>";
+			if(isset($_POST['misc_insurance_to'])) $message .="<b>COI</b> Y<br/>";
+			$message .="<br /></span>";
 		}
 
 		include('alt_addresses.php');

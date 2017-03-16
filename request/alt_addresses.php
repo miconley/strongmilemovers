@@ -69,7 +69,10 @@
 								break;
 					}
 				}
-				$message .="<br/><br/></span>";
+				$message .="<br/>";
+				if(isset($_POST['misc_walk_alt'][$alt_count])) $message .="<b>Long Walk</b> Y<br/>";
+				if(isset($_POST['misc_insurance_alt'][$alt_count])) $message .="<b>COI</b> Y<br/>";
+				$message .="<br/></span>";
 				$alt_count++;
 			}
 		}
