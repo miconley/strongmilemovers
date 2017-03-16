@@ -92,7 +92,7 @@
 		<tr valign="top">
 			<td><?php echo $row['id'];?></td>
 			<td><?php echo date("F j, Y, g:i a", strtotime($row['entrydate']));?></td>
-			<td><?php echo $row['name'];?></td>
+			<td><?php echo stripslashes($row['name']);?></td>
 			<td class="info"><div class="container">
 					<div class="header"><span>Expand</span></div>
 					<div class="content"><?php echo html_entity_decode(stripslashes($row['info']));?></div>
