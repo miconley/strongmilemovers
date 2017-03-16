@@ -546,7 +546,30 @@ HELP TYPE
 TYPES & QUANTITIES OF POSSESSIONS
 
 -->		
+		<div class="formText"><b>FURNITURE & BOX INVENTORY</b><br/>
+			<button type="button" class="howtopack">How Pack boxes <font color="#a3a3a3">( click here to learn more )</font></button><br/>
+			<div class="howtopack_content">
+			<ul>
+			<li><b>Small (16 x 12 x 12)</b><br/>
+				Books, magazines, glassware (heavier, smaller items)</li>
+			<li><b>Medium (18 x 18 x 18)</b><br/>
+				Shoes, clothing & similar</li>
+			<li><b>Large (24 x 18 x 18+)</b><br/>
+				Do not use these unless absolutely necessary! These are meant for larger,less dense items like cookie sheets, board games, lamp shade, pillows, comfortors</li>
+			</ul>
+			</div>
 
+			<button type="button" class="boxcounts">Typical box counts <font color="#a3a3a3">( click here to learn more )</font></button>
+			<div class="boxcounts_content">
+			<ul>
+				<li><b>1 BR:</b> 20-40<br/></li>
+				<li><b>2 BR:</b> 40-70</li>
+				<li><b>3 BR:</b> 70-100</li>
+				<li><b>4 BR+:</b> 100-150+</li>
+			</ul>
+			We know this may be a hard number to know precisely.  Do your best to <b>OVERESTIMATE</b> how many you'll have for a better quote.
+			</div>
+		</div>
 		<div class="formText">Please list the total QUANTITIES of what you have, LEAVE BLANK IF YOU HAVE NONE:</div>
 
 

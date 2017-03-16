@@ -10,6 +10,17 @@ $(function() {
 
 	setFocus();						
 
+	$('.howtopack').on('click', function(e) { 
+		e.preventDefault(); 
+		$('.howtopack_content').toggle();
+	});
+
+
+	$('.boxcounts').on('click', function(e) { 
+		e.preventDefault(); 
+		$('.boxcounts_content').toggle();
+	});
+
 	setTimeout(function() { $('#captchaDiv').html('<input type="checkbox" name="itshuman" id="itshuman" />'); }, 5000);
 
 	});
