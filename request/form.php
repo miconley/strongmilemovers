@@ -466,7 +466,7 @@ ALTERNATE DATE SERVICE
 -->
 		<div class="halfcont">
 			<div class="formText">Alternate date of service:</div>
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="text" id="date_of_service_alt" name="date_of_service_alt" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="date" id="date_of_service_alt" name="date_of_service_alt" />
 		</div>
 
 <!-- SHIM -->
