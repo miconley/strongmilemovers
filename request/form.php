@@ -145,7 +145,7 @@ APT From
 
 		<div class="apt_from">
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="apt_floor_from" name="apt_floor_from" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="apt_brs_from" name="apt_brs_from" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs_from" name="apt_brs_from" maxlength="10" />
 			<input type="checkbox" class="apt_elevator_from" name="apt_elevator_from" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs_from" name="apt_stairs_from" value="1">Stairs
 		</div>
