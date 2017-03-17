@@ -25,16 +25,9 @@ $(function() {
 
 	});
 
-	if(isiPhone || isWindowsPhone || isAndroid) {
-
-	} else {
 
 	$('#date_of_service').datepicker();
-
-
-
-	}
-
+	$('#date_of_service_alt').datepicker();
 
 
 	function formatPhone(obj) {

@@ -443,7 +443,7 @@ DATE SERVICE
 
 		<div class="halfcont">
 			<div class="formText">Preferred date of service:</div>
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="date" id="date_of_service" name="date_of_service" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="text" id="date_of_service" name="date_of_service" />
 		</div>
 
 <!-- 
@@ -468,7 +468,7 @@ ALTERNATE DATE SERVICE
 -->
 		<div class="halfcont">
 			<div class="formText">Alternate date of service:</div>
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="date" id="date_of_service_alt" name="date_of_service_alt" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="text" id="date_of_service_alt" name="date_of_service_alt" />
 		</div>
 
 <!-- SHIM -->
@@ -557,7 +557,7 @@ TYPES & QUANTITIES OF POSSESSIONS
 			<li><b>Medium (18 x 18 x 18)</b><br/>
 				Shoes, clothing & similar</li>
 			<li><b>Large (24 x 18 x 18+)</b><br/>
-				Do not use these unless absolutely necessary! These are meant for larger,less dense items like cookie sheets, board games, lamp shade, pillows, comfortors</li>
+				DO NOT USE THESE UNLESS ABSOLUTELY NECESSARY! These are meant for larger,less dense items like cookie sheets, board games, lamp shade, pillows, comfortors</li>
 			</ul>
 			</div>
 
