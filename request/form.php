@@ -10,7 +10,7 @@
 	</div>
 	<div id="headerMobile">
 		<img src="../images/header_mobile.jpg" />
-		Professional Moving With A Modern Twist<br/>
+		Professional Moving<br />With A Modern Twist<br/>
 		732-754-3626<br/><br/>
 		PLEASE FILL IN AS MUCH INFORMATION AS POSSIBLE TO RECEIVE AN ACCURATE QUOTE:
 	</div>
@@ -441,7 +441,7 @@ DATE SERVICE
 
 		<div class="halfcont">
 			<div class="formText">Preferred date of service:</div>
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="text" id="date_of_service" name="date_of_service" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="date" id="date_of_service" name="date_of_service" />
 		</div>
 
 <!-- 
