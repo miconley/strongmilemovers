@@ -569,7 +569,7 @@ TYPES & QUANTITIES OF POSSESSIONS
 				<li><b>3 BR:</b> 70-100</li>
 				<li><b>4 BR+:</b> 100-150+</li>
 			</ul>
-			We know this may be a hard number to know precisely.  Do your best to <b>OVERESTIMATE</b> how many you'll have for a better quote.
+			We know this may be a hard number to know precisely.<br/>Do your best to <b>OVERESTIMATE</b> how many you'll have for a better quote.
 			</div>
 		</div>
 		<div class="formText">Please list the total QUANTITIES of what you have, LEAVE BLANK IF YOU HAVE NONE:</div>
