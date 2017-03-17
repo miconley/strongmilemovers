@@ -29,10 +29,10 @@ USER INFO
       	<div class="formText">Full Name</div>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Name" placeholder="Name" type="text" name="cust_name" id="cust_name" maxlength="50" class="required"/>
 		<div class="formText">Contact</div>
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Email" placeholder="Email" type="text" name="cust_email" id="cust_email" maxlength="50" />		
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Phone" placeholder="Phone" type="text" name="cust_phone" id="cust_phone" maxlength="50" class="required" style="width: 200px"/>
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Email" placeholder="Email" type="email" name="cust_email" id="cust_email" maxlength="50" />		
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Phone" placeholder="Phone" type="tel" name="cust_phone" id="cust_phone" maxlength="50" class="required" style="width: 200px"/>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Ext." placeholder="Ext." type="text" name="cust_ext" id="cust_ext" maxlength="50" style="width: 70px" />
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Alt Phone" placeholder="Alt Phone" type="text" id="cust_phone_alt" name="cust_phone_alt" maxlength="50" />
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Alt Phone" placeholder="Alt Phone" type="tel" id="cust_phone_alt" name="cust_phone_alt" maxlength="50" />
 		<div class="formText"><b>LOADING</b> Address:</div>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr_from" id="cust_addr_from" maxlength="50" />
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2_from" id="cust_addr_2_from" maxlength="50" />
@@ -117,8 +117,8 @@ HOME From
 -->
 
 		<div class="home_from">
-			<input onfocus="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="text" class="home_floor_from" name="home_floor_from" maxlength="10" />
-			<input onfocus="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="home_brs_from" name="home_brs_from" maxlength="10" />
+			<input onfocus="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="number" class="home_floor_from" name="home_floor_from" maxlength="10" />
+			<input onfocus="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="home_brs_from" name="home_brs_from" maxlength="10" />
 			<input type="checkbox" class="home_attic_from" name="home_attic_from" value="1">Attic&nbsp;
 			<input type="checkbox" class="home_basement_from" name="home_basement_from" value="1">Basement&nbsp;
 			<input type="checkbox" class="home_garage_from" name="home_garage_from" value="1">Garage&nbsp;
@@ -158,7 +158,7 @@ CONDO From
 
 		<div class="condo_from">
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="condo_floor_from" name="condo_floor_from" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="condo_brs_from" name="condo_brs_from" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="condo_brs_from" name="condo_brs_from" maxlength="10" />
 			<input type="checkbox" class="condo_elevator_from" name="condo_elevator_from" value="1">Elevator&nbsp;
 			<input type="checkbox" class="condo_stairs_from" name="condo_stairs_from" value="1">Stairs<br/>
 			<input type="checkbox" class="condo_mulitlevel_from" name="condo_mulitlevel_from" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
@@ -171,8 +171,8 @@ THS From
 -->
 
 		<div class="ths_from">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="text" class="ths_floor_from" name="ths_floor_from" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="ths_brs_from" name="ths_brs_from" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="number" class="ths_floor_from" name="ths_floor_from" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="ths_brs_from" name="ths_brs_from" maxlength="10" />
 			<input type="checkbox" class="ths_multilevel_from" name="ths_multilevel_from" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font><br/>
 			<input type="checkbox" class="tha_attic_from" name="ths_attic_from" value="1">Attic&nbsp;
 			<input type="checkbox" class="ths_basement_from" name="ths_basement_from" value="1">Basement&nbsp;
@@ -187,7 +187,7 @@ OFFICE From
 -->
 
 		<div class="office_from">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of rooms?" placeholder="# of rooms?" type="text" class="office_rooms_from" name="office_rooms_from" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of rooms?" placeholder="# of rooms?" type="number" class="office_rooms_from" name="office_rooms_from" maxlength="10" />
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="office_floor_from" name="office_floor_from" maxlength="10" />
 			<input type="checkbox" class="office_elevator_from" name="office_elevator_from" value="1">Elevator&nbsp;
 			<input type="checkbox" class="office_stairs_from" name="office_stairs_from" value="1">Stairs
@@ -314,8 +314,8 @@ HOME To
 -->
 
 		<div class="home">
-			<input onfocus="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="text" class="home_floor" name="home_floor" maxlength="10" />
-			<input onfocus="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="home_brs" name="home_brs" maxlength="10" />
+			<input onfocus="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="number" class="home_floor" name="home_floor" maxlength="10" />
+			<input onfocus="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="home_brs" name="home_brs" maxlength="10" />
 			<input type="checkbox" class="home_attic" name="home_attic" value="1">Attic&nbsp;
 			<input type="checkbox" class="home_basement" name="home_basement" value="1">Basement&nbsp;
 			<input type="checkbox" class="home_garage" name="home_garage" value="1">Garage&nbsp;
@@ -342,7 +342,7 @@ APT To
 
 		<div class="apt">
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="apt_floor" name="apt_floor" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="apt_brs" name="apt_brs" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs" name="apt_brs" maxlength="10" />
 			<input type="checkbox" class="apt_elevator" name="apt_elevator" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs" name="apt_stairs" value="1">Stairs
 		</div>
@@ -355,7 +355,7 @@ CONDO From
 
 		<div class="condo">
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="condo_floor" name="condo_floor" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="condo_brs" name="condo_brs" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="condo_brs" name="condo_brs" maxlength="10" />
 			<input type="checkbox" class="condo_elevator" name="condo_elevator" value="1">Elevator&nbsp;
 			<input type="checkbox" class="condo_stairs" name="condo_stairs" value="1">Stairs<br/>
 			<input type="checkbox" class="condo_mulitlevel" name="condo_mulitlevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
@@ -368,8 +368,8 @@ THS To
 -->
 
 		<div class="ths">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="text" class="ths_floor" name="ths_floor" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="text" class="ths_brs" name="ths_brs" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="number" class="ths_floor" name="ths_floor" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="ths_brs" name="ths_brs" maxlength="10" />
 			<input type="checkbox" class="ths_multilevel" name="ths_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font><br/>
 			<input type="checkbox" class="tha_attic" name="ths_attic" value="1">Attic&nbsp;
 			<input type="checkbox" class="ths_basement" name="ths_basement" value="1">Basement&nbsp;
@@ -384,7 +384,7 @@ OFFICE To
 -->
 
 		<div class="office">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of rooms?" placeholder="# of rooms?" type="text" class="office_rooms" name="office_rooms" maxlength="10" />
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of rooms?" placeholder="# of rooms?" type="number" class="office_rooms" name="office_rooms" maxlength="10" />
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="office_floor" name="office_floor" maxlength="10" />
 			<input type="checkbox" class="office_elevator" name="office_elevator" value="1">Elevator&nbsp;
 			<input type="checkbox" class="office_stairs" name="office_stairs" value="1">Stairs
