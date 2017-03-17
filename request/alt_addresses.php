@@ -82,6 +82,7 @@
 
 							case "storage_alt":
 								$message .="<b>Residence Type:</b> Storage Unit<br/>";
+								$message .="<b>Floor:</b> ". $_POST['storage_floor_alt'][$alt_count] ."<br />\r\n";
 								$message .="<b>Size:</b> ". $_POST['storage_size_alt'][$alt_count] ."<br/>";
 								if(isset($_POST['storage_elevator_alt'][$alt_count])) $message .="<b>Elevator:</b> Y<br/>";
 								if(isset($_POST['storage_stairs_alt'][$alt_count])) $message .="<b>Stairs:</b> Y<br/>";
@@ -91,7 +92,7 @@
 				$message .="<br/>";
 				if(isset($_POST['misc_walk_alt'][$alt_count])) $message .="<b>Long Walk</b> Y<br/>";
 				if(isset($_POST['misc_insurance_alt'][$alt_count])) $message .="<b>COI</b> Y<br/>";
-				if($_POST['misc_text_alt'][$alt_count] != "") $message .="<b>Additional information:</b> ". $_POST['misc_text_alt'][$alt_count] ."<br/>";
+				if($_POST['misc_text_alt'][$alt_count] != "" && $_POST['misc_text_alt'][$alt_count] != "Other") $message .="<b>Additional information:</b> ". $_POST['misc_text_alt'][$alt_count] ."<br/>";
 				$message .="<br/></span>";
 				$alt_count++;
 			}

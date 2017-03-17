@@ -259,6 +259,7 @@
 
 						case "storage_from":
 							$message .="<b>Loading Residence Type:</b> Storage Unit<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['storage_floor_from'] ."<br />\r\n";
 							$message .="<b>Size:</b> ". $_SAFE_POST['storage_size_from'] ."<br />\r\n";
 							if(isset($_SAFE_POST['storage_elevator_from'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['storage_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
@@ -268,7 +269,7 @@
 			$message .="<br />";
 			if(isset($_SAFE_POST['misc_walk_from'])) $message .="<b>Long Walk</b> Y<br/>";
 			if(isset($_SAFE_POST['misc_insurance_from'])) $message .="<b>COI</b> Y<br/>";
-			if($_SAFE_POST['misc_text_from']  != "" ) $message .="<b>Additional information:</b> ". $_SAFE_POST['misc_text_from'] ."<br/>";
+			if($_SAFE_POST['misc_text_from'] != "" && $_SAFE_POST['misc_text_from'] != "Other") $message .="<b>Additional information:</b> ". $_SAFE_POST['misc_text_from'] ."<br/>";
 			$message .="<br /></span>";
 		}
 
@@ -340,6 +341,7 @@
 
 						case "storage":
 							$message .="<b>Loading Residence Type:</b> Storage Unit<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['storage_floor'] ."<br />\r\n";
 							$message .="<b>Size:</b> ". $_SAFE_POST['storage_size'] ."<br />\r\n";
 							if(isset($_SAFE_POST['storage_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['storage_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
@@ -349,7 +351,7 @@
 			$message .="<br />";
 			if(isset($_SAFE_POST['misc_walk_to'])) $message .="<b>Long Walk</b> Y<br/>";
 			if(isset($_SAFE_POST['misc_insurance_to'])) $message .="<b>COI</b> Y<br/>";
-			if($_SAFE_POST['misc_text_to'] != "") $message .="<b>Additional information:</b> ". $_SAFE_POST['misc_text_to'] ."<br/>";
+			if($_SAFE_POST['misc_text_to'] != "" && $_SAFE_POST['misc_text_to'] != "Other") $message .="<b>Additional information:</b> ". $_SAFE_POST['misc_text_to'] ."<br/>";
 			$message .="<br /></span>";
 		}
 

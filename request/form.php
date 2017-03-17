@@ -200,6 +200,7 @@ STORAGE From
 -->
 
 		<div class="storage_from">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What Floor?" placeholder="What Floor?" type="text" class="storage_floor_from" name="storage_floor_from" maxlength="10" />
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit Size (ie 10x10)" placeholder="Unit Size (ie 10x10)" type="text" class="storage_size_from" name="storage_size_from" maxlength="30" />
 			<input type="checkbox" class="storage_elevator_from" name="storage_elevator_from" value="1">Elevator&nbsp;
 			<input type="checkbox" class="storage_stairs_from" name="storage_stairs_from" value="1">Stairs
@@ -397,6 +398,7 @@ STORAGE To
 -->
 
 		<div class="storage">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What Floor?" placeholder="What Floor?" type="text" class="storage_floor" name="storage_floor" maxlength="10" />
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit Size (ie 10x10)" placeholder="Unit Size (ie 10x10)" type="text" class="storage_size" name="storage_size" maxlength="30" />
 			<input type="checkbox" class="storage_elevator" name="storage_elevator" value="1">Elevator&nbsp;
 			<input type="checkbox" class="storage_stairs" name="storage_stairs" value="1">Stairs
@@ -539,7 +541,7 @@ HELP TYPE
 			<span class="help_desc"> - Packing of SOME loose items throughout your home</span>
 		</div>
 
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="Other" type="text" class="other_text" name="other_text" maxlength="30" />
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Other" placeholder="Other" type="text" class="other_text" name="other_text" maxlength="30" />
 		<div class="formText nomargin"><font color="#a3a3a3">Only brief explanation here.  Further explanation allowed in open box at bottom of this page labeled "Tell us more important information about your move?"</font></div>
 <!--
 
