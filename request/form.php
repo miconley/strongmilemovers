@@ -547,7 +547,7 @@ TYPES & QUANTITIES OF POSSESSIONS
 
 -->		
 		<div class="formText"><b>FURNITURE & BOX INVENTORY</b><br/>
-			<button type="button" class="howtopack">How Pack boxes <font color="#a3a3a3">( click here to learn more )</font></button><br/>
+			<button type="button" class="howtopack">How to pack boxes <font color="#a3a3a3">( click here to learn more )</font></button><br/>
 			<div class="howtopack_content">
 			<ul>
 			<li><b>Small (16 x 12 x 12)</b><br/>
