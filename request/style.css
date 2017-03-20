@@ -1,3 +1,7 @@
+html, body, a {	cursor:  auto;
+
+    cursor:  url(../images/cursor.png) 0 0, pointer;}
+
 body
 
 {
