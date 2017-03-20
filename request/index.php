@@ -351,7 +351,7 @@
 			$message .="<br />";
 			if(isset($_SAFE_POST['misc_walk_to'])) $message .="<b>Long Walk</b> Y<br/>";
 			if(isset($_SAFE_POST['misc_insurance_to'])) $message .="<b>COI</b> Y<br/>";
-			if($_SAFE_POST['misc_text_to'] != "" && $_SAFE_POST['misc_text_to'] != "Other") $message .="<b>Additional information:</b> ". $_SAFE_POST['misc_text_to'] ."<br/>";
+			if($_SAFE_POST['misc_text_to'] != "") $message .="<b>Additional information:</b> ". $_SAFE_POST['misc_text_to'] ."<br/>";
 			$message .="<br /></span>";
 		}
 
@@ -371,7 +371,7 @@
 		if(isset($_SAFE_POST['help_packing_partial'])) { $helpCount = 1; $helpMessage .="Packing (partial)<br />\r\n"; }
 		
 
-		if($_SAFE_POST['other_text'] !="" ) { $helpCount = 1; $helpMessage .="Other help: ". $_SAFE_POST['other_text'] ."<br />\r\n"; }
+		if($_SAFE_POST['other_text'] != "") { $helpCount = 1; $helpMessage .="Other help: ". $_SAFE_POST['other_text'] ."<br />\r\n"; }
 		if($helpCount > 0) {
 			$message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;\">Help Requested:</h1>";
 			$message .= "<span style=\"color: #000000; font-size: 15px;\">" .$helpMessage ."</span>";

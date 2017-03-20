@@ -541,7 +541,7 @@ HELP TYPE
 			<span class="help_desc"> - Packing of SOME loose items throughout your home</span>
 		</div>
 
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Other" placeholder="Other" type="text" class="other_text" name="other_text" maxlength="30" />
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Specify other help needed not listed above" placeholder="Specify other help needed not listed above" type="text" class="other_text" name="other_text" maxlength="30" />
 		<div class="formText nomargin"><font color="#a3a3a3">Only brief explanation here.  Further explanation allowed in open box at bottom of this page labeled "Tell us more important information about your move?"</font></div>
 <!--
 
