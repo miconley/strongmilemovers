@@ -474,7 +474,7 @@ textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo {
 }
 
 .howtopack_content, .boxcounts_content {
-	display: none;
+
 }
 
 @media print {

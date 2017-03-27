@@ -10,16 +10,16 @@ $(function() {
 
 	setFocus();						
 
-	$('.howtopack').on('click', function(e) { 
-		e.preventDefault(); 
-		$('.howtopack_content').toggle();
-	});
+	// $('.howtopack').on('click', function(e) { 
+	// 	e.preventDefault(); 
+	// 	$('.howtopack_content').toggle();
+	// });
 
 
-	$('.boxcounts').on('click', function(e) { 
-		e.preventDefault(); 
-		$('.boxcounts_content').toggle();
-	});
+	// $('.boxcounts').on('click', function(e) { 
+	// 	e.preventDefault(); 
+	// 	$('.boxcounts_content').toggle();
+	// });
 
 	setTimeout(function() { $('#captchaDiv').html('<input type="checkbox" name="itshuman" id="itshuman" />'); }, 5000);
 
@@ -896,7 +896,17 @@ function ValidateForm()
 
 					case "storage_from":
 
-						if (findObj("storage_size_from").value == "" || findObj("storage_size_from").value == "Unit size (ie 10x10)") {
+						if (findObj("storage_floor_from").value == " " || findObj("storage_floor_from").value == "What Floor?") {
+
+								alert("Please specify what floor your storage unit is on.");
+
+								setTimeout(function(){findObj("storage_floor_from").focus();}, 500);
+
+								return false;
+
+						} 
+
+						if (findObj("storage_size_from").value == " " || findObj("storage_size_from").value == "Unit Size (ie 10x10)") {
 
 								alert("Please approximate how large your storage unit is.  For example 10x10");
 
@@ -904,7 +914,7 @@ function ValidateForm()
 
 								return false;
 
-						}
+						} 
 
 						break;		
 
@@ -1131,7 +1141,17 @@ function ValidateForm()
 
 					case "storage":
 
-						if (findObj("storage_size").value == "" || findObj("storage_size").value == "Unit size (ie 10x10)") {
+						if (findObj("storage_floor").value == " " || findObj("storage_floor").value == "What floor?") {
+
+								alert("Please specify what floor your storage unit is on.");
+
+								setTimeout(function(){findObj("storage_floor").focus();}, 500);
+
+								return false;
+
+						}
+
+						if (findObj("storage_size").value == " " || findObj("storage_size").value == "Unit size (ie 10x10)") {
 
 								alert("Please approximate how large your storage unit is.  For example 10x10");
 
@@ -1376,8 +1396,19 @@ function ValidateForm()
 				case "storage_alt":
 
 
+					if ($(this).find(".storage_floor_alt").val() == " " || $(this).find(".storage_floor_alt").val() == "What floor?") {
 
-					if ($(this).find(".storage_size_alt").val() == "" || $(this).find(".storage_size_alt").val() == "Unit size (ie 10x10)") {
+
+
+							alert("Please specify what floor your storage unit is on.");
+
+							findFocus($(this), '.storage_floor_alt');
+
+							return false;
+
+					}
+
+					if ($(this).find(".storage_size_alt").val() == " " || $(this).find(".storage_size_alt").val() == "Unit size (ie 10x10)") {
 
 
 

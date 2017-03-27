@@ -485,7 +485,6 @@ REFERRAL
 		<select class="cust_referral" name="cust_referral" onchange="show_element(this.name, this.selectedIndex);">
 			<option value="">Please Select</option>
 			<option value="">----------------</option>
-			<option value="previouscustomer">Previous Customer</option>
 			<option value="yelp">Yelp</option>
 			<option value="angieslist">Angie's List</option>
 			<option value="movingstaffers">Moving Staffers</option>
@@ -495,6 +494,7 @@ REFERRAL
 			<option value="sm">Strongmile Employee</option>
 			<option value="bc">Business Card</option>
 			<option value="uhaul">U-Haul Dealer</option>
+			<option value="previouscustomer">Previous Customer</option>
 			<option value="other">Other</option>
 		</select>
 		<div class="referral">
@@ -533,11 +533,11 @@ HELP TYPE
 			<span class="help_desc"> - Building to building, walking distance moves less than 200 ft. that don't require a truck</span>
 		</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Packing services (complete)</label>
+			<input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Box packing (complete)</label>
 			<span class="help_desc"> - Packing of ALL loose items throughout your home</span>
 		</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing">Packing services (partial)</label>
+			<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing">Box packing (partial)</label>
 			<span class="help_desc"> - Packing of SOME loose items throughout your home</span>
 		</div>
 
@@ -549,7 +549,7 @@ TYPES & QUANTITIES OF POSSESSIONS
 
 -->		
 		<div class="formText"><b>FURNITURE & BOX INVENTORY</b><br/>
-			<button type="button" class="howtopack">How to pack boxes <font color="#a3a3a3">( click here to learn more )</font></button><br/>
+			How to pack boxes<br/>
 			<div class="howtopack_content">
 			<ul>
 			<li><b>Small (16 x 12 x 12)</b><br/>
@@ -557,11 +557,11 @@ TYPES & QUANTITIES OF POSSESSIONS
 			<li><b>Medium (18 x 18 x 18)</b><br/>
 				Shoes, clothing & similar</li>
 			<li><b>Large (24 x 18 x 18+)</b><br/>
-				DO NOT USE THESE UNLESS ABSOLUTELY NECESSARY! These are meant for larger,less dense items like cookie sheets, board games, lamp shade, pillows, comfortors</li>
+				DO NOT USE THESE UNLESS ABSOLUTELY NECESSARY!<br />These are meant for larger,less dense items like cookie sheets, board games, lampshades, pillows, comforters</li>
 			</ul>
 			</div>
 
-			<button type="button" class="boxcounts">Typical box counts <font color="#a3a3a3">( click here to learn more )</font></button>
+			Typical box counts<br/>
 			<div class="boxcounts_content">
 			<ul>
 				<li><b>1 BR:</b> 20-40<br/></li>

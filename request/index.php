@@ -216,14 +216,14 @@
 
 						case "apt_studio_from":
 							$message .="<b>Loading Residence Type:</b> Studio Apartment<br />\r\n";
-							$message .="<b>Floors:</b> ". $_SAFE_POST['apt_studio_floor_from'] ."<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['apt_studio_floor_from'] ."<br />\r\n";
 							if(isset($_SAFE_POST['apt_studio_elevator_from'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['apt_studio_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 
 						case "apt_from":
 							$message .="<b>Loading Residence Type:</b> Apartment<br />\r\n";
-							$message .="<b>Floors:</b> ". $_SAFE_POST['apt_floor_from'] ."<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['apt_floor_from'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['apt_brs_from']."<br />\r\n";
 							if(isset($_SAFE_POST['apt_elevator_from'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['apt_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
@@ -287,7 +287,7 @@
 
 				switch($_SAFE_POST['cust_residence_type']){
 						case "home":
-							$message .="<b>Loading Residence Type:</b> Single Family Home<br />\r\n";
+							$message .="<b>Unloading Residence Type:</b> Single Family Home<br />\r\n";
 							$message .="<b>Floors:</b> ". $_SAFE_POST['home_floor'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['home_brs']."<br />\r\n";
 							if(isset($_SAFE_POST['home_attic'])) $message .="<b>Attic:</b> Y<br />\r\n";
@@ -297,22 +297,22 @@
 							break;
 
 						case "apt_studio":
-							$message .="<b>Loading Residence Type:</b> Studio Apartment<br />\r\n";
-							$message .="<b>Floors:</b> ". $_SAFE_POST['apt_studio_floor'] ."<br />\r\n";
+							$message .="<b>Unloading Residence Type:</b> Studio Apartment<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['apt_studio_floor'] ."<br />\r\n";
 							if(isset($_SAFE_POST['apt_studio_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['apt_studio_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 
 						case "apt":
-							$message .="<b>Loading Residence Type:</b> Apartment<br />\r\n";
-							$message .="<b>Floors:</b> ". $_SAFE_POST['apt_floor'] ."<br />\r\n";
+							$message .="<b>Unloading Residence Type:</b> Apartment<br />\r\n";
+							$message .="<b>Floor:</b> ". $_SAFE_POST['apt_floor'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['apt_brs']."<br />\r\n";
 							if(isset($_SAFE_POST['apt_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['apt_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
 							break;
 
 						case "condo":
-							$message .="<b>Loading Residence Type:</b> Condominium<br />\r\n";
+							$message .="<b>Unloading Residence Type:</b> Condominium<br />\r\n";
 							$message .="<b>Floor:</b> ". $_SAFE_POST['condo_floor'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['condo_brs']."<br />\r\n";
 							if(isset($_SAFE_POST['condo_multilevel'])) $message .="<b>Multi-level:</b> Y<br />\r\n";
@@ -321,7 +321,7 @@
 							break;
 
 						case "ths":
-							$message .="<b>Loading Residence Type:</b> Townhouse / Duplex<br />\r\n";
+							$message .="<b>Unloading Residence Type:</b> Townhouse / Duplex<br />\r\n";
 							$message .="<b>Floor:</b> ". $_SAFE_POST['ths_floor'] ."<br />\r\n";
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['ths_brs']."<br />\r\n";
 							if(isset($_SAFE_POST['ths_multilevel'])) $message .="<b>Multi-level:</b> Y<br />\r\n";
@@ -332,7 +332,7 @@
 							break;
 
 						case "office":
-							$message .="<b>Loading Residence Type:</b> Office<br />\r\n";
+							$message .="<b>Unloading Residence Type:</b> Office<br />\r\n";
 							$message .="<b>Rooms:</b> ". $_SAFE_POST['office_rooms'] ."<br />\r\n";
 							$message .="<b>Floor:</b> ". $_SAFE_POST['office_floor'] ."<br />\r\n";
 							if(isset($_SAFE_POST['office_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
@@ -340,7 +340,7 @@
 							break;
 
 						case "storage":
-							$message .="<b>Loading Residence Type:</b> Storage Unit<br />\r\n";
+							$message .="<b>Unloading Residence Type:</b> Storage Unit<br />\r\n";
 							$message .="<b>Floor:</b> ". $_SAFE_POST['storage_floor'] ."<br />\r\n";
 							$message .="<b>Size:</b> ". $_SAFE_POST['storage_size'] ."<br />\r\n";
 							if(isset($_SAFE_POST['storage_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
@@ -367,8 +367,8 @@
 		if(isset($_SAFE_POST['help_inhome'])) { $helpCount = 1; $helpMessage .="In-Home<br />\r\n"; }
 		if(isset($_SAFE_POST['help_inapt'])) { $helpCount = 1; $helpMessage .="In-Building<br />\r\n"; }
 		if(isset($_SAFE_POST['help_incomplex'])) { $helpCount = 1; $helpMessage .="In-Complex<br />\r\n"; }	
-		if(isset($_SAFE_POST['help_packing'])) { $helpCount = 1; $helpMessage .="Packing (complete)<br />\r\n"; }
-		if(isset($_SAFE_POST['help_packing_partial'])) { $helpCount = 1; $helpMessage .="Packing (partial)<br />\r\n"; }
+		if(isset($_SAFE_POST['help_packing'])) { $helpCount = 1; $helpMessage .="Box packing (complete)<br />\r\n"; }
+		if(isset($_SAFE_POST['help_packing_partial'])) { $helpCount = 1; $helpMessage .="Box packing (partial)<br />\r\n"; }
 		
 
 		if($_SAFE_POST['other_text'] != "") { $helpCount = 1; $helpMessage .="Other help: ". $_SAFE_POST['other_text'] ."<br />\r\n"; }
