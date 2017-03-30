@@ -516,7 +516,7 @@
 
 		if(isset($_POST['itshuman'])) {
 			$refId = save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
-			$refIdText = '<div style="color: #000000; font-size: 15px;"><b>Reference ID: ' . $refId . '</b></div>';
+			$refIdText = '<div style="color: #000000; font-size: 15px;"><b>Request ID: ' . $refId . '</b></div>';
 			$message = $refIdText . $message;
 			mail($to, '#'. $refId .' - '. $_SAFE_POST['date_of_service'] . ' - ' . stripslashes($_SAFE_POST['cust_name']) .' - '. $_SAFE_POST['cust_phone'],  stripcslashes($message), $headers);
 
