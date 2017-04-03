@@ -93,9 +93,9 @@
 		print_r($_SAFE_POST);
 		echo "</pre>";
 		*/
-		$message = '<div style="color: #000000; font-size: 15px;">';
+		// $message = '<div style="color: #000000; font-size: 15px;">';
 
-		$message .='<h1 style="font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;"> Customer Information:</h1>';
+		// $message .='<h1 style="font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;"> Customer Information:</h1>';
 		$message .="<span style=\"color: #000000; font-size: 15px;\"><b>Name:</b> ". $_SAFE_POST['cust_name'] ."<br />\r\n";
 		$message .="<b>Phone:</b> ". $_SAFE_POST['cust_phone'];
 		if($_SAFE_POST['cust_ext'] != "") $message .=" x". $_SAFE_POST['cust_ext'];
@@ -510,13 +510,15 @@
 
 		$to = "strongmilemovers@gmail.com";
 
-		//$to = "michaeljconley@gmail.com";
+		//$to = "michaeljconley@gmail.com";	
 
 		date_default_timezone_set('America/New_York');
 
 		if(isset($_POST['itshuman'])) {
 			$refId = save_request($_SAFE_POST['cust_name'], $_SAFE_POST['date_of_service'], $message);
-			$refIdText = '<div style="color: #000000; font-size: 15px;"><b>Request ID: ' . $refId . '</b></div>';
+			$refIdText = '<div style="color: #000000; font-size: 15px;">';
+
+			$refIdText .='<h1 style="font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;">Request ID: ' . $refId . '</h1>';
 			$message = $refIdText . $message;
 			mail($to, '#'. $refId .' - '. $_SAFE_POST['date_of_service'] . ' - ' . stripslashes($_SAFE_POST['cust_name']) .' - '. $_SAFE_POST['cust_phone'],  stripcslashes($message), $headers);
 
