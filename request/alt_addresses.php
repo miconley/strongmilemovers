@@ -11,17 +11,6 @@
 				if($_POST['cust_state_alt'][$alt_count] != "") $message .= $_POST['cust_state_alt'][$alt_count];
 				$message .= "</a><br/>";
 				if($_POST['cust_addr_2_alt'][$alt_count] != "") $message .="<br />Unit ". $_POST['cust_addr_2_alt'][$alt_count];
-				$message .= "<Br /><b>Action</b>: ";
-				switch($_POST['action_alt'][$alt_count]){
-					case "loading_alt":
-						$message .= "Loading";
-						break;
-
-					case "unloading_alt":
-						$message .= "Unloading";
-						break;
-				}
-
 				$message .= "<br/><br/>";
 
 				if($_POST['cust_residence_type_alt'][$alt_count] != "") {
@@ -53,7 +42,7 @@
 								break;
 
 							case "condo_alt":
-								$message .="<b>Loading Residence Type:</b> Condominium<br />\r\n";
+								$message .="<b>Residence Type:</b> Condominium<br />\r\n";
 								$message .="<b>Floor:</b> ". $_SAFE_POST['condo_floor_alt'][$alt_count] ."<br />\r\n";
 								$message .="<b>Bedrooms:</b> ". $_SAFE_POST['condo_brs_alt'][$alt_count]."<br />\r\n";
 								if(isset($_SAFE_POST['condo_multilevel_alt'][$alt_count])) $message .="<b>Multi-level:</b> Y<br />\r\n";
@@ -93,7 +82,19 @@
 				if(isset($_POST['misc_walk_alt'][$alt_count])) $message .="<b>Long Walk</b> Y<br/>";
 				if(isset($_POST['misc_insurance_alt'][$alt_count])) $message .="<b>COI</b> Y<br/>";
 				if($_POST['misc_text_alt'][$alt_count] != "" && $_POST['misc_text_alt'][$alt_count] != "Other") $message .="<b>Additional information:</b> ". $_POST['misc_text_alt'][$alt_count] ."<br/>";
-				$message .="<br/></span>";
+				$message .="<br/>";
+				$message .= "<br /><b>Action</b>: ";
+				switch($_POST['action_alt'][$alt_count]){
+					case "loading_alt":
+						$message .= "Loading";
+						break;
+
+					case "unloading_alt":
+						$message .= "Unloading";
+						break;
+				}
+				$message .="<br /><br/></span>";
+
 				$alt_count++;
 			}
 		}

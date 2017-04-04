@@ -933,9 +933,6 @@ function ValidateForm()
 		}
 
 
-
-
-
 		if(findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
 
 			if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
@@ -1177,265 +1174,264 @@ function ValidateForm()
 
 		}
 
-	}
+		for(x = 1; x <= $('div[id^="cust_addr_alt"]').length; x ++) {
 
-	$('div[id^="cust_addr_alt"]').each(function() {
+			var $that = $('.alt_addr_'+x);
 
-		if ($(this).find(".action_alt").val() == "" || $(this).find(".action_alt").val() == "Loading/Unloading?") {
 
-			alert("Please specify if we are loading or unloading at this location.");
+			if($that.find(".cust_addr_alt").val() == "" || $that.find(".cust_addr_alt").val() == "Address") {
 
-			findFocus($(this), '.action_alt');
+				alert("You must enter an address.");
 
-			return false;
+				findFocus($that, '.cust_addr_alt');
 
-		}
-
-
-		if($(this).find(".cust_addr_alt").val() == "" || $(this).find(".cust_addr_alt").val() == "Address") {
-
-			alert("You must enter an address.");
-
-			findFocus($(this), '.cust_addr_alt');
-
-			return false;
-
-		}
-
-		if($(this).find(".cust_city_alt").val() == "" || $(this).find(".cust_city_alt").val() == "City") {
-
-			alert("You must enter a city.");
-
-			findFocus($(this), '.cust_city_alt');
-
-			return false;
-
-		}
-
-		if($(this).find('.cust_state_alt').val() == "")
-
-		{
-
-			alert("You must enter a state.");
-
-			findFocus($(this), '.cust_state_alt');
-
-			return false;
-
-		}
-
-
-		var val = $(this).find('.cust_res_type_alt').val();
-
-		if(val != "")
-
-		{
-
-			switch(val){
-
-				case "home_alt":
-
-					if ($(this).find(".home_floor_alt").val() == "" || $(this).find(".home_floor_alt").val() == "How many floors?") {
-
-
-
-							alert("Please specify how many floors you have in your home.");
-
-							findFocus($(this), '.home_floor_alt');
-
-							return false;
-
-					}
-
-
-
-					if ($(this).find(".home_brs_alt").val() == "" || $(this).find(".home_brs_alt").val() == "# of bedrooms?") {
-
-
-
-							alert("Please specify how many bedrooms you have in your home.");
-
-							findFocus($(this), '.home_brs_alt');
-
-							return false;
-
-					}											
-
-					break;	
-
-
-				case "apt_studio_alt":
-
-					if ($(this).find(".apt_studio_floor_alt").val() == "" || $(this).find(".apt_studio_floor_alt").val() == "What floor?") {
-
-							alert("Please specify what floor your studio apartment is on.");
-
-							findFocus($(this), '.apt_studio_floor_alt');
-
-							return false;
-
-					}
-
-					break;
-
-
-				case "apt_alt":
-
-					if ($(this).find(".apt_floor_alt").val() == "" || $(this).find(".apt_floor_alt").val() == "What floor?") {
-
-							alert("Please specify what floor your apartment is on.");
-
-							findFocus($(this), '.apt_floor_alt');
-
-							return false;
-
-					}
-
-
-
-					if ($(this).find(".apt_brs_alt").val() == "" || $(this).find(".apt_brs_alt").val() == "# of bedrooms?") {
-
-							alert("Please specify how many bedrooms you have in your apartment.");
-
-							findFocus($(this), '.apt_brs_alt');
-
-							return false;
-
-					}											
-
-					break;										
-
-
-				case "condo_alt":
-
-					if ($(this).find(".condo_floor_alt").val() == "" || $(this).find(".condo_floor_alt").val() == "What floor?") {
-
-							alert("Please specify what floor your condominium is on.");
-
-							findFocus($(this), '.condo_floor_alt');
-
-							return false;
-
-					}
-
-
-					if ($(this).find(".condo_brs_alt").val() == "" || $(this).find(".condo_brs_alt").val() == "# of bedrooms?") {
-
-							alert("Please specify how many bedrooms you have in your condominium.");
-
-							findFocus($(this), '.condo_brs_alt');
-
-							return false;
-
-					}	
-
-					break;
-
-
-				case "ths_alt":
-
-					if ($(this).find(".ths_floor_alt").val() == "" || $(this).find(".ths_floor_alt").val() == "How many floors?") {
-
-
-
-							alert("Please specify how many floors you have in your townhouse/duplex.");
-
-							findFocus($(this), '.ths_brs_alt');
-
-							return false;
-
-					}
-
-
-
-					if ($(this).find(".ths_brs_alt").val() == "" || $(this).find(".ths_brs_alt").val() == "# of bedrooms?") {
-
-
-							alert("Please specify how many bedrooms you have in your townhouse/duplex.");
-
-							findFocus($(this), '.ths_brs_alt');
-
-							return false;
-
-					}										
-
-					break;		
-
-
-
-				case "office_alt":
-
-					if ($(this).find(".office_rooms_alt").val() == "" || $(this).find(".office_rooms_alt").val() == "# of rooms?") {
-
-
-							alert("Please specify how many rooms you have in your office.");
-
-							findFocus($(this), '.office_rooms_alt');
-
-							return false;
-
-					}		
-
-					if ($(this).find(".office_floor_alt").val() == "" || $(this).find(".office_floor_alt").val() == "What floor?") {
-
-
-
-							alert("Please specify what floor your office is on.");
-
-							findFocus($(this), '.office_brs_alt');
-
-							return false;
-
-					}
-
-					
-					break;
-
-
-
-				case "storage_alt":
-
-
-					if ($(this).find(".storage_floor_alt").val() == " " || $(this).find(".storage_floor_alt").val() == "What floor?") {
-
-
-
-							alert("Please specify what floor your storage unit is on.");
-
-							findFocus($(this), '.storage_floor_alt');
-
-							return false;
-
-					}
-
-					if ($(this).find(".storage_size_alt").val() == " " || $(this).find(".storage_size_alt").val() == "Unit size (ie 10x10)") {
-
-
-
-							alert("Please approximate how large your storage unit is.  For example 10x10");
-
-							findFocus($(this), '.storage_size_alt');
-
-							return false;
-
-					}
-
-
-					break;		
+				return false;
 
 			}
-		} else{
 
-			alert("You must specify if it's a residence or a storage unit.");
+			if($that.find(".cust_city_alt").val() == "" || $that.find(".cust_city_alt").val() == "City") {
 
-			findFocus($(this), '.cust_res_type_alt');
+				alert("You must enter a city.");
 
-			return false;										
+				findFocus($that, '.cust_city_alt');
 
+				return false;
+
+			}
+
+			if($that.find('.cust_state_alt').val() == "")
+
+			{
+
+				alert("You must enter a state.");
+
+				findFocus($that, '.cust_state_alt');
+
+				return false;
+
+			}
+
+
+			var val = $that.find('.cust_res_type_alt').val();
+
+			if(val != "")
+
+			{
+
+				switch(val){
+
+					case "home_alt":
+
+						if ($that.find(".home_floor_alt").val() == "" || $that.find(".home_floor_alt").val() == "How many floors?") {
+
+
+
+								alert("Please specify how many floors you have in your home.");
+
+								findFocus($that, '.home_floor_alt');
+
+								return false;
+
+						}
+
+
+
+						if ($that.find(".home_brs_alt").val() == "" || $that.find(".home_brs_alt").val() == "# of bedrooms?") {
+
+
+
+								alert("Please specify how many bedrooms you have in your home.");
+
+								findFocus($that, '.home_brs_alt');
+
+								return false;
+
+						}											
+
+						break;	
+
+
+					case "apt_studio_alt":
+
+						if ($that.find(".apt_studio_floor_alt").val() == "" || $that.find(".apt_studio_floor_alt").val() == "What floor?") {
+
+								alert("Please specify what floor your studio apartment is on.");
+
+								findFocus($that, '.apt_studio_floor_alt');
+
+								return false;
+
+						}
+
+						break;
+
+
+					case "apt_alt":
+
+						if ($that.find(".apt_floor_alt").val() == "" || $that.find(".apt_floor_alt").val() == "What floor?") {
+
+								alert("Please specify what floor your apartment is on.");
+
+								findFocus($that, '.apt_floor_alt');
+
+								return false;
+
+						}
+
+
+
+						if ($that.find(".apt_brs_alt").val() == "" || $that.find(".apt_brs_alt").val() == "# of bedrooms?") {
+
+								alert("Please specify how many bedrooms you have in your apartment.");
+
+								findFocus($that, '.apt_brs_alt');
+
+								return false;
+
+						}											
+
+						break;										
+
+
+					case "condo_alt":
+
+						if ($that.find(".condo_floor_alt").val() == "" || $that.find(".condo_floor_alt").val() == "What floor?") {
+
+								alert("Please specify what floor your condominium is on.");
+
+								findFocus($that, '.condo_floor_alt');
+
+								return false;
+
+						}
+
+
+						if ($that.find(".condo_brs_alt").val() == "" || $that.find(".condo_brs_alt").val() == "# of bedrooms?") {
+
+								alert("Please specify how many bedrooms you have in your condominium.");
+
+								findFocus($that, '.condo_brs_alt');
+
+								return false;
+
+						}	
+
+						break;
+
+
+					case "ths_alt":
+
+						if ($that.find(".ths_floor_alt").val() == "" || $that.find(".ths_floor_alt").val() == "How many floors?") {
+
+
+
+								alert("Please specify how many floors you have in your townhouse/duplex.");
+
+								findFocus($that, '.ths_brs_alt');
+
+								return false;
+
+						}
+
+
+
+						if ($that.find(".ths_brs_alt").val() == "" || $that.find(".ths_brs_alt").val() == "# of bedrooms?") {
+
+
+								alert("Please specify how many bedrooms you have in your townhouse/duplex.");
+
+								findFocus($that, '.ths_brs_alt');
+
+								return false;
+
+						}										
+
+						break;		
+
+
+
+					case "office_alt":
+
+						if ($that.find(".office_rooms_alt").val() == "" || $that.find(".office_rooms_alt").val() == "# of rooms?") {
+
+
+								alert("Please specify how many rooms you have in your office.");
+
+								findFocus($that, '.office_rooms_alt');
+
+								return false;
+
+						}		
+
+						if ($that.find(".office_floor_alt").val() == "" || $that.find(".office_floor_alt").val() == "What floor?") {
+
+
+
+								alert("Please specify what floor your office is on.");
+
+								findFocus($that, '.office_brs_alt');
+
+								return false;
+
+						}
+
+						
+						break;
+
+
+
+					case "storage_alt":
+
+
+						if ($that.find(".storage_floor_alt").val() == " " || $that.find(".storage_floor_alt").val() == "What floor?") {
+
+
+
+								alert("Please specify what floor your storage unit is on.");
+
+								findFocus($that, '.storage_floor_alt');
+
+								return false;
+
+						}
+
+						if ($that.find(".storage_size_alt").val() == " " || $that.find(".storage_size_alt").val() == "Unit size (ie 10x10)") {
+
+
+
+								alert("Please approximate how large your storage unit is.  For example 10x10");
+
+								findFocus($that, '.storage_size_alt');
+
+								return false;
+
+						}
+
+
+						break;		
+
+				}
+			} else{
+
+				alert("You must specify if it's a residence or a storage unit.");
+
+				findFocus($that, '.cust_res_type_alt');
+
+				return false;										
+
+			}
+
+			if ($that.find(".action_alt").val() == "" || $that.find(".action_alt").val() == "Loading/Unloading?") {
+
+				alert("Please specify if we are loading or unloading at this location.");
+
+				findFocus($that, '.action_alt');
+
+				return false;
+
+			}
 		}
-	});
 
-	if(!debug) {
 
 		if($('#date_of_service').val() == "Please select" || $('#date_of_service').val() == "") {
 
