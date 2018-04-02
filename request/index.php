@@ -486,6 +486,7 @@
 	    if($_SAFE_POST['cust_furniture_treadmill'] != "" && $_SAFE_POST['cust_furniture_treadmill'] > 0) { $furnCount = true;  $tempMessage .="Treadmill: ". $_SAFE_POST['cust_furniture_treadmill'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_elliptical'] != "" && $_SAFE_POST['cust_furniture_elliptical'] > 0) { $furnCount = true;  $tempMessage .="Elliptical: ". $_SAFE_POST['cust_furniture_elliptical'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_stationarybike'] != "" && $_SAFE_POST['cust_furniture_stationarybike'] > 0) { $furnCount = true;  $tempMessage .="Stationary Bike: ". $_SAFE_POST['cust_furniture_stationarybike'] ."<br />\r\n" ;} 
+	    	if($_SAFE_POST['cust_furniture_weightbenches'] != "" && $_SAFE_POST['cust_furniture_weightbenches'] > 0) { $furnCount = true;  $tempMessage .="Weight Benches: ". $_SAFE_POST['cust_furniture_weightbenches'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_excercise_other'] != "") { $furnCount = true;  $tempMessage .="Other Exercise Equipment: ". $_SAFE_POST['cust_furniture_excercise_other'] ."<br />\r\n" ;} 
 	    save_message();
 

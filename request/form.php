@@ -667,6 +667,7 @@ GYM & EXCERCISE
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_treadmill" maxlength="5" /></div><div class="furnText">Treadmill</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_elliptical" maxlength="5" /></div><div class="furnText">Elliptical</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_stationarybike" maxlength="5" /></div><div class="furnText">Stationary Bike</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_weightbenches" maxlength="5" /></div><div class="furnText">Weight Benches</div></div>
 		<div class="formText nomargin">Other Exercise Equipment<div>
 		<input type="text" class="cust_furniture_excercise_other" name="cust_furniture_excercise_other" maxlength="255" />
 
