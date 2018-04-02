@@ -481,6 +481,14 @@
 		$furnMessage[$itemIndex]['items'] = $tempMessage;
 	    save_message();
 
+		$furnMessage[$itemIndex]['title'] = "Bathrooms:";
+		$furnMessage[$itemIndex]['items'] = "";
+	    if($_SAFE_POST['cust_furniture_bathroom_cabinets'] != "" && $_SAFE_POST['cust_furniture_bathroom_cabinets'] > 0) { $furnCount = true;  $tempMessage .="Cabinets: ". $_SAFE_POST['cust_furniture_bathroom_cabinets'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_bathroom_mirrors'] != "" && $_SAFE_POST['cust_furniture_bathroom_mirrors'] > 0) { $furnCount = true;  $tempMessage .="Mirrors: ". $_SAFE_POST['cust_furniture_bathroom_mirrors'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_bathroom_shelves'] != "" && $_SAFE_POST['cust_furniture_bathroom_shelves'] > 0) { $furnCount = true;  $tempMessage .="Shelves: ". $_SAFE_POST['cust_furniture_bathroom_shelves'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_bathroom_other'] != "") { $furnCount = true;  $tempMessage .="Other bathroom items: ". $_SAFE_POST['cust_furniture_bathroom_other'] ."<br />\r\n" ;} 
+	    save_message();
+
 		$furnMessage[$itemIndex]['title'] = "Exercise:";
 		$furnMessage[$itemIndex]['items'] = "";
 	    if($_SAFE_POST['cust_furniture_treadmill'] != "" && $_SAFE_POST['cust_furniture_treadmill'] > 0) { $furnCount = true;  $tempMessage .="Treadmill: ". $_SAFE_POST['cust_furniture_treadmill'] ."<br />\r\n" ;} 

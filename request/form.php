@@ -659,6 +659,20 @@ BEDROOMS
 
 <!--
 
+BATHROOMS
+
+-->
+
+		<div class="formText"><b>Bathrooms</b></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bathroom_cabinets" maxlength="5" /></div><div class="furnText">Cabinets</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bathroom_mirrors" maxlength="5" /></div><div class="furnText">Mirrors</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bathroom_shelves" maxlength="5" /></div><div class="furnText">Shelves</div></div>
+		<div class="formText nomargin">Other Bathroom Items<div>
+		<textarea type="text" class="cust_otherinfo" name="cust_furniture_bathroom_other"></textarea>
+
+
+<!--
+
 GYM & EXCERCISE
 
 -->
@@ -669,7 +683,7 @@ GYM & EXCERCISE
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_stationarybike" maxlength="5" /></div><div class="furnText">Stationary Bike</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_weightbenches" maxlength="5" /></div><div class="furnText">Weight Benches</div></div>
 		<div class="formText nomargin">Other Exercise Equipment<div>
-		<input type="text" class="cust_furniture_excercise_other" name="cust_furniture_excercise_other" maxlength="255" />
+		<textarea type="text" class="cust_otherinfo"  name="cust_furniture_excercise_other"></textarea>
 
 <!--
 
@@ -691,7 +705,7 @@ OUTDOOR / GARAGE
 		<div class="formText wide nomargin">Generators or Other Gas-Powered Items?<div>
 		<input type="text" class="cust_furniture_outside_other_gas" name="cust_furniture_outside_other_gas" maxlength="255" />
 		<div class="formText wide nomargin">Other Outside Items<div>
-		<input type="text" class="cust_furniture_outside_other" name="cust_furniture_outside_other" maxlength="255" />
+		<textarea type="text" class="cust_otherinfo" name="cust_furniture_outside_other"></textarea>
 
 <!--
 

@@ -391,8 +391,9 @@ input[type="checkbox"] {
 
 .other_text, .cust_furniture_other, .cust_furniture_glass, .cust_addr_other { width: 98%;}
 
-textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo { font-family: 'Ropa Sans', sans-serif; font-size: 18px; line-height: 20px; width: 99%; height: 200px; resize:none;}
-
+textarea { height: 200px; }
+textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo { font-family: 'Ropa Sans', sans-serif; font-size: 18px; line-height: 20px; width: 99%; resize:none;}
+textarea.cust_otherinfo { height: 100px; }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #000;
@@ -535,9 +536,8 @@ textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo {
 	.help_checkbox.wide { width: 100%;}
 
 	#recaptcha_area { zoom: 0.95;}
-
-	textarea.cust_otherinfo, textarea.cust_importantinfo { font-family: 'Ropa Sans', sans-serif; font-size: 18px; line-height: 20px; width: 97%; height: 200px; resize:none;}
-
+	
+	textarea.cust_otherinfo, textarea.cust_importantinfo { font-family: 'Ropa Sans', sans-serif; font-size: 18px; line-height: 20px; width: 97%; resize:none;}
 }
 
 input::-webkit-outer-spin-button,
