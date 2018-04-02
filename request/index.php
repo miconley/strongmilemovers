@@ -498,18 +498,18 @@
 
 	    $furnMessage[$itemIndex]['title'] = "Outdoor / Garage / Shed:";
 	    $furnMessage[$itemIndex]['items'] = "";
-	    if($_SAFE_POST['cust_furniture_patiotable'] != "" && $_SAFE_POST['cust_furniture_patiotable'] > 0) { $furnCount = true;  $tempMessage .="Patio Table: ". $_SAFE_POST['cust_furniture_patiotable'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_patiochairs'] != "" && $_SAFE_POST['cust_furniture_patiochairs'] > 0) { $furnCount = true;  $tempMessage .="Patio Chairs: ". $_SAFE_POST['cust_furniture_patiochairs'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_outdoorgrill'] != "" && $_SAFE_POST['cust_furniture_outdoorgrill'] > 0) { $furnCount = true;  $tempMessage .="Outdoor Grill: ". $_SAFE_POST['cust_furniture_outdoorgrill'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_bike'] != "" && $_SAFE_POST['cust_furniture_bike'] > 0) { $furnCount = true;  $tempMessage .="Bicycles: ". $_SAFE_POST['cust_furniture_bike'] ."<br />\r\n" ;} 
-	   	if($_SAFE_POST['cust_furniture_yardtools'] != "" && $_SAFE_POST['cust_furniture_yardtools'] > 0) { $furnCount = true;  $tempMessage .="Yard Tools: ". $_SAFE_POST['cust_furniture_yardtools'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_ladder'] != "" && $_SAFE_POST['cust_furniture_ladder'] > 0) { $furnCount = true;  $tempMessage .="Ladders: ". $_SAFE_POST['cust_furniture_ladder'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_snowblower'] != "" && $_SAFE_POST['cust_furniture_snowblower'] > 0) { $furnCount = true;  $tempMessage .="Snow Blower: ". $_SAFE_POST['cust_furniture_snowblower'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_lawnmower'] != "" && $_SAFE_POST['cust_furniture_lawnmower'] > 0) { $furnCount = true;  $tempMessage .="Lawn Mower: ". $_SAFE_POST['cust_furniture_lawnmower'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_lawnmower_size'] != "" && $_SAFE_POST['cust_furniture_lawnmower_size'] > 0) { $furnCount = true;  $tempMessage .="Lawn Mower Size: ". $_SAFE_POST['cust_furniture_lawnmower_size'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_lawnmower_type'] != "" && $_SAFE_POST['cust_furniture_lawnmower_type'] > 0) { $furnCount = true;  $tempMessage .="Lawn Mower Type: ". $_SAFE_POST['cust_furniture_lawnmower_type'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_lawnmower_power'] != "" && $_SAFE_POST['cust_furniture_lawnmower_power'] > 0) { $furnCount = true;  $tempMessage .="Lawn Mower Powerplant: ". $_SAFE_POST['cust_furniture_lawnmower_power'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_outside_other'] != "") { $furnCount = true;  $tempMessage .="Other Outside: ". $_SAFE_POST['cust_furniture_outside_other'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_outside_other_gas'] != "") { $furnCount = true;  $tempMessage .="Other Gas-Powered Items: ". $_SAFE_POST['cust_furniture_outside_other_gas'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outside_other_gas'] != "" && $_SAFE_POST['cust_furniture_outside_other_gas'] > 0) { $furnCount = true;  $tempMessage .="Generators: ". $_SAFE_POST['cust_furniture_outside_other_gas'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_boats'] != "" && $_SAFE_POST['cust_furniture_boats'] > 0) { $furnCount = true;  $tempMessage .="Boats / Canoes / Kayaks: ". $_SAFE_POST['cust_furniture_boats'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_shelves'] != "" && $_SAFE_POST['cust_furniture_shelves'] > 0) { $furnCount = true;  $tempMessage .="Shelves: ". $_SAFE_POST['cust_furniture_shelves'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_tables'] != "" && $_SAFE_POST['cust_furniture_tables'] > 0) { $furnCount = true;  $tempMessage .="Tables: ". $_SAFE_POST['cust_furniture_tables'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_chairs'] != "" && $_SAFE_POST['cust_furniture_chairs'] > 0) { $furnCount = true;  $tempMessage .="Chairs: ". $_SAFE_POST['cust_furniture_chairs'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_umbrellas'] != "" && $_SAFE_POST['cust_furniture_umbrellas'] > 0) { $furnCount = true;  $tempMessage .="Umbrellas: ". $_SAFE_POST['cust_furniture_umbrellas'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outdoorgrill'] != "" && $_SAFE_POST['cust_furniture_outdoorgrill'] > 0) { $furnCount = true;  $tempMessage .="Grill: ". $_SAFE_POST['cust_furniture_outdoorgrill'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outside_other'] != "") { $furnCount = true;  $tempMessage .="Other Outdoor Items: ". $_SAFE_POST['cust_furniture_outside_other'] ."<br />\r\n" ;} 
 	    save_message();
 
 	    $furnMessage[$itemIndex]['title'] = "Others:";

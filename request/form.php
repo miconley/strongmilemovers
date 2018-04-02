@@ -694,19 +694,18 @@ OUTDOOR / GARAGE
 -->
 
 		<div class="formText"><b>Outdoor/Garage/Shed</b></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_patiotable" maxlength="5" /></div><div class="furnText">Patio Table</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_patiochairs" maxlength="5" /></div><div class="furnText">Patio Chairs</div></div>		
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorgrill" maxlength="5" /></div><div class="furnText">Outdoor Grill</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bike" maxlength="5" /></div><div class="furnText">Bicycles</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_yardtools" maxlength="5" /></div><div class="furnText">Yard Tools</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_snowblower" maxlength="5" /></div><div class="furnText">Snow Blower</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bike" maxlength="5" /></div><div class="furnText">Bikes</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_ladder" maxlength="5" /></div><div class="furnText">Ladders</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_lawnmower" maxlength="5" /></div><div class="furnText">Lawn Mower</div></div>
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_lawnmower_size" maxlength="20" /></div><div class="furnText">Lawn Mower Size</font></div></div>
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_lawnmower_type" maxlength="20" /></div><div class="furnText">Push or riding?</font></div></div>
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_lawnmower_power" maxlength="20" /></div><div class="furnText">Gas or Electric?</font></div></div>
-		<div class="formText wide nomargin">Generators or Other Gas-Powered Items?<div>
-		<input type="text" class="cust_furniture_outside_other_gas" name="cust_furniture_outside_other_gas" maxlength="255" />
-		<div class="formText wide nomargin">Other Outside Items<div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_snowblower" maxlength="5" /></div><div class="furnText">Snow Blower</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outside_other_gas" maxlength="5" /></div><div class="furnText">Generators</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorboats" maxlength="5" /></div><div class="furnText">Boats / Canoes / Kayaks</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorshelves" maxlength="5" /></div><div class="furnText">Shelves</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoortables" maxlength="5" /></div><div class="furnText">Tables</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorchairs" maxlength="5" /></div><div class="furnText">Chairs</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorumbrellas" maxlength="5" /></div><div class="furnText">Umbrellas</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorgrill" maxlength="5" /></div><div class="furnText">Grill</div></div>
+		<div class="formText wide nomargin">Other Outdoor Items<div>
 		<input type="text" class="other_text" name="cust_furniture_outside_other" />
 
 <!--
