@@ -569,30 +569,9 @@ HELP TYPE
 TYPES & QUANTITIES OF POSSESSIONS
 
 -->		
-		<div class="formText"><b>FURNITURE & BOX INVENTORY</b><br/>
-			How to pack boxes<br/>
-			<div class="howtopack_content">
-			<ul>
-			<li><b>Small (16 x 12 x 12)</b><br/>
-				Books, magazines, glassware (heavier, smaller items)</li>
-			<li><b>Medium (18 x 18 x 18)</b><br/>
-				Shoes, clothing & similar</li>
-			<li><b>Large (24 x 18 x 18+)</b><br/>
-				DO NOT USE THESE UNLESS ABSOLUTELY NECESSARY!<br />These are meant for larger, less dense items like cookie sheets, board games, lampshades, pillows, comforters</li>
-			</ul>
-			</div>
+		<div class="formText"><b>FURNITURE & BOX INVENTORY</b></div>
 
-			Typical box counts<br/>
-			<div class="boxcounts_content">
-			<ul>
-				<li><b>1 BR:</b> 20-40<br/></li>
-				<li><b>2 BR:</b> 40-70</li>
-				<li><b>3 BR:</b> 70-100</li>
-				<li><b>4 BR+:</b> 100-150+</li>
-			</ul>
-			We know this may be a hard number to know precisely.<br/>Do your best to <b>OVERESTIMATE</b> how many you'll have for a better quote.
-			</div>
-		</div>
+
 		<div class="formText">Indicate <b>NUMERICAL QUANTITY ONLY</b> of items you have in each box unless asking for more info. 
 Simple leave box <b>BLANK</b> if you have none:</div>
 
@@ -753,6 +732,38 @@ MISCELLANEOUS
 		<div class="furnRow wide"><div class="furnInput boxes"><input type="number" name="cust_furniture_boxtubs" maxlength="5" id="cust_furniture_boxtubs" /></div><div class="furnText top-align" style="width: 85%"><b>Boxes And / Or Plastic Tubs</b> - We know this may be a hard number to know precisely, but do your best to over estimate how many you'll have for a better quote.</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_luggage" maxlength="5" /></div><div class="furnText">Luggage</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bags" maxlength="5" /></div><div class="furnText">Bags</div></div>
+
+		<div class="formText">
+			How to pack boxes<br/>
+			<div class="howtopack_content">
+			<ul>
+			<li><b>Small (16 x 12 x 12)</b><br/>
+				Books, magazines, glassware (heavier, smaller items)</li>
+			<li><b>Medium (18 x 18 x 18)</b><br/>
+				Shoes, clothing & similar</li>
+			<li><b>Large (24 x 18 x 18+)</b><br/>
+				DO NOT USE THESE UNLESS ABSOLUTELY NECESSARY!<br />These are meant for larger, less dense items like cookie sheets, board games, lampshades, pillows, comforters</li>
+			</ul>
+			</div>
+
+			Typical box counts<br/>
+			<div class="boxcounts_content">
+			<ul>
+				<li><b>1 BR:</b> 20-40<br/></li>
+				<li><b>2 BR:</b> 40-70</li>
+				<li><b>3 BR:</b> 70-100</li>
+				<li><b>4 BR+:</b> 100-150+</li>
+			</ul>
+			We know this may be a hard number to know precisely.<br/>Do your best to <b>OVERESTIMATE</b> how many you'll have for a better quote.
+			</div>
+		</div>
+<!--
+
+Box Totals
+
+-->
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_numboxes" maxlength="5" placeholder="0" /></div><div class="furnText">Grand total of boxes</div></div>
+
 <!--
 
 FURNITURE MOVE ONLY

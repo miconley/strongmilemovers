@@ -546,7 +546,7 @@
 		} else {
 			str_replace("<h1 style='font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;'>Household Items:</h1><br />\r\n", "", $message);
 		}
-
+		if($_SAFE_POST['cust_numboxes'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Number of Boxes:</b> ". $_SAFE_POST['cust_numboxes'] ."<br /><br /></span>";
 	    if($_SAFE_POST['cust_furniture_other'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Additional Items:</b> ". $_SAFE_POST['cust_furniture_other'] ."<br /><br /></span>";
 	    if($_SAFE_POST['cust_furniture_glass'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Glass Items:</b> ". $_SAFE_POST['cust_furniture_glass'] ."<br /><br /></span>";
 	    if($_SAFE_POST['cust_furniture_ikea'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Pressboard/IKEA Items:</b> ". $_SAFE_POST['cust_furniture_ikea'] ."<br /><br /></span>";
