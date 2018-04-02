@@ -76,6 +76,12 @@
 								if(isset($_POST['storage_elevator_alt'][$alt_count])) $message .="<b>Elevator:</b> Y<br/>";
 								if(isset($_POST['storage_stairs_alt'][$alt_count])) $message .="<b>Stairs:</b> Y<br/>";
 								break;
+
+
+							case "other_alt":
+								$message .="<b>Residence Type:</b> Other<br />\r\n";
+								$message .="<b>Info:</b> ". $_SAFE_POST['other_text_alt'] ."<br />\r\n";
+								break;
 					}
 				}
 				$message .="<br/>";

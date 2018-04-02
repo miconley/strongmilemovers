@@ -323,7 +323,7 @@ a { color: #f7941d; }
 
 .help_desc { position: relative; color: #a3a3a3; }
 
-.home, .apt_studio, .apt, .condo, .ths, .office, .storage, .home_from, .apt_studio_from, .apt_from, .condo_from, .ths_from, .office_from, .storage_from, .home_alt, .apt_studio_alt, .apt_alt, .condo_alt, .ths_alt, .office_alt, .storage_alt, .referral { display: none }
+.home, .apt_studio, .apt, .condo, .ths, .office, .storage, .other_to, .home_from, .apt_studio_from, .apt_from, .condo_from, .ths_from, .office_from, .storage_from, .other_from, .home_alt, .apt_studio_alt, .apt_alt, .condo_alt, .ths_alt, .office_alt, .storage_alt, .other_alt, .referral { display: none }
 
 
 
@@ -502,7 +502,7 @@ textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo {
 
 @media screen and (max-width: 460px) {
 
-	#container { position: absolute; width: 100%; height: auto; top: 0px; left: 0px; margin: 0 auto; }
+	#container { position: relative; width: 99%; height: auto; top: 0px; left: 0px; margin: 0 auto; }
 
 	#header { display: none !important}
 
@@ -516,11 +516,13 @@ textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo {
 
 	#strongmile_form { width: 100%;}
 
-	.furnRow { width: 100%;}
+	.furnRow { width: 100%; }
+
+	.furnInput.boxes { width: 10%; }
 
 	input{ width: 96%; }
 
-	select { width: 100%; }
+	select { width: 99%; }
 
 	.other_text, .cust_furniture_other, .cust_furniture_glass { width: 96% }
 
@@ -538,3 +540,9 @@ textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo {
 
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

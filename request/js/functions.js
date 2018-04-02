@@ -70,27 +70,17 @@ $(function() {
 			//console.log($('.cust_residence_type').val());
 
 			var val = $('.'+selectedName).val();
-
 			if(val != "")
-
 			{
-
 				$(".home").slideUp();
-
 				$(".apt_studio").slideUp();
-
 				$(".apt").slideUp();
-
 				$(".condo").slideUp();
-
 				$(".ths").slideUp();
-
 				$(".office").slideUp();
-
 				$(".storage").slideUp();
-
+				$(".other_to").slideUp();
 				$('.'+val).slideDown();
-
 			} else {
 
 				$(".home").slideUp();
@@ -107,6 +97,7 @@ $(function() {
 
 				$(".storage").slideUp();
 
+				$(".other_to").slideUp();
 
 
 				$('.home_floor').val('How many floors?');
@@ -185,6 +176,9 @@ $(function() {
 
 				$('.storage_stairs').prop('checked', false);
 
+
+				$('.other_to_text').val('More Info Here');
+
 			}
 
 			break;
@@ -215,6 +209,8 @@ $(function() {
 
 				$(".storage_from").slideUp();
 
+				$(".other_from").slideUp();
+
 				$('.'+val).slideDown();
 
 			} else {
@@ -233,7 +229,7 @@ $(function() {
 
 				$(".storage_from").slideUp();
 
-
+				$(".other_from").slideUp();
 
 				$('.home_floor_from').val('How many floors?');
 
@@ -311,6 +307,8 @@ $(function() {
 
 				$('.storage_stairs_from').prop('checked', false);
 
+				$('.other_from_text').val('More Info Here');
+
 			}
 
 			break;
@@ -372,6 +370,16 @@ $(function() {
 					break;
 
 
+				case "referredby":
+
+					$('.referral_val').val('Who referred you?');
+
+					$('.referral_val').attr('placeholder', 'Who referred you?');
+
+					$(".referral").slideDown();
+
+					break;
+
 
 				case "other":
 
@@ -415,6 +423,8 @@ function show_element_alt(selectedName, selectedAddr){
 
 		addr.find(".storage_alt").slideUp();
 
+		addr.find(".other_alt").slideUp();
+
 		addr.find('.'+val).slideDown();
 
 	} else {
@@ -433,6 +443,7 @@ function show_element_alt(selectedName, selectedAddr){
 
 		addr.find(".storage_alt").slideUp();
 
+		addr.find(".other_alt").slideUp();
 
 
 		addr.find('.home_floor_alt').val('How many floors?');
@@ -496,6 +507,8 @@ function show_element_alt(selectedName, selectedAddr){
 		addr.find('.storage_elevator_alt').prop('checked', false);
 
 		addr.find('.storage_stairs_alt').prop('checked', false);
+
+		addr.find('.other_text_alt').val('More Info Here');
 
 	}
 
@@ -918,6 +931,21 @@ function ValidateForm()
 
 						break;		
 
+
+					case "other_from":
+
+						if (findObj("other_text_from").value == " " || findObj("other_text_from").value == "More Info Here") {
+
+								alert("Please provide specific about this property.");
+
+								setTimeout(function(){findObj("other_text_from").focus();}, 500);
+
+								return false;
+
+						}
+
+						break;		
+
 				}
 
 			} else {
@@ -1153,6 +1181,20 @@ function ValidateForm()
 								alert("Please approximate how large your storage unit is.  For example 10x10");
 
 								setTimeout(function(){findObj("storage_size").focus();}, 500);
+
+								return false;
+
+						}
+
+						break;	
+
+					case "other_to":
+
+						if (findObj("other_text_to").value == " " || findObj("other_text_to").value == "More Info Here") {
+
+								alert("Please provide specific about this property.");
+
+								setTimeout(function(){findObj("other_text_to").focus();}, 500);
 
 								return false;
 
@@ -1410,6 +1452,20 @@ function ValidateForm()
 
 						break;		
 
+					case "other_alt":
+
+						if (findObj("other_text_alt").value == " " || findObj("other_text_alt").value == "More Info Here") {
+
+								alert("Please provide specific about this property.");
+
+								setTimeout(function(){findObj("other_text_alt").focus();}, 500);
+
+								return false;
+
+						}
+
+						break;	
+
 				}
 			} else{
 
@@ -1502,6 +1558,19 @@ function ValidateForm()
 					break;
 
 
+				case "referredby":
+
+					if (findObj("referral_val").value == "" || findObj("referral_val").value == "Who referred you?") {
+
+						alert("Please specify a referral.");
+
+						setTimeout(function(){findObj("referral_val").focus();}, 500);
+
+						return false;
+
+					}
+
+					break;
 
 				case "other":
 
