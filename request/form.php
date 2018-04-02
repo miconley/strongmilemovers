@@ -656,6 +656,8 @@ BEDROOMS
 		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_armoire" maxlength="20" /></div><div class="furnText top-align">Armoire <font color="#a3a3a3">(Qty & Sizes:<br/>i.e. 1 - 6 x 6 ft.)</font></div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_mirror" maxlength="5" /></div><div class="furnText">Mirror</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_chest" maxlength="5" /></div><div class="furnText">Chest/Trunk</div></div>
+		<div class="formText nomargin">Other Bedroom Items<div>
+		<input type="text" class="other_text" name="cust_furniture_bedroom_other" />
 
 <!--
 
@@ -668,7 +670,7 @@ BATHROOMS
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bathroom_mirrors" maxlength="5" /></div><div class="furnText">Mirrors</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bathroom_shelves" maxlength="5" /></div><div class="furnText">Shelves</div></div>
 		<div class="formText nomargin">Other Bathroom Items<div>
-		<textarea type="text" class="cust_otherinfo" name="cust_furniture_bathroom_other"></textarea>
+		<input type="text" class="other_text" name="cust_furniture_bathroom_other" />
 
 
 <!--
@@ -683,7 +685,7 @@ GYM & EXCERCISE
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_stationarybike" maxlength="5" /></div><div class="furnText">Stationary Bike</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_weightbenches" maxlength="5" /></div><div class="furnText">Weight Benches</div></div>
 		<div class="formText nomargin">Other Exercise Equipment<div>
-		<textarea type="text" class="cust_otherinfo"  name="cust_furniture_excercise_other"></textarea>
+		<input type="text" class="other_text" name="cust_furniture_excercise_other" />
 
 <!--
 
@@ -691,7 +693,7 @@ OUTDOOR / GARAGE
 
 -->
 
-		<div class="formText"><b>Outdoor/Garage</b></div>
+		<div class="formText"><b>Outdoor/Garage/Shed</b></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_patiotable" maxlength="5" /></div><div class="furnText">Patio Table</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_patiochairs" maxlength="5" /></div><div class="furnText">Patio Chairs</div></div>		
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorgrill" maxlength="5" /></div><div class="furnText">Outdoor Grill</div></div>
@@ -705,7 +707,7 @@ OUTDOOR / GARAGE
 		<div class="formText wide nomargin">Generators or Other Gas-Powered Items?<div>
 		<input type="text" class="cust_furniture_outside_other_gas" name="cust_furniture_outside_other_gas" maxlength="255" />
 		<div class="formText wide nomargin">Other Outside Items<div>
-		<textarea type="text" class="cust_otherinfo" name="cust_furniture_outside_other"></textarea>
+		<input type="text" class="other_text" name="cust_furniture_outside_other" />
 
 <!--
 
