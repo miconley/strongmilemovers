@@ -4,7 +4,7 @@ var isAndroid = navigator.userAgent.match(/Android/i) != null;
 
 var isWindowsPhone = navigator.userAgent.match(/Windows Phone/i) != null;
 
-var debug = false;
+var debug = true;
 
 $(function() { 
 
@@ -25,9 +25,9 @@ $(function() {
 
 	});
 
-
-	$('#date_of_service').datepicker();
-	$('#date_of_service_alt').datepicker();
+	var dateToday = new Date();
+	$('#date_of_service').datepicker({ minDate: dateToday });
+	$('#date_of_service_alt').datepicker({ minDate: dateToday });
 
 
 	function formatPhone(obj) {
@@ -53,7 +53,11 @@ $(function() {
 	}
 
 
-
+	$('.specialty_cb').each(function() { 
+		$(this).on('change', function()  {
+			$(this).siblings('span').toggle();
+		});
+	})
 
 	function show_element(selectedName, selectedIndex)
 
@@ -335,7 +339,19 @@ $(function() {
 
 				case "search":
 
-				case "previouscustomer":
+				case "mcoc":
+
+				case "mcda":
+
+				case "mm": 
+
+				case "mccn":
+
+				case "mll":
+
+				case "ecoc":
+
+				case "facebook":
 
 					$(".referral").slideUp();
 
@@ -347,6 +363,12 @@ $(function() {
 
 				case "sm":
 
+	            case "bc":
+
+	            case "referredby":
+
+	            case "uhaul":
+
 					$('.referral_val').val('Who?');
 
 					$('.referral_val').attr('placeholder', 'Who?');
@@ -357,24 +379,22 @@ $(function() {
 
 
 
-				case "bc":
+				case "iknowjoe":
 
-				case "uhaul":
+					$('.referral_val').val('How?');
 
-					$('.referral_val').val('Where?');
-
-					$('.referral_val').attr('placeholder', 'Where?');
+					$('.referral_val').attr('placeholder', 'How?');
 
 					$(".referral").slideDown();
 
 					break;
 
 
-				case "referredby":
+				case "previouscustomer":
 
-					$('.referral_val').val('Who referred you?');
+					$('.referral_val').val('When?');
 
-					$('.referral_val').attr('placeholder', 'Who referred you?');
+					$('.referral_val').attr('placeholder', 'When?');
 
 					$(".referral").slideDown();
 
@@ -573,7 +593,6 @@ function show_element_alt(selectedName, selectedAddr){
 function validateTick()
 
 {
-
 
 
     if($("#itshuman").attr('checked'))
@@ -1524,8 +1543,10 @@ function ValidateForm()
 			switch(val){
 
 				case "sm":
-
 				case "ff":
+	            case "bc":
+	            case "referredby":
+	            case "uhaul":
 
 					if (findObj("referral_val").value == "" || findObj("referral_val").value == "Who?") {
 
@@ -1539,15 +1560,11 @@ function ValidateForm()
 
 					break;
 
+	            case "iknowjoe":
 
+					if (findObj("referral_val").value == "" || findObj("referral_val").value == "How?") {
 
-				case "bc":
-
-				case "uhaul":
-
-					if (findObj("referral_val").value == "" || findObj("referral_val").value == "Where?") {
-
-						alert("Please specify a referral.");
+						alert("Please specify how you know Joe.");
 
 						setTimeout(function(){findObj("referral_val").focus();}, 500);
 
@@ -1557,12 +1574,11 @@ function ValidateForm()
 
 					break;
 
+				case "previouscustomer":
 
-				case "referredby":
+					if (findObj("referral_val").value == "" || findObj("referral_val").value == "When?") {
 
-					if (findObj("referral_val").value == "" || findObj("referral_val").value == "Who referred you?") {
-
-						alert("Please specify a referral.");
+						alert("Please specify when we last worked with you.");
 
 						setTimeout(function(){findObj("referral_val").focus();}, 500);
 
@@ -1673,15 +1689,15 @@ function ValidateForm()
 			return false;
 		}
 
-		if($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
+		// if($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
 			
-			alert("Please specify an amount of boxes or tubs.");
+		// 	alert("Please specify an amount of boxes or tubs.");
 
-			setTimeout(function(){findObj("cust_furniture_boxtubs").focus();}, 500);
+		// 	setTimeout(function(){findObj("cust_furniture_boxtubs").focus();}, 500);
 
-			return false;
+		// 	return false;
 
-		}
+		// }
 	}
 
 	return true;

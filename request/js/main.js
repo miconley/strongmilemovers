@@ -711,6 +711,9 @@ function ValidateForm() {
             switch (val) {
               case "sm":
               case "ff":
+              case "bc":
+              case "referredby":
+              case "uhaul":
                 if (findObj("referral_val").value == "" || findObj("referral_val").value == "Who?") {
                     alert("Please specify a referral.");
                     setTimeout(function() {
@@ -719,11 +722,19 @@ function ValidateForm() {
                     return false;
                 }
                 break;
+              case "iknowjoe":
+                if (findObj("referral_val").value == "" || findObj("referral_val").value == "How?") {
+                    alert("Please specify how you know Joe.");
+                    setTimeout(function() {
+                        findObj("referral_val").focus();
+                    }, 500);
+                    return false;
+                }
+                break;
 
-              case "bc":
-              case "uhaul":
-                if (findObj("referral_val").value == "" || findObj("referral_val").value == "Where?") {
-                    alert("Please specify a referral.");
+              case "previouscustomer":
+                if (findObj("referral_val").value == "" || findObj("referral_val").value == "When?") {
+                    alert("Please specify when we last worked with you.");
                     setTimeout(function() {
                         findObj("referral_val").focus();
                     }, 500);
@@ -732,8 +743,8 @@ function ValidateForm() {
                 break;
 
               case "other":
-                if (findObj("referral_val").value == "" || findObj("referral_val").value == "Please Specify") {
-                    alert("Please specify a referral.");
+                if (findObj("referral_val").value == "" || findObj("referral_val").value == "Where?") {
+                    alert("Please specify where you found us.");
                     setTimeout(function() {
                         findObj("referral_val").focus();
                     }, 500);
@@ -799,13 +810,13 @@ function ValidateForm() {
             }, 500);
             return false;
         }
-        if ($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
-            alert("Please specify an amount of boxes or tubs.");
-            setTimeout(function() {
-                findObj("cust_furniture_boxtubs").focus();
-            }, 500);
-            return false;
-        }
+        // if ($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
+        //     alert("Please specify an amount of boxes or tubs.");
+        //     setTimeout(function() {
+        //         findObj("cust_furniture_boxtubs").focus();
+        //     }, 500);
+        //     return false;
+        // }
     }
     return true;
 }

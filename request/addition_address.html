@@ -115,6 +115,7 @@ APT From
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs_alt" name="apt_brs_alt[]" maxlength="10" />
 			<input type="checkbox" class="apt_elevator_alt" name="apt_elevator_alt[]" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs_alt" name="apt_stairs_alt[]" value="1">Stairs
+			<input type="checkbox" class="apt_multilevel_alt" name="condo_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -128,7 +129,7 @@ CONDO
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="condo_brs_alt" name="condo_brs_alt[]" maxlength="10" />
 			<input type="checkbox" class="condo_elevator_alt" name="condo_elevator_alt[]" value="1">Elevator&nbsp;
 			<input type="checkbox" class="condo_stairs_alt" name="condo_stairs_alt[]" value="1">Stairs<br/>
-			<input type="checkbox" class="condo_mulitlevel_alt" name="condo_mulitlevel_alt[]" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+			<input type="checkbox" class="condo_multilevel_alt" name="condo_multilevel_alt[]" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -181,19 +182,7 @@ Other
 		<div class="other_alt">
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="More Info Here" placeholder="More Info Here" type="text" class="other_text_alt" name="other_text_alt" />
 		</div>		
-
-<!--
-
-		Walking distance info
-
--->
-		<div class="formText">Check if:</div>
-		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="misc_walk_alt" name="misc_walk_alt[]" value="1"><label for="misc_walk_alt">LONG WALK (200 FT. +) From residence/unit to truck/POD</label>
-		</div>
-		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="misc_insurance_alt" name="misc_insurance_alt[]" value="1"><label for="misc_insurance_alt">Building management requires Certificate of Insurance</label>
-		</div>		
+	
 		<div class="formText nomargin"><font color="#a3a3a3">Anything else we need to know about this residence? (optional)</font></div>	
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="" type="text" class="other_text" name="misc_text_alt[]" />	
 		<br/>

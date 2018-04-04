@@ -33,7 +33,7 @@ USER INFO
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Phone" placeholder="Phone" type="tel" name="cust_phone" id="cust_phone" maxlength="50" class="required" style="width: 200px"/>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Ext." placeholder="Ext." type="text" name="cust_ext" id="cust_ext" maxlength="50" style="width: 70px" />
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Alt Phone" placeholder="Alt Phone" type="tel" id="cust_phone_alt" name="cust_phone_alt" maxlength="50" />
-		<div class="formText"><b>LOADING</b> Address:</div>
+		<div class="formText"><b>LOADING</b> Address / Current Residence / Origin</div>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr_from" id="cust_addr_from" maxlength="50" />
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2_from" id="cust_addr_2_from" maxlength="50" />
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="City" placeholder="City" type="text" name="cust_city_from" id="cust_city_from" maxlength="50" />
@@ -149,6 +149,7 @@ APT From
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs_from" name="apt_brs_from" maxlength="10" />
 			<input type="checkbox" class="apt_elevator_from" name="apt_elevator_from" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs_from" name="apt_stairs_from" value="1">Stairs
+			<input type="checkbox" class="apt_multilevel_from" name="condo_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -162,7 +163,7 @@ CONDO From
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="condo_brs_from" name="condo_brs_from" maxlength="10" />
 			<input type="checkbox" class="condo_elevator_from" name="condo_elevator_from" value="1">Elevator&nbsp;
 			<input type="checkbox" class="condo_stairs_from" name="condo_stairs_from" value="1">Stairs<br/>
-			<input type="checkbox" class="condo_mulitlevel_from" name="condo_mulitlevel_from" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+			<input type="checkbox" class="condo_multilevel_from" name="condo_multilevel_from" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -216,18 +217,7 @@ Other From
 		<div class="other_from">
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="More Info Here" placeholder="More Info Here" type="text" class="other_text_from" name="other_text_from" />
 		</div>		
-<!--
 
-		Walking distance info
-
--->
-		<div class="formText">Check if:</div>
-		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="misc_walk_from" name="misc_walk_from" value="1"><label for="misc_walk_from">LONG WALK (200 FT. +) From residence/unit to truck/POD</label>
-		</div>
-		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="misc_insurance_from" name="misc_insurance_from" value="1"><label for="misc_insurance_from">Building management requires Certificate of Insurance</label>
-		</div>
 		<div class="formText nomargin"><font color="#a3a3a3">Anything else we need to know about this residence? (optional)</font></div>	
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="" type="text" class="other_text" name="misc_text_from" />
 
@@ -238,7 +228,7 @@ UNLOADING INFO
 -->
 
 
-		<div class="formText"><b>UNLOADING</b> Address:</div>
+		<div class="formText"><b>UNLOADING</b> Address</div>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr" id="cust_addr" maxlength="50" />
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2" id="cust_addr_2" maxlength="50" />
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="City" placeholder="City" type="text" name="cust_city" id="cust_city" maxlength="50" />
@@ -356,6 +346,7 @@ APT To
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs" name="apt_brs" maxlength="10" />
 			<input type="checkbox" class="apt_elevator" name="apt_elevator" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs" name="apt_stairs" value="1">Stairs
+			<input type="checkbox" class="apt_multilevel" name="condo_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -369,7 +360,7 @@ CONDO From
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="condo_brs" name="condo_brs" maxlength="10" />
 			<input type="checkbox" class="condo_elevator" name="condo_elevator" value="1">Elevator&nbsp;
 			<input type="checkbox" class="condo_stairs" name="condo_stairs" value="1">Stairs<br/>
-			<input type="checkbox" class="condo_mulitlevel" name="condo_mulitlevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+			<input type="checkbox" class="condo_multilevel" name="condo_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -426,18 +417,6 @@ Other To
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="More Info Here" placeholder="More Info Here" type="text" class="other_text_to" name="other_text_to" />
 		</div>	
 
-<!--
-
-		Walking distance info
-
--->
-		<div class="formText">Check if:</div>
-		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="misc_walk_to" name="misc_walk_to" value="1"><label for="misc_walk_to">LONG WALK (200 FT. +) From residence/unit to truck/POD</label>
-		</div>
-		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="misc_insurance_to" name="misc_insurance_to" value="1"><label for="misc_insurance_to">Building management requires Certificate of Insurance</label>
-		</div>
 		<div class="formText nomargin"><font color="#a3a3a3">Anything else we need to know about this residence? (optional)</font></div>	
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="" type="text" class="other_text" name="misc_text_to" />
 
@@ -505,17 +484,22 @@ REFERRAL
 		<select class="cust_referral" name="cust_referral" onchange="show_element(this.name, this.selectedIndex);">
 			<option value="">Please Select</option>
 			<option value="">----------------</option>
-			<option value="yelp">Yelp</option>
+			<option value="yelp">Yelp!</option>
 			<option value="angieslist">Angie's List</option>
-			<option value="movingstaffers">Moving Staffers</option>
-			<option value="movinghelper">Moving Helper</option>
-			<option value="hireahelper">Hire A Helper</option>
+			<option value="facebook">Facebook Group</option>
+			<option value="previouscustomer">I'm a Previous Customer</option>
+			<option value="referredby">Referred by a Previous Customer</option>
 			<option value="ff">Friend/Family</option>
+			<option value="iknowjoe">"I Know Joe!"</option>
 			<option value="sm">Strongmile Employee</option>
 			<option value="bc">Business Card</option>
 			<option value="uhaul">U-Haul Dealer</option>
-			<option value="previouscustomer">I'm a Previous Customer</option>
-			<option value="referredby">Referred by a Previous Customer</option>
+			<option value="mcoc">Metuchen Chamber of Commerce</option>
+			<option value="mcda">Metuchen Downtown Alliance</option>
+			<option value="mm">Metuchen Mirror</option>
+			<option value="mll">Metuchen Little League</option>
+			<option value="mccn">Metuchen Classic Car Night</option>
+			<option value="ecoc">Edison Chamber of Commerce</option>
 			<option value="other">Other</option>
 		</select>	
 		<div class="referral">
@@ -554,42 +538,38 @@ HELP TYPE
 			<span class="help_desc"> - Building to building, walking distance moves less than 200 ft. that don't require a truck</span>
 		</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Box packing (complete)</label>
+			<input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Packing services complete</label>
 			<span class="help_desc"> - Packing of ALL loose items throughout your home</span>
 		</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing">Box packing (partial)</label>
+			<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing">Packing services partial</label>
 			<span class="help_desc"> - Packing of SOME loose items throughout your home</span>
 		</div>
 
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Specify other help needed not listed above" placeholder="Specify other help needed not listed above" type="text" class="other_text" name="other_text" maxlength="30" />
-		<div class="formText nomargin"><font color="#a3a3a3">Only brief explanation here.  Further explanation allowed in open box at bottom of this page labeled "Tell us more important information about your move?"</font></div>
+		<div class="formText nomargin"><font color="#a3a3a3">Only brief service topic here.  Further explanation allowed in open box at bottom of this page.</font></div>
 <!--
 
 TYPES & QUANTITIES OF POSSESSIONS
 
 -->		
-		<div class="formText"><b>FURNITURE & BOX INVENTORY</b></div>
+		<div class="formText"><b>FURNITURE INVENTORY</b></div>
 
 
-		<div class="formText">Indicate <b>NUMERICAL QUANTITY ONLY</b> of items you have in each box unless asking for more info. 
-Simple leave box <b>BLANK</b> if you have none:</div>
+		<div class="formText">Indicate <b>NUMERICAL QUANTITY ONLY</b> - Leave <b>BLANK</b> if you have none</div>
 
-<!--
+<!-- 
 
-ENTRY - REMOVED for now
+MISCELLANEOUS
 
 -->
-
-<!-- 		<div class="formText"><b>Entry / Hallways</b><div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_entry_table" maxlength="5" /></div><div class="furnText">Tables</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_entry_coatrack" maxlength="5" /></div><div class="furnText">Coat Racks</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_entry_shoerack" maxlength="5" /></div><div class="furnText">Shoe Racks</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_entry_mirror" maxlength="5" /></div><div class="furnText">Mirrors</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_entry_shelf" maxlength="5" /></div><div class="furnText">Shelving</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_entry_boxes" id="boxcount" maxlength="5" /></div><div class="furnText">Boxes</div></div>
-		<div class="formText nomargin">Other items:<div>
-		<input type="text" class="cust_furniture_entry_other_text" name="cust_furniture_entry_other_text" maxlength="255" /> -->
+		<div class="formText"><b>Miscellaneous Totals</b></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_tvs" maxlength="5" /></div><div class="furnText">TV's</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_shelves" maxlength="5" /></div><div class="furnText">Book Shelves</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_floorlamps" maxlength="5" /></div><div class="furnText">Floor Lamps</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_tablelamps" maxlength="5" /></div><div class="furnText">Table Lamps</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_pictures" maxlength="5" /></div><div class="furnText">Pictures</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_rugs" maxlength="5" /></div><div class="furnText">Rugs</div></div>
 
 <!--
 
@@ -597,7 +577,7 @@ LIVING ROOM
 
 -->
 
-		<div class="formText"><b>Living / Family Room</b><div>
+		<div class="formText"><b>Living / Family Room / Den</b><div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa" maxlength="5" /></div><div class="furnText">Sectional Sofa</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_sections" maxlength="5" /></div><div class="furnText">How many sections?</div></div>
 		<div class="furnRow"><div class="furnInput_nocheck_thin"><input type="text" name="cust_furniture_secsofa_chaise" maxlength="5" /></div><div class="furnText">Is there a chaise? <font color="#a3a3a3">(Y/N)</font></div></div>
@@ -613,20 +593,56 @@ LIVING ROOM
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_coffeetable" maxlength="5" /></div><div class="furnText">Coffee Table</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_endtable" maxlength="5" /></div><div class="furnText">End Table</div></div>
 
+
+<!-- 
+
+KITCHEN
+
+-->
+
+		<div class="formText"><b>Kitchen</b><div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kitchentable" maxlength="5" /></div><div class="furnText">Tables</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kitchenchairs" maxlength="5" /></div><div class="furnText">Chairs</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_microwave" maxlength="5" /></div><div class="furnText">Microwave</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_winerack" maxlength="5" /></div><div class="furnText">Wine Rack</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bakerrack" maxlength="5" /></div><div class="furnText">Baker's Rack</div></div>		
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bars" maxlength="5" /></div><div class="furnText">Bars</div></div>		
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_stools" maxlength="5" /></div><div class="furnText">Stools</div></div>
+		<div class="formText wide nomargin">Other kitchen items:<div>
+		<input type="text" class="other_text" name="cust_furniture_kitchen_other" />
+
+<!--
+
+APPLIANCES
+
+-->
+
+		<div class="formText"><b>Appliances</b></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_refrigerator" maxlength="5" /></div><div class="furnText">Refrigerator</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_freezer" maxlength="5" /></div><div class="furnText">Freezer</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_stove" maxlength="5" /></div><div class="furnText">Stove</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_dishwasher" maxlength="5" /></div><div class="furnText">Dishwasher</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_washer" maxlength="5" /></div><div class="furnText">Washer</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_dryer" maxlength="5" /></div><div class="furnText">Dryer</div></div>
+		<div class="formText wide nomargin">Other Appliance items:<div>
+		<input type="text" class="other_text" name="cust_furniture_appliance_other" />
+
 <!-- 
 
 DINING
 
 -->
 
-		<div class="formText"><b>Dining room / Kitchen furniture</b><div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_diningtable" maxlength="5" /></div><div class="furnText">Dining / Kitchen Table</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_diningchairs" maxlength="5" /></div><div class="furnText">Dining / Kitchen Chairs</div></div>
+		<div class="formText"><b>Dining room</b><div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_diningtable" maxlength="5" /></div><div class="furnText">Tables</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_diningchairs" maxlength="5" /></div><div class="furnText">Chairs</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_chinacabinet" maxlength="5" /></div><div class="furnText">China Cabinet</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_curiocabinet" maxlength="5" /></div><div class="furnText">Curio Cabinet</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_buffettable" maxlength="5" /></div><div class="furnText">Buffet Table</div></div>		
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_breakfront" maxlength="5" /></div><div class="furnText">Breakfront</div></div>		
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_hutch" maxlength="5" /></div><div class="furnText">Hutch</div></div>
+		<div class="formText wide nomargin">Other dining items:<div>
+		<input type="text" class="other_text" name="cust_furniture_dining_other" />
 
 <!-- 
 
@@ -658,6 +674,25 @@ BEDROOMS
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_chest" maxlength="5" /></div><div class="furnText">Chest/Trunk</div></div>
 		<div class="formText nomargin">Other Bedroom Items<div>
 		<input type="text" class="other_text" name="cust_furniture_bedroom_other" />
+
+<!--
+
+APPLIANCES
+
+-->
+
+		<div class="formText"><b>Kids / Baby</b></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_beds" maxlength="5" /></div><div class="furnText">Beds</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_cribs" maxlength="5" /></div><div class="furnText">Cribs</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_dressers" maxlength="5" /></div><div class="furnText">Dressers</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_tables" maxlength="5" /></div><div class="furnText">Tables</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_chairs" maxlength="5" /></div><div class="furnText">Chairs</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_toytrunks" maxlength="5" /></div><div class="furnText">Toy Trunks</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_largetoys" maxlength="5" /></div><div class="furnText">Large Toys</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_glidershairs" maxlength="5" /></div><div class="furnText">Glider Chairs</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_changingtables" maxlength="5" /></div><div class="furnText">Changing Tables</div></div>
+		<div class="formText wide nomargin">Others:<div>
+		<input type="text" class="other_text" name="cust_furniture_kids_other" />
 
 <!--
 
@@ -698,13 +733,13 @@ OUTDOOR / GARAGE
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_ladder" maxlength="5" /></div><div class="furnText">Ladders</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_lawnmower" maxlength="5" /></div><div class="furnText">Lawn Mower</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_snowblower" maxlength="5" /></div><div class="furnText">Snow Blower</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outside_other_gas" maxlength="5" /></div><div class="furnText">Generators</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorboats" maxlength="5" /></div><div class="furnText">Boats / Canoes / Kayaks</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorshelves" maxlength="5" /></div><div class="furnText">Shelves</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoortables" maxlength="5" /></div><div class="furnText">Tables</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorchairs" maxlength="5" /></div><div class="furnText">Chairs</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorumbrellas" maxlength="5" /></div><div class="furnText">Umbrellas</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoorgrill" maxlength="5" /></div><div class="furnText">Grill</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_generator" maxlength="5" /></div><div class="furnText">Generators</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_boats" maxlength="5" /></div><div class="furnText">Boats / Canoes / Kayaks</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_shelves" maxlength="5" /></div><div class="furnText">Shelves</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_tables" maxlength="5" /></div><div class="furnText">Tables</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_chairs" maxlength="5" /></div><div class="furnText">Chairs</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_umbrellas" maxlength="5" /></div><div class="furnText">Umbrellas</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_grill" maxlength="5" /></div><div class="furnText">Grill</div></div>
 		<div class="formText wide nomargin">Other Outdoor Items<div>
 		<input type="text" class="other_text" name="cust_furniture_outside_other" />
 
@@ -726,30 +761,71 @@ OTHER HOUSEWARES
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_safe" maxlength="5" /></div><div class="furnText">Safe</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_piano" maxlength="5" /></div><div class="furnText">Piano</div></div>
 
+
 <!--
 
-APPLIANCES
+Attic Misc
+
+-->
+		<div class="formText"><b>Attic Miscellaneous</b></div>
+		<input type="text" class="other_text" name="cust_furniture_attic_misc" />
+
+<!--
+
+Basement Misc
 
 -->
 
-		<div class="formText"><b>Appliances</b></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_washer" maxlength="5" /></div><div class="furnText">Washer</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_dryer" maxlength="5" /></div><div class="furnText">Dryer</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_refrigerator" maxlength="5" /></div><div class="furnText">Refrigerator</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_freezer" maxlength="5" /></div><div class="furnText">Freezer</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_stove" maxlength="5" /></div><div class="furnText">Stove</div></div>
 
-<!-- 
+		<div class="formText"><b>Basement Miscellaneous</b></div>
+		<input type="text" class="other_text" name="cust_furniture_basement_misc" />
 
-MISCELLANEOUS
+<!--
+
+Specialy Items
 
 -->
-		<div class="formText"><b>Miscellaneous</b></div>
-		<div class="furnRow wide"><div class="furnInput boxes"><input type="number" name="cust_furniture_boxtubs" maxlength="5" id="cust_furniture_boxtubs" /></div><div class="furnText top-align" style="width: 85%"><b>Boxes And / Or Plastic Tubs</b> - We know this may be a hard number to know precisely, but do your best to over estimate how many you'll have for a better quote.</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_luggage" maxlength="5" /></div><div class="furnText">Luggage</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bags" maxlength="5" /></div><div class="furnText">Bags</div></div>
+
+		<div class="formText"><b>Specialty Items</b> - Additional Fees may apply</div>
+		<div class="help_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_pianos" name="specialty_pianos" value="1"><label for="specialty_pianos">Pianos</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_pianos_more" /></span>
+		</div>		
+		<div class="specialty_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_safes" name="specialty_safes" value="1"><label for="specialty_safes">Safes</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_safes_more" /></span>
+		</div>
+		<div class="specialty_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_gyms" name="specialty_gyms" value="1"><label for="specialty_gyms">Full Gyms</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_gyms_more" /></span>
+		</div>		
+		<div class="specialty_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_hospitalbeds" name="specialty_hospitalbeds" value="1"><label for="specialty_hospitalbeds">Hospital Beds</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_hospitalbeds_more" /></span>
+		</div>	
+		<div class="specialty_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_toolboxes" name="specialty_toolboxes" value="1"><label for="specialty_toolboxes">Heavy Toolboxes</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_toolboxes_more" /></span>
+		</div>
+		<div class="specialty_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_machinery" name="specialty_machinery" value="1"><label for="specialty_machinery">Large Machinery</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_machinery_more" /></span>
+		</div>
+		<div class="specialty_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_worktables" name="specialty_worktables" value="1"><label for="specialty_worktables">Work Tables</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_worktables_more" /></span>
+		</div>
+		<div class="specialty_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_trampolines" name="specialty_trampolines" value="1"><label for="specialty_trampolines">Trampolines</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_trampolines_more" /></span>
+		</div>
+		<div class="specialty_checkbox wide">
+			<input type="checkbox" class="specialty_cb" id="specialty_pooltables" name="specialty_pooltables" value="1"><label for="specialty_pooltables">Pool Tables</label>
+			<span class="specialty_desc">More Info: <input type="text" name="specialty_pooltables_more" /></span>
+		</div>
 
 		<div class="formText">
+			<b>BOXES</b><br />
 			How to pack boxes<br/>
 			<div class="howtopack_content">
 			<ul>
@@ -770,7 +846,6 @@ MISCELLANEOUS
 				<li><b>3 BR:</b> 70-100</li>
 				<li><b>4 BR+:</b> 100-150+</li>
 			</ul>
-			We know this may be a hard number to know precisely.<br/>Do your best to <b>OVERESTIMATE</b> how many you'll have for a better quote.
 			</div>
 		</div>
 <!--
@@ -778,33 +853,23 @@ MISCELLANEOUS
 Box Totals
 
 -->
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_numboxes" maxlength="5" placeholder="0" /></div><div class="furnText">Grand total of boxes</div></div>
+		<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_boxtubs" id="cust_furniture_boxtubs" maxlength="5" placeholder="0" /></div><label for="cust_furniture_boxtubs">ESTIMATED TOTAL BOX COUNT </label> <br/> This may be difficult to know precisely.   Try to OVERESTIMATE your box count.</div><br/><Br/>
 
 <!--
 
 FURNITURE MOVE ONLY
 
 -->
-		<div class="formText">Check if:</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="furn_move_only" name="furn_move_only" value="1"><label for="furn_move_only">FURNITURE MOVE ONLY - Customer moving all boxes personally</label>
+			<input type="checkbox" class="help_cb" id="furn_move_only" name="furn_move_only" value="1"><label for="furn_move_only">NO BOXES - FURNITURE MOVE ONLY - Customer moving all boxes personally</label>
 		</div>
-
-<!--
-
-OTHER
-
--->
-		<div class="formText">Additional items with quantities not listed above?</div>
-		<input type="text" class="cust_furniture_other" name="cust_furniture_other" />
-
 <!--
 
 GLASS
 
 -->
 
-		<div class="formText">GLASS items? (Examples: Tops, shelves, doors etc.)</div>
+		<div class="formText">List any GLASS items? (Examples: Tops, shelves, doors etc.)</div>
 		<input type="text" class="cust_furniture_glass" name="cust_furniture_glass" />
 
 <!--
@@ -812,7 +877,7 @@ GLASS
 PRESS BOARD
 
 -->
-		<div class="formText">Any presswood, pressboard, IKEA style furniture not made of solid wood?</div>
+		<div class="formText">List any presswood, pressboard, IKEA style furniture not made of solid wood</div>
 		<input type="text" class="cust_furniture_glass" name="cust_furniture_ikea" />
 
 <!--
@@ -820,7 +885,7 @@ PRESS BOARD
 High Value
 
 -->
-		<div class="formText">Any high-value items of concern?</div>
+		<div class="formText">List any high-value items of concern</div>
 		<input type="text" class="cust_furniture_glass" name="cust_furniture_highvalue" />
 
 <!--
@@ -828,7 +893,7 @@ High Value
 IMPORTANT
 
 -->
-		<div class="formText">Tell us more important information about your move?</div>
+		<div class="formText">Tell us more important information about your move</div>
 		<textarea class="cust_importantinfo" name="cust_importantinfo" wrap="soft"></textarea>
 
 <!--

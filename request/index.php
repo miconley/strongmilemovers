@@ -144,7 +144,7 @@
 
 		if($_SAFE_POST['cust_referral'] != "") {
 			$message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;\">Referred by:</h1>";
-
+			$message .="<span style=\"color: #000000; font-size: 15px;\">";
 			// <option value="movinghelper">Moving Helper</option>
 			// <option value="hireahelper">Hire A Helper</option>
 			// <option value="angieslist">Angie's List</option>
@@ -159,7 +159,7 @@
 			switch($_SAFE_POST['cust_referral']){
 
 					case "previouscustomer":
-						$message .="Is a previous customer";
+						$message .="<b>Previous Customer:</b> ". $_SAFE_POST['referral_val'];
 						break;
 
 					case "movinghelper":
@@ -180,6 +180,34 @@
 
 					case "yelp":
 						$message .="<b>Website:</b> Yelp";
+						break;
+
+					case "mcoc":
+						$message .="Metuchen Chamber of Commerce";
+						break;
+
+					case "mll":
+						$message .="Metuchen Little League";
+						break;
+
+					case "mda":
+						$message .="Metuchen Downtown Alliance";
+						break;
+
+					case "mm":
+						$message .="Metuchen Mirror";
+						break;
+
+					case "mccn":
+						$message .="Metuchen Classic Car Night";
+						break;
+
+					case "ecoc":
+						$message .="Edison Chamber of Commerce";
+						break;
+
+					case "iknowjoe":
+						$message .="<b>They know Joe:</b> ". $_SAFE_POST['referral_val'];
 						break;
 
 					case "ff":
@@ -244,6 +272,7 @@
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['apt_brs_from']."<br />\r\n";
 							if(isset($_SAFE_POST['apt_elevator_from'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['apt_stairs_from'])) $message .="<b>Stairs:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['apt_multilevel_from'])) $message .="<b>Multiple levels:</b> Y<br />\r\n";
 							break;
 
 						case "condo_from":
@@ -331,6 +360,7 @@
 							$message .="<b>Bedrooms:</b> ". $_SAFE_POST['apt_brs']."<br />\r\n";
 							if(isset($_SAFE_POST['apt_elevator'])) $message .="<b>Elevator:</b> Y<br />\r\n";
 							if(isset($_SAFE_POST['apt_stairs'])) $message .="<b>Stairs:</b> Y<br />\r\n";
+							if(isset($_SAFE_POST['apt_multilevel'])) $message .="<b>Multiple levels:</b> Y<br />\r\n";
 							break;
 
 						case "condo":
@@ -408,20 +438,17 @@
 
 		$message .=""; 	
 
-		// REMOVED for now 
-		
-		// $furnMessage[$itemIndex]['title'] = "Entry / Hallways:";
-		// $furnMessage[$itemIndex]['items'] = "";
-		// if($_SAFE_POST['cust_furniture_entry_table'] != "" && $_SAFE_POST['cust_furniture_entry_table'] > 0) { $furnCount = true;  $tempMessage .="Tables: ". $_SAFE_POST['cust_furniture_entry_table'] ."<br />\r\n"; }
-		// if($_SAFE_POST['cust_furniture_entry_coatrack'] != "" && $_SAFE_POST['cust_furniture_entry_coatrack'] > 0) { $furnCount = true;  $tempMessage .="Coat Racks: ". $_SAFE_POST['cust_furniture_entry_coatrack'] ."<br />\r\n"; }
-		// if($_SAFE_POST['cust_furniture_entry_shoerack'] != "" && $_SAFE_POST['cust_furniture_entry_shoerack'] > 0) { $furnCount = true;  $tempMessage .="Shoe Racks: ". $_SAFE_POST['cust_furniture_entry_shoerack'] ."<br />\r\n"; }
-		// if($_SAFE_POST['cust_furniture_entry_mirror'] != "" && $_SAFE_POST['cust_furniture_entry_mirror'] > 0) { $furnCount = true;  $tempMessage .="Mirrors: ". $_SAFE_POST['cust_furniture_entry_mirror'] ."<br />\r\n"; }
-		// if($_SAFE_POST['cust_furniture_entry_shelf'] != "" && $_SAFE_POST['cust_furniture_entry_shelf'] > 0) { $furnCount = true;  $tempMessage .="Shelving ". $_SAFE_POST['cust_furniture_entry_shelf'] ."<br />\r\n"; }
-		// if($_SAFE_POST['cust_furniture_entry_boxes'] != "" && $_SAFE_POST['cust_furniture_entry_boxes'] > 0) { $furnCount = true;  $tempMessage .="Boxes: ". $_SAFE_POST['cust_furniture_entry_boxes'] ."<br />\r\n"; }
-		// if($_SAFE_POST['cust_furniture_entry_other_text'] != "") { $furnCount = true;  $tempMessage .="Other Entry Items: ". $_SAFE_POST['cust_furniture_entry_other_text'] ."<br />\r\n" ;} 
-		// save_message();
+	    $furnMessage[$itemIndex]['title'] = "Miscellaneous:";
+	    $furnMessage[$itemIndex]['items'] = "";
+	   	if($_SAFE_POST['cust_furniture_misc_tvs'] != "" && $_SAFE_POST['cust_furniture_misc_tvs'] > 0) { $furnCount = true;  $tempMessage .="TVs: ". $_SAFE_POST['cust_furniture_misc_tvs'] ."<br />\r\n" ;}
+	   	if($_SAFE_POST['cust_furniture_misc_shelves'] != "" && $_SAFE_POST['cust_furniture_misc_shelves'] > 0) { $furnCount = true;  $tempMessage .="Shelves: ". $_SAFE_POST['cust_furniture_misc_shelves'] ."<br />\r\n" ;}
+	    if($_SAFE_POST['cust_furniture_misc_tablelamps'] != "" && $_SAFE_POST['cust_furniture_misc_tablelamps'] > 0) { $furnCount = true;  $tempMessage .="Table Lamps: ". $_SAFE_POST['cust_furniture_misc_tablelamps'] ."<br />\r\n" ;}
+	    if($_SAFE_POST['cust_furniture_misc_floorlamps'] != "" && $_SAFE_POST['cust_furniture_misc_floorlamps'] > 0) { $furnCount = true;  $tempMessage .="Floor Lamps: ". $_SAFE_POST['cust_furniture_misc_floorlamps'] ."<br />\r\n" ;}
+		if($_SAFE_POST['cust_furniture_misc_pictures'] != "" && $_SAFE_POST['cust_furniture_misc_pictures'] > 0) { $furnCount = true;  $tempMessage .="Pictures: ". $_SAFE_POST['cust_furniture_misc_pictures'] ."<br />\r\n" ;}
+		if($_SAFE_POST['cust_furniture_misc_rugs'] != "" && $_SAFE_POST['cust_furniture_misc_rugs'] > 0) { $furnCount = true;  $tempMessage .="Rugs: ". $_SAFE_POST['cust_furniture_misc_rugs'] ."<br />\r\n" ;}
+		save_message();
 
-		$furnMessage[$itemIndex]['title'] = "Living / Family room:";
+		$furnMessage[$itemIndex]['title'] = "Living / Family room / Den:";
 		$furnMessage[$itemIndex]['items'] = "";
 		if($_SAFE_POST['cust_furniture_secsofa'] != "" && $_SAFE_POST['cust_furniture_secsofa'] > 0) { $furnCount = true;  $tempMessage .="Sectional Sofa: ". $_SAFE_POST['cust_furniture_secsofa'] ."<br />\r\n"; }
 		if($_SAFE_POST['cust_furniture_secsofa_sections'] != "" && $_SAFE_POST['cust_furniture_secsofa_sections'] > 0) { $furnCount = true;  $tempMessage .="Sections: ". $_SAFE_POST['cust_furniture_secsofa'] ."<br />\r\n"; }
@@ -446,15 +473,39 @@
 	    if($_SAFE_POST['cust_furniture_endtable'] != "" && $_SAFE_POST['cust_furniture_endtable'] > 0) { $furnCount = true;  $tempMessage .="End Table: ". $_SAFE_POST['cust_furniture_endtable'] ."<br />\r\n" ;} 
 	    save_message();
 
-	    $furnMessage[$itemIndex]['title'] = "Dining room / Kitchen furniture:";
+	    $furnMessage[$itemIndex]['title'] = "Kitchen:";
 	    $furnMessage[$itemIndex]['items'] = "";
-	    if($_SAFE_POST['cust_furniture_diningtable'] != "" && $_SAFE_POST['cust_furniture_diningtable'] > 0) { $furnCount = true;  $tempMessage .="Dining/Kitchen Table: ". $_SAFE_POST['cust_furniture_diningtable'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_diningchairs'] != "" && $_SAFE_POST['cust_furniture_diningchairs'] > 0) { $furnCount = true;  $tempMessage .="Dining/Kitchen Chairs: ". $_SAFE_POST['cust_furniture_diningchairs'] ."<br />\r\n" ;}
+	    if($_SAFE_POST['cust_furniture_kitchentable'] != "" && $_SAFE_POST['cust_furniture_kitchentable'] > 0) { $furnCount = true;  $tempMessage .="Kitchen Table: ". $_SAFE_POST['cust_furniture_kitchentable'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_kitchenchairs'] != "" && $_SAFE_POST['cust_furniture_kitchenchairs'] > 0) { $furnCount = true;  $tempMessage .="Kitchen Chairs: ". $_SAFE_POST['cust_furniture_kitchenchairs'] ."<br />\r\n" ;}
+	    if($_SAFE_POST['cust_furniture_microwave'] != "" && $_SAFE_POST['cust_furniture_microwave'] > 0) { $furnCount = true;  $tempMessage .="Microwave: ". $_SAFE_POST['cust_furniture_microwave'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_winerack'] != "" && $_SAFE_POST['cust_furniture_winerack'] > 0) { $furnCount = true;  $tempMessage .="Wine Rack: ". $_SAFE_POST['cust_furniture_winerack'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_bakerrack'] != "" && $_SAFE_POST['cust_furniture_bakerrack'] > 0) { $furnCount = true;  $tempMessage .="Baker's Rack: ". $_SAFE_POST['cust_furniture_bakerrack'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_bars'] != "" && $_SAFE_POST['cust_furniture_bars'] > 0) { $furnCount = true;  $tempMessage .="Bars: ". $_SAFE_POST['cust_furniture_bars'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_stools'] != "" && $_SAFE_POST['cust_furniture_stools'] > 0) { $furnCount = true;  $tempMessage .="Stools: ". $_SAFE_POST['cust_furniture_stools'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_kitchen_other'] != "") { $furnCount = true;  $tempMessage .="Other kitchen items: ". $_SAFE_POST['cust_furniture_kitchen_other'] ."<br />\r\n" ;} 
+	    save_message();
+
+	    $furnMessage[$itemIndex]['title'] = "Appliances:";
+	    $furnMessage[$itemIndex]['items'] = "";
+	    if($_SAFE_POST['cust_furniture_refrigerator'] != "" && $_SAFE_POST['cust_furniture_refrigerator'] > 0) { $furnCount = true;  $tempMessage .="Refrigerator: ". $_SAFE_POST['cust_furniture_refrigerator'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_freezer'] != "" && $_SAFE_POST['cust_furniture_freezer'] > 0) { $furnCount = true;  $tempMessage .="Freezer: ". $_SAFE_POST['cust_furniture_freezer'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_stove'] != "" && $_SAFE_POST['cust_furniture_stove'] > 0) { $furnCount = true;  $tempMessage .="Stove: ". $_SAFE_POST['cust_furniture_stove'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_dishwasher'] != "" && $_SAFE_POST['cust_furniture_dishwasher'] > 0) { $furnCount = true;  $tempMessage .="Dishwasher: ". $_SAFE_POST['cust_furniture_dishwasher'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_washer'] != "" && $_SAFE_POST['cust_furniture_washer'] > 0) { $furnCount = true;  $tempMessage .="Washer: ". $_SAFE_POST['cust_furniture_washer'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_dryer'] != "" && $_SAFE_POST['cust_furniture_dryer'] > 0) { $furnCount = true;  $tempMessage .="Dryer: ". $_SAFE_POST['cust_furniture_dryer'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_appliance_other'] != "") { $furnCount = true;  $tempMessage .="Other appliances: ". $_SAFE_POST['cust_furniture_appliance_other'] ."<br />\r\n" ;} 
+	    save_message();
+
+	    $furnMessage[$itemIndex]['title'] = "Dining room:";
+	    $furnMessage[$itemIndex]['items'] = "";
+	    if($_SAFE_POST['cust_furniture_diningtable'] != "" && $_SAFE_POST['cust_furniture_diningtable'] > 0) { $furnCount = true;  $tempMessage .="Dining Table: ". $_SAFE_POST['cust_furniture_diningtable'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_diningchairs'] != "" && $_SAFE_POST['cust_furniture_diningchairs'] > 0) { $furnCount = true;  $tempMessage .="Dining Chairs: ". $_SAFE_POST['cust_furniture_diningchairs'] ."<br />\r\n" ;}
 	    if($_SAFE_POST['cust_furniture_buffettable'] != "" && $_SAFE_POST['cust_furniture_buffettable'] > 0) { $furnCount = true;  $tempMessage .="Buffet Table: ". $_SAFE_POST['cust_furniture_buffettable'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_chinacabinet'] != "" && $_SAFE_POST['cust_furniture_chinacabinet'] > 0) { $furnCount = true;  $tempMessage .="China Cabinet: ". $_SAFE_POST['cust_furniture_chinacabinet'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_curiocabinet'] != "" && $_SAFE_POST['cust_furniture_curiocabinet'] > 0) { $furnCount = true;  $tempMessage .="Curio Cabinet: ". $_SAFE_POST['cust_furniture_curiocabinet'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_hutch'] != "" && $_SAFE_POST['cust_furniture_hutch'] > 0) { $furnCount = true;  $tempMessage .="Hutch: ". $_SAFE_POST['cust_furniture_hutch'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_breakfront'] != "" && $_SAFE_POST['cust_furniture_breakfront'] > 0) { $furnCount = true;  $tempMessage .="Break Front: ". $_SAFE_POST['cust_furniture_breakfront'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_breakfront'] != "" && $_SAFE_POST['cust_furniture_breakfront'] > 0) { $furnCount = true;  $tempMessage .="Break Front: ". $_SAFE_POST['cust_furniture_breakfront'] ."<br />\r\n" ;}
+	    if($_SAFE_POST['cust_furniture_dining_other'] != "") { $furnCount = true;  $tempMessage .="Other dining items: ". $_SAFE_POST['cust_furniture_dining_other'] ."<br />\r\n" ;} 
 	    save_message();
 
 	    $furnMessage[$itemIndex]['title'] = "Office furniture:";
@@ -479,6 +530,21 @@
 		if($_SAFE_POST['cust_furniture_bedroom_other'] != "") { $furnCount = true;  $tempMessage .="Other bedroom items: ". $_SAFE_POST['cust_furniture_bedroom_other'] ."<br />\r\n" ;}    
 	    save_message();
 
+	    $furnMessage[$itemIndex]['title'] = "Kids / Baby:";
+	    $furnMessage[$itemIndex]['items'] = "";
+	    if($_SAFE_POST['cust_furniture_kids_beds'] != "" && $_SAFE_POST['cust_furniture_kids_beds'] > 0) { $furnCount = true;  $tempMessage .="Beds: ". $_SAFE_POST['cust_furniture_kids_beds'] ."<br />\r\n" ;}
+	    if($_SAFE_POST['cust_furniture_kids_cribs'] != "" && $_SAFE_POST['cust_furniture_kids_cribs'] > 0) { $furnCount = true;  $tempMessage .="Cribs: ". $_SAFE_POST['cust_furniture_kids_cribs'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_kids_dressers'] != "" && $_SAFE_POST['cust_furniture_kids_dressers'] > 0) { $furnCount = true;  $tempMessage .="Dressers: ". $_SAFE_POST['cust_furniture_kids_dressers'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_kids_tables'] != "" && $_SAFE_POST['cust_furniture_kids_tables'] > 0) { $furnCount = true;  $tempMessage .="Tables: ". $_SAFE_POST['cust_furniture_kids_tables'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_kids_chairs'] != "" && $_SAFE_POST['cust_furniture_kids_chairs'] > 0) { $furnCount = true;  $tempMessage .="Chairs: ". $_SAFE_POST['cust_furniture_kids_chairs'] ."<br />\r\n" ;} 
+		if($_SAFE_POST['cust_furniture_kids_toytrunks'] != "" && $_SAFE_POST['cust_furniture_kids_toytrunks'] > 0) { $furnCount = true;  $tempMessage .="Toy Chests: ". $_SAFE_POST['cust_furniture_kids_toytrunks'] ."<br />\r\n" ;} 
+		if($_SAFE_POST['cust_furniture_kids_largetoys'] != "" && $_SAFE_POST['cust_furniture_kids_largetoys'] > 0) { $furnCount = true;  $tempMessage .="Large Toys: ". $_SAFE_POST['cust_furniture_kids_largetoys'] ."<br />\r\n" ;} 
+		if($_SAFE_POST['cust_furniture_kids_gliderchairs'] != "" && $_SAFE_POST['cust_furniture_kids_gliderchairs'] > 0) { $furnCount = true;  $tempMessage .="Gliding Chairs: ". $_SAFE_POST['cust_furniture_kids_gliderchairs'] ."<br />\r\n" ;} 
+		if($_SAFE_POST['cust_furniture_kids_changingtables'] != "" && $_SAFE_POST['cust_furniture_kids_changingtables'] > 0) { $furnCount = true;  $tempMessage .="Changing Tables: ". $_SAFE_POST['cust_furniture_kids_changingtables'] ."<br />\r\n" ;} 
+		if($_SAFE_POST['cust_furniture_kids_other'] != "") { $furnCount = true;  $tempMessage .="Other kids items: ". $_SAFE_POST['cust_furniture_kids_other'] ."<br />\r\n" ;} 
+ 
+	    save_message();
+
 		$furnMessage[$itemIndex]['title'] = "Bathrooms:";
 		$furnMessage[$itemIndex]['items'] = "";
 	    if($_SAFE_POST['cust_furniture_bathroom_cabinets'] != "" && $_SAFE_POST['cust_furniture_bathroom_cabinets'] > 0) { $furnCount = true;  $tempMessage .="Cabinets: ". $_SAFE_POST['cust_furniture_bathroom_cabinets'] ."<br />\r\n" ;} 
@@ -492,7 +558,7 @@
 	    if($_SAFE_POST['cust_furniture_treadmill'] != "" && $_SAFE_POST['cust_furniture_treadmill'] > 0) { $furnCount = true;  $tempMessage .="Treadmill: ". $_SAFE_POST['cust_furniture_treadmill'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_elliptical'] != "" && $_SAFE_POST['cust_furniture_elliptical'] > 0) { $furnCount = true;  $tempMessage .="Elliptical: ". $_SAFE_POST['cust_furniture_elliptical'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_stationarybike'] != "" && $_SAFE_POST['cust_furniture_stationarybike'] > 0) { $furnCount = true;  $tempMessage .="Stationary Bike: ". $_SAFE_POST['cust_furniture_stationarybike'] ."<br />\r\n" ;} 
-	    	if($_SAFE_POST['cust_furniture_weightbenches'] != "" && $_SAFE_POST['cust_furniture_weightbenches'] > 0) { $furnCount = true;  $tempMessage .="Weight Benches: ". $_SAFE_POST['cust_furniture_weightbenches'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_weightbenches'] != "" && $_SAFE_POST['cust_furniture_weightbenches'] > 0) { $furnCount = true;  $tempMessage .="Weight Benches: ". $_SAFE_POST['cust_furniture_weightbenches'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_excercise_other'] != "") { $furnCount = true;  $tempMessage .="Other Exercise Equipment: ". $_SAFE_POST['cust_furniture_excercise_other'] ."<br />\r\n" ;} 
 	    save_message();
 
@@ -502,45 +568,15 @@
 	    if($_SAFE_POST['cust_furniture_ladder'] != "" && $_SAFE_POST['cust_furniture_ladder'] > 0) { $furnCount = true;  $tempMessage .="Ladders: ". $_SAFE_POST['cust_furniture_ladder'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_snowblower'] != "" && $_SAFE_POST['cust_furniture_snowblower'] > 0) { $furnCount = true;  $tempMessage .="Snow Blower: ". $_SAFE_POST['cust_furniture_snowblower'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_lawnmower'] != "" && $_SAFE_POST['cust_furniture_lawnmower'] > 0) { $furnCount = true;  $tempMessage .="Lawn Mower: ". $_SAFE_POST['cust_furniture_lawnmower'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_outside_other_gas'] != "" && $_SAFE_POST['cust_furniture_outside_other_gas'] > 0) { $furnCount = true;  $tempMessage .="Generators: ". $_SAFE_POST['cust_furniture_outside_other_gas'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_boats'] != "" && $_SAFE_POST['cust_furniture_boats'] > 0) { $furnCount = true;  $tempMessage .="Boats / Canoes / Kayaks: ". $_SAFE_POST['cust_furniture_boats'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_shelves'] != "" && $_SAFE_POST['cust_furniture_shelves'] > 0) { $furnCount = true;  $tempMessage .="Shelves: ". $_SAFE_POST['cust_furniture_shelves'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_tables'] != "" && $_SAFE_POST['cust_furniture_tables'] > 0) { $furnCount = true;  $tempMessage .="Tables: ". $_SAFE_POST['cust_furniture_tables'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_chairs'] != "" && $_SAFE_POST['cust_furniture_chairs'] > 0) { $furnCount = true;  $tempMessage .="Chairs: ". $_SAFE_POST['cust_furniture_chairs'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_umbrellas'] != "" && $_SAFE_POST['cust_furniture_umbrellas'] > 0) { $furnCount = true;  $tempMessage .="Umbrellas: ". $_SAFE_POST['cust_furniture_umbrellas'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_outdoorgrill'] != "" && $_SAFE_POST['cust_furniture_outdoorgrill'] > 0) { $furnCount = true;  $tempMessage .="Grill: ". $_SAFE_POST['cust_furniture_outdoorgrill'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outdoor_generator'] != "" && $_SAFE_POST['cust_furniture_outdoor_generator'] > 0) { $furnCount = true;  $tempMessage .="Generators: ". $_SAFE_POST['cust_furniture_outdoor_generator'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outdoor_boats'] != "" && $_SAFE_POST['cust_furniture_outdoor_boats'] > 0) { $furnCount = true;  $tempMessage .="Boats / Canoes / Kayaks: ". $_SAFE_POST['cust_furniture_outdoor_boats'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outdoor_shelves'] != "" && $_SAFE_POST['cust_furniture_outdoor_shelves'] > 0) { $furnCount = true;  $tempMessage .="Shelves: ". $_SAFE_POST['cust_furniture_outdoor_shelves'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outdoor_tables'] != "" && $_SAFE_POST['cust_furniture_outdoor_tables'] > 0) { $furnCount = true;  $tempMessage .="Tables: ". $_SAFE_POST['cust_furniture_outdoor_tables'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outdoor_chairs'] != "" && $_SAFE_POST['cust_furniture_outdoor_chairs'] > 0) { $furnCount = true;  $tempMessage .="Chairs: ". $_SAFE_POST['cust_furniture_outdoor_chairs'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outdoor_umbrellas'] != "" && $_SAFE_POST['cust_furniture_outdoor_umbrellas'] > 0) { $furnCount = true;  $tempMessage .="Umbrellas: ". $_SAFE_POST['cust_furniture_outdoor_umbrellas'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_outdoor_grill'] != "" && $_SAFE_POST['cust_furniture_outdoor_grill'] > 0) { $furnCount = true;  $tempMessage .="Grill: ". $_SAFE_POST['cust_furniture_outdoor_grill'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_outside_other'] != "") { $furnCount = true;  $tempMessage .="Other Outdoor Items: ". $_SAFE_POST['cust_furniture_outside_other'] ."<br />\r\n" ;} 
 	    save_message();
-
-	    $furnMessage[$itemIndex]['title'] = "Others:";
-	    $furnMessage[$itemIndex]['items'] = "";
-	    if($_SAFE_POST['cust_furniture_tv'] != "" && $_SAFE_POST['cust_furniture_tv'] > 0) { $furnCount = true;  $tempMessage .="TV: ". $_SAFE_POST['cust_furniture_tv'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_tvstand'] != "" && $_SAFE_POST['cust_furniture_tvstand'] > 0) { $furnCount = true;  $tempMessage .="TV Stand: ". $_SAFE_POST['cust_furniture_tvstand'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_entertainmentcenter'] != "") { $furnCount = true;  $tempMessage .="Entertainment Stand (Qty & Sizes): ". $_SAFE_POST['cust_furniture_entertainmentcenter'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_lamp_floor'] != "" && $_SAFE_POST['cust_furniture_lamp_floor'] > 0) { $furnCount = true;  $tempMessage .="Floor Lamp: ". $_SAFE_POST['cust_furniture_lamp_floor'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_lamp_table'] != "" && $_SAFE_POST['cust_furniture_lamp_table'] > 0) { $furnCount = true;  $tempMessage .="Table Lamp: ". $_SAFE_POST['cust_furniture_lamp_table'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_rug'] != "" && $_SAFE_POST['cust_furniture_rug'] > 0) { $furnCount = true;  $tempMessage .="Rugs: ". $_SAFE_POST['cust_furniture_rug'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_toys'] != "" && $_SAFE_POST['cust_furniture_toys'] > 0) { $furnCount = true;  $furnMessage[$itemIndex]['items'].="Lg Childrens Toys: ". $_SAFE_POST['cust_furniture_toys'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_crib'] != "" && $_SAFE_POST['cust_furniture_crib'] > 0) { $furnCount = true;  $tempMessage .="Crib: ". $_SAFE_POST['cust_furniture_crib'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_safe'] != "" && $_SAFE_POST['cust_furniture_safe'] > 0) { $furnCount = true;  $tempMessage .="Safe: ". $_SAFE_POST['cust_furniture_safe'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_piano'] != "" && $_SAFE_POST['cust_furniture_piano'] > 0) { $furnCount = true;  $tempMessage .="Piano: ". $_SAFE_POST['cust_furniture_piano'] ."<br />\r\n" ;}  
-	    save_message();
-
-	    $furnMessage[$itemIndex]['title'] = "Appliances:";
-	    $furnMessage[$itemIndex]['items'] = "";
-	    if($_SAFE_POST['cust_furniture_washer'] != "" && $_SAFE_POST['cust_furniture_washer'] > 0) { $furnCount = true;  $tempMessage .="Washer: ". $_SAFE_POST['cust_furniture_washer'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_dryer'] != "" && $_SAFE_POST['cust_furniture_dryer'] > 0) { $furnCount = true;  $tempMessage .="Dryer: ". $_SAFE_POST['cust_furniture_dryer'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_refrigerator'] != "" && $_SAFE_POST['cust_furniture_refrigerator'] > 0) { $furnCount = true;  $tempMessage .="Refrigerator: ". $_SAFE_POST['cust_furniture_refrigerator'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_freezer'] != "" && $_SAFE_POST['cust_furniture_freezer'] > 0) { $furnCount = true;  $tempMessage .="Freezer: ". $_SAFE_POST['cust_furniture_freezer'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_stove'] != "" && $_SAFE_POST['cust_furniture_stove'] > 0) { $furnCount = true;  $tempMessage .="Stove: ". $_SAFE_POST['cust_furniture_stove'] ."<br />\r\n" ;} 
-	    save_message();
-
-	    $furnMessage[$itemIndex]['title'] = "Miscellaneous:";
-	    $furnMessage[$itemIndex]['items'] = "";
-	    if($_SAFE_POST['cust_furniture_boxtubs'] != "") { $furnCount = true;  $tempMessage .="Boxes / Plastic Tubs: ". $_SAFE_POST['cust_furniture_boxtubs'] ."<br />\r\n" ;}		
-	    if($_SAFE_POST['cust_furniture_luggage'] != "" && $_SAFE_POST['cust_furniture_luggage'] > 0) { $furnCount = true;  $tempMessage .="Luggage: ". $_SAFE_POST['cust_furniture_luggage'] ."<br />\r\n" ;}
-		if($_SAFE_POST['cust_furniture_bags'] != "" && $_SAFE_POST['cust_furniture_bags'] > 0) { $furnCount = true;  $tempMessage .="Bags: ". $_SAFE_POST['cust_furniture_bags'] ."<br />\r\n" ;}
-		save_message();
 
 		if($furnCount) {
 			$message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;\">Household Items:</h1><br />\r\n";	
@@ -553,7 +589,73 @@
 		} else {
 			str_replace("<h1 style='font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;'>Household Items:</h1><br />\r\n", "", $message);
 		}
-		if($_SAFE_POST['cust_numboxes'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Number of Boxes:</b> ". $_SAFE_POST['cust_numboxes'] ."<br /><br /></span>";
+		if($_SAFE_POST['cust_furniture_attic_misc'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Attic Miscellaneous:</b> ". $_SAFE_POST['cust_furniture_attic_misc'] ."<br /><br /></span>";
+		if($_SAFE_POST['cust_furniture_basement_misc'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Basement Miscellaneous:</b> ". $_SAFE_POST['cust_furniture_basement_misc'] ."<br /><br /></span>";
+		
+		if(isset($_SAFE_POST['specialty_pianos'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Piano"; 
+			if($_SAFE_POST['specialty_pianos_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_pianos_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}
+
+		if(isset($_SAFE_POST['specialty_safes'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Safes"; 
+			if($_SAFE_POST['specialty_safes_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_safes_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}	
+
+		if(isset($_SAFE_POST['specialty_gyms'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Full Gyms"; 
+			if($_SAFE_POST['specialty_gyms_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_gyms_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}	
+
+		if(isset($_SAFE_POST['specialty_hospitalbeds'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Hospital Beds"; 
+			if($_SAFE_POST['specialty_hospitalbeds_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_hospitalbeds_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}	
+
+		if(isset($_SAFE_POST['specialty_toolboxes'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Heavy Toolboxes"; 
+			if($_SAFE_POST['specialty_toolboxes_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_toolboxes_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}
+
+		if(isset($_SAFE_POST['specialty_machinery'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Large Machinery"; 
+			if($_SAFE_POST['specialty_machinery_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_machinery_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}
+
+		if(isset($_SAFE_POST['specialty_worktables'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Work Tables"; 
+			if($_SAFE_POST['specialty_worktables_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_worktables_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}
+
+		if(isset($_SAFE_POST['specialty_trampolines'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Trampolines"; 
+			if($_SAFE_POST['specialty_trampolines_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_trampolines_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}
+
+		if(isset($_SAFE_POST['specialty_pooltables'])) { 
+			$specialtyCount = 1; $specialtyMessage .="Pool Tables"; 
+			if($_SAFE_POST['specialty_pooltables_more'] != "") $specialtyMessage .= " : " .$_SAFE_POST['specialty_pooltables_more'];
+			$specialtyMessage .= "<br />\r\n";
+		}
+
+		if($specialtyCount > 0) {
+			$message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;\">Specialty Items:</h1>";
+			$message .= "<span style=\"color: #000000; font-size: 15px;\">" .$specialtyMessage ."</span>";
+		}
+		
+		$message .="<br /><br />\r\n";
+
+		$message .=""; 	
+
+		if($_SAFE_POST['cust_furniture_boxtubs'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Number of Boxes:</b> ". $_SAFE_POST['cust_furniture_boxtubs'] ."<br /><br /></span>";
 	    if($_SAFE_POST['cust_furniture_other'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Additional Items:</b> ". $_SAFE_POST['cust_furniture_other'] ."<br /><br /></span>";
 	    if($_SAFE_POST['cust_furniture_glass'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Glass Items:</b> ". $_SAFE_POST['cust_furniture_glass'] ."<br /><br /></span>";
 	    if($_SAFE_POST['cust_furniture_ikea'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>Pressboard/IKEA Items:</b> ". $_SAFE_POST['cust_furniture_ikea'] ."<br /><br /></span>";
@@ -570,8 +672,8 @@
 
 		$to = "strongmilemovers@gmail.com";
 
-		// echo $message;
-		// die();
+		echo $message;
+		die();
 		//$to = "michaeljconley@gmail.com";	
 
 		date_default_timezone_set('America/New_York');

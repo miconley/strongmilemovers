@@ -39,6 +39,7 @@
 								$message .="<b>Bedrooms:</b> ". $_POST['apt_brs_alt'][$alt_count]."<br/>";
 								if(isset($_POST['apt_elevator_alt'][$alt_count])) $message .="<b>Elevator:</b> Y<br/>";
 								if(isset($_POST['apt_stairs_alt'][$alt_count])) $message .="<b>Stairs:</b> Y<br/>";
+								if(isset($_POST['apt_multilevel_alt'])) $message .="<b>Multiple levels:</b> Y<br />\r\n";
 								break;
 
 							case "condo_alt":
