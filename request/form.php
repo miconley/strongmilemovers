@@ -228,7 +228,7 @@ UNLOADING INFO
 -->
 
 
-		<div class="formText"><b>UNLOADING</b> Address</div>
+		<div class="formText"><b>UNLOADING</b> Address / Desintation</div>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr" id="cust_addr" maxlength="50" />
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2" id="cust_addr_2" maxlength="50" />
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="City" placeholder="City" type="text" name="cust_city" id="cust_city" maxlength="50" />
@@ -427,7 +427,7 @@ ALTERNATE ADDRESSES
 -->	
 
 
- 		<div class="formText"><b>ADDITIONAL ADDRESSES</b> associated with your move - provide residence types, floors & loading or unloading at locations</div>
+ 		<div class="formText"><b>ADDITIONAL ADDRESSES</b> associated with your move</div>
 		<div class="alt_addresses"></div>
 		<div class="add_address">Click here to add an additional address</div>
 		<!--<textarea class="cust_addr_other" name="cust_addr_other" wrap="soft"></textarea>
@@ -556,7 +556,7 @@ TYPES & QUANTITIES OF POSSESSIONS
 		<div class="formText"><b>FURNITURE INVENTORY</b></div>
 
 
-		<div class="formText">Indicate <b>NUMERICAL QUANTITY ONLY</b> - Leave <b>BLANK</b> if you have none</div>
+		<div class="formText">Indicate <b>NUMERICAL QUANTITY ONLY</b><br/>Leave <b>BLANK</b> if you have none</div>
 
 <!-- 
 
@@ -580,19 +580,18 @@ LIVING ROOM
 		<div class="formText"><b>Living / Family Room / Den</b><div>
 		<div class="furnRow box wide">
 			<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_2seatcouch" maxlength="5" /></div><div class="furnText">2 seat couches - Total</div></div>
-			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_2seatcouch_sleeper" maxlength="5" /></div><div class="furnText">Sleeper</div></div>
-			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_2seatcouch_recliner" maxlength="5" /></div><div class="furnText">Reclining</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_2seatcouch_sleeper" maxlength="5" /></div><div class="furnText"># Sleeper</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_2seatcouch_recliner" maxlength="5" /></div><div class="furnText"># Reclining</div></div>
 		</div>
 		<div class="furnRow box wide">
 			<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch" maxlength="5" /></div><div class="furnText">3 seat couches - Total</div></div>
-			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch_sleeper" maxlength="5" /></div><div class="furnText">Sleeper</div></div>
-			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch_recliner" maxlength="5" /></div><div class="furnText">Reclining</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch_sleeper" maxlength="5" /></div><div class="furnText"># Sleeper</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch_recliner" maxlength="5" /></div><div class="furnText"># Reclining</div></div>
 		</div>
 		<div class="furnRow box wide">
 			<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_secsofa" maxlength="5" /></div><div class="furnText">Sectional Sofa - Total</div></div>
-			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_sections" maxlength="5" /></div><div class="furnText">Sections</div></div>
-			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_sleeper" maxlength="5" /></div><div class="furnText">Sleeper</div></div>
-			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_recliner" maxlength="5" /></div><div class="furnText">Reclining</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_sleeper" maxlength="5" /></div><div class="furnText"># Sleeper</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_recliner" maxlength="5" /></div><div class="furnText"># Reclining</div></div>
 		</div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_recliner" maxlength="5" /></div><div class="furnText">Recliners - Single seat</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_simplechair" maxlength="5" /></div><div class="furnText">Arm Chairs - Single seat</div></div>

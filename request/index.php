@@ -698,8 +698,8 @@
 
 		$to = "strongmilemovers@gmail.com";
 
-		echo $message;
-		die();
+		// echo $message;
+		// die();
 		//$to = "michaeljconley@gmail.com";	
 
 		date_default_timezone_set('America/New_York');

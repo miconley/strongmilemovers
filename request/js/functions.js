@@ -4,7 +4,7 @@ var isAndroid = navigator.userAgent.match(/Android/i) != null;
 
 var isWindowsPhone = navigator.userAgent.match(/Windows Phone/i) != null;
 
-var debug = true;
+var debug = false;
 
 $(function() { 
 
