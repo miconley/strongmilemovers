@@ -59,6 +59,56 @@ $(function() {
 		});
 	})
 
+	$('.cust_furniture_bed_frame').each(function() { 
+		$(this).on('change', function()  {
+			switch($(this).val()) {
+				case "other":
+					$(this).siblings('input').slideDown();
+					break;
+
+				default:
+					$(this).siblings('input').slideUp();
+					$(this).siblings('input').val('What do we need to know?');
+			}
+		});
+	})
+
+	setInterval(function(){
+		if($('#entertainment_center').val() != "" && $('#entertainment_center').val() > 0)  {
+			$('#entertainment_center_dimensions').show();
+		} else {
+			$('#entertainment_center_dimensions').hide();
+		}
+
+		if($('#cust_furniture_desk').val() != "" && $('#cust_furniture_desk').val() > 0)  {
+			$('#fordesks').show();
+		} else {
+			$('#fordesks').hide();
+		}
+	}, 100);
+
+	// $('#entertainment_center').on('change', function()  {
+	// 	if($(this).val() != "" && $(this).val() > 0) {
+	// 		$('#entertainment_center_dimensions').show();
+	// 	} else {
+	// 		$('#entertainment_center_dimensions').hide();
+	// 	}
+	// }).on('focus', function()  {
+	// 	if($(this).val() != "" && $(this).val() > 0) {
+	// 		$('#entertainment_center_dimensions').show();
+	// 	} else {
+	// 		$('#entertainment_center_dimensions').hide();
+	// 	}
+	// }).on('blur', function()  {
+	// 	if($(this).val() != "" && $(this).val() > 0) {
+	// 		$('#entertainment_center_dimensions').show();
+	// 	} else {
+	// 		$('#entertainment_center_dimensions').hide();
+	// 	}
+	// })
+
+
+
 	function show_element(selectedName, selectedIndex)
 
 	{
@@ -661,7 +711,7 @@ function fSubmit()
 
 			if(findObj("cust_state").value == "State (2 letter abbr.)") $("#cust_state").val("");
 
-			if(findObj("other_text").value == "Specify other help needed not listed above") $(".other_text").val("");
+			if(findObj("other_text").value == "Specify other help needed not listed above") findObj("other_text").value = "";
 
 	  		document.forms["strongmile_form"].submit();
 
@@ -1536,8 +1586,6 @@ function ValidateForm()
 
 		{
 
-
-
 			var val = $('.cust_referral').val();
 
 			switch(val){
@@ -1698,6 +1746,30 @@ function ValidateForm()
 		// 	return false;
 
 		// }
+
+		var bedCheck = true;
+
+		$('.cust_furniture_bed_frame').each(function() { 
+			switch($(this).val()) {
+				case "other":
+				if($(this).siblings('input').val() == "" || $(this).siblings('input').val() == "What do we need to know?") {
+
+					alert("Please tell us about your bed frame.");
+
+					findFocus($(this).parent(), '.cust_furniture_bed_other');
+
+					bedCheck = false;
+
+					return false;
+
+				}					
+				break;
+			}
+		})
+
+		if(bedCheck == false) {
+			return false;
+		}
 	}
 
 	return true;

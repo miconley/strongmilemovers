@@ -14,7 +14,7 @@
 		732-754-3626<br/><br/>
 		PLEASE FILL IN AS MUCH INFORMATION AS POSSIBLE TO RECEIVE AN ACCURATE QUOTE:
 	</div>
-	<form id="strongmile_form" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="strongmile_form" method="post">
+	<form id="strongmile_form" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="strongmile_form" method="post" autocomplete="on">
 
 <!-- 
 
@@ -149,7 +149,7 @@ APT From
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs_from" name="apt_brs_from" maxlength="10" />
 			<input type="checkbox" class="apt_elevator_from" name="apt_elevator_from" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs_from" name="apt_stairs_from" value="1">Stairs
-			<input type="checkbox" class="apt_multilevel_from" name="condo_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+			<input type="checkbox" class="apt_multilevel_from" name="apt_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -346,7 +346,7 @@ APT To
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs" name="apt_brs" maxlength="10" />
 			<input type="checkbox" class="apt_elevator" name="apt_elevator" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs" name="apt_stairs" value="1">Stairs
-			<input type="checkbox" class="apt_multilevel" name="condo_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+			<input type="checkbox" class="apt_multilevel" name="apt_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -578,21 +578,34 @@ LIVING ROOM
 -->
 
 		<div class="formText"><b>Living / Family Room / Den</b><div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa" maxlength="5" /></div><div class="furnText">Sectional Sofa</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_sections" maxlength="5" /></div><div class="furnText">How many sections?</div></div>
-		<div class="furnRow"><div class="furnInput_nocheck_thin"><input type="text" name="cust_furniture_secsofa_chaise" maxlength="5" /></div><div class="furnText">Is there a chaise? <font color="#a3a3a3">(Y/N)</font></div></div>
-		<div class="furnRow"></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch" maxlength="5" /></div><div class="furnText">3-Seat Couch</div></div>
-		<div class="furnRow"><div class="furnInput_nocheck_thin"><input type="text" name="cust_furniture_3seatcouch_sleeper" maxlength="5" /></div><div class="furnText">Is it a sleeper sofa? <font color="#a3a3a3">(Y/N)</font></div></div>
-		<div class="furnRow"><div class="furnInput"><input type="text" name="cust_furniture_2seatcouch" maxlength="5" /></div><div class="furnText">2-Seat Couch</div></div>
-		<div class="furnRow"><div class="furnInput_nocheck_thin"><input type="text" name="cust_furniture_2seatcouch_sleeper" maxlength="5" /></div><div class="furnText">Is it a sleeper sofa? <font color="#a3a3a3">(Y/N)</font></div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_recliner" maxlength="5" /></div><div class="furnText">Recliner</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_simplechair" maxlength="5" /></div><div class="furnText">Arm Chair</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_futon" maxlength="5" /></div><div class="furnText">Futon</div></div>
+		<div class="furnRow box wide">
+			<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_2seatcouch" maxlength="5" /></div><div class="furnText">2 seat couches - Total</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_2seatcouch_sleeper" maxlength="5" /></div><div class="furnText">Sleeper</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_2seatcouch_recliner" maxlength="5" /></div><div class="furnText">Reclining</div></div>
+		</div>
+		<div class="furnRow box wide">
+			<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch" maxlength="5" /></div><div class="furnText">3 seat couches - Total</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch_sleeper" maxlength="5" /></div><div class="furnText">Sleeper</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_3seatcouch_recliner" maxlength="5" /></div><div class="furnText">Reclining</div></div>
+		</div>
+		<div class="furnRow box wide">
+			<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_secsofa" maxlength="5" /></div><div class="furnText">Sectional Sofa - Total</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_sections" maxlength="5" /></div><div class="furnText">Sections</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_sleeper" maxlength="5" /></div><div class="furnText">Sleeper</div></div>
+			<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_secsofa_recliner" maxlength="5" /></div><div class="furnText">Reclining</div></div>
+		</div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_recliner" maxlength="5" /></div><div class="furnText">Recliners - Single seat</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_simplechair" maxlength="5" /></div><div class="furnText">Arm Chairs - Single seat</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_rockingchair" maxlength="5" /></div><div class="furnText">Rocking chairs</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_ottoman" maxlength="5" /></div><div class="furnText">Ottoman</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_futon" maxlength="5" /></div><div class="furnText">Futon</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_coffeetable" maxlength="5" /></div><div class="furnText">Coffee Table</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_endtable" maxlength="5" /></div><div class="furnText">End Table</div></div>
-
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_tvstand" maxlength="5" /></div><div class="furnText">Tv Stand</div></div>
+		<div class="furnRow wide"><div class="furnInput"><input id="entertainment_center" type="number" name="cust_furniture_entertainment_center" maxlength="5" /></div><div class="furnText">Entertainment center - Large unit for electronics</div></div>
+		<div class="furnRow" id="entertainment_center_dimensions"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_entertainment_dimensions" maxlength="10" /></div><div class="furnText">Dimensions</div></div>
+		<div class="formText wide nomargin">Other living room items:<div>
+		<input type="text" class="other_text" name="cust_furniture_livingroom_other" />
 
 <!-- 
 
@@ -651,11 +664,22 @@ OFFICE
 -->
 
 		<div class="formText"><b>Office furniture</b><div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk" maxlength="5" /></div><div class="furnText">Desk</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_office_chair" maxlength="5" /></div><div class="furnText">Office Chair</div></div>		
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_bookshelf" maxlength="20" /></div><div class="furnText">Book Shelf (Qty & Sizes)</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_filecabinet" maxlength="5" /></div><div class="furnText">File Cabinet</div></div>
-
+		<div class="furnRow box wide">
+			<div class="furnRow wide"><div class="furnInput"><input id="cust_furniture_desk" type="number" name="cust_furniture_desk" maxlength="5" /></div><div class="furnText">Desks</div></div>
+			<div class="furnRow wide" id="fordesks">
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_simple" maxlength="5" /></div><div class="furnText">Simple rectangular</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_lshape" maxlength="5" /></div><div class="furnText">L-Shape</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_hutch" maxlength="5" /></div><div class="furnText">Hutch top (Shelf backing)</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_cubicle" maxlength="5" /></div><div class="furnText">Cubicle</div></div>
+			</div>
+		</div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_office_chair" maxlength="5" /></div><div class="furnText">Office Chairs</div></div>	
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_filecabinet" maxlength="5" /></div><div class="furnText">File Cabinets</div></div>	
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_cpu_towers" maxlength="20" /></div><div class="furnText">CPU Towers</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_monitors" maxlength="20" /></div><div class="furnText">Monitors</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_copiers" maxlength="20" /></div><div class="furnText">Copiers</div></div>
+		<div class="furnRow wide"><div class="formText wide nomargin">Other office items:<div>
+		<input type="text" class="other_text" name="cust_furniture_office_other" /></div>
 <!--
 
 BEDROOMS
@@ -663,17 +687,20 @@ BEDROOMS
 -->
 
 		<div class="formText"><b>Bedrooms</b><div>
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_mattress" maxlength="20" /></div><div class="furnText top-align">Mattress <font color="#a3a3a3">(Qty & Sizes:<br/>i.e.1K 2Q 2T etc.)</font></div></div>
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_boxspring" maxlength="20" /></div><div class="furnText top-align">Box Spring <font color="#a3a3a3">(Qty & Sizes:<br/>i.e. 1K 2Q 2T etc.)</font></div></div>
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_bedframe" maxlength="20" /></div><div class="furnText top-align">Bed Frame <font color="#a3a3a3">(Qty & Sizes:<br/>i.e. 1K 2Q 2T etc.)</font></div></div>
+		<?php include('beds.php'); ?>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_nightstand" maxlength="5" /></div><div class="furnText">Night Stand</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_dresser" maxlength="5" /></div><div class="furnText">Dresser <font color="#a3a3a3">(low & long)</font></div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_chestofdrawers" maxlength="5" /></div><div class="furnText top-align">Chest Of Drawers<br/><font color="#a3a3a3">(tall & narrower)</font></div></div>
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_armoire" maxlength="20" /></div><div class="furnText top-align">Armoire <font color="#a3a3a3">(Qty & Sizes:<br/>i.e. 1 - 6 x 6 ft.)</font></div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_mirror" maxlength="5" /></div><div class="furnText">Mirror</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_chest" maxlength="5" /></div><div class="furnText">Chest/Trunk</div></div>
-		<div class="formText nomargin">Other Bedroom Items<div>
-		<input type="text" class="other_text" name="cust_furniture_bedroom_other" />
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_mirror" maxlength="5" /></div><div class="furnText">Mirrors</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_dresser" maxlength="5" /></div><div class="furnText top-align">Standard Dresser <font color="#a3a3a3">(Waist high,<br/>Lower and longer dressers)</font></div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_chestofdrawers" maxlength="5" /></div><div class="furnText top-align">Chest Of Drawers <font color="#a3a3a3">(Chest high,<br/>Narrower and taller dressers)</font></div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_trunk" maxlength="5" /></div><div class="furnText">Trunks</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bedroom_chair" maxlength="5" /></div><div class="furnText">Chairs</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_armoire" maxlength="5" /></div><div class="furnText">Armoire </div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_armoire_dimensions" maxlength="20" /></div><div class="furnText">Dimensions</div></div>
+		<div class="furnRow"><input type="checkbox" class="help_cb" id="cust_furniture_armoire_assembled" name="cust_furniture_armoire_assembled" value="1"><label for="cust_furniture_armoire_assembled">Assembed in room?</label></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_wardrobe" maxlength="5" /></div><div class="furnText">Wardrobe</div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_wardrobe_dimensions" maxlength="20" /></div><div class="furnText">Dimensions</div></div>
+		<div class="furnRow"><input type="checkbox" class="help_cb" id="cust_furniture_wardrobe_assembled" name="cust_furniture_wardrobe_assembled" value="1"><label for="cust_furniture_wardrobe_assembled">Assembed in room?</label></div>
+
+		<div class="furnRow wide"><div class="formText nomargin">Other Bedroom Items<div>
+		<input type="text" class="other_text" name="cust_furniture_bedroom_other" /></div>
 
 <!--
 
@@ -691,7 +718,7 @@ APPLIANCES
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_largetoys" maxlength="5" /></div><div class="furnText">Large Toys</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_glidershairs" maxlength="5" /></div><div class="furnText">Glider Chairs</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_kids_changingtables" maxlength="5" /></div><div class="furnText">Changing Tables</div></div>
-		<div class="formText wide nomargin">Others:<div>
+		<div class="formText wide nomargin">Other kid Items:<div>
 		<input type="text" class="other_text" name="cust_furniture_kids_other" />
 
 <!--
@@ -742,24 +769,6 @@ OUTDOOR / GARAGE
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_grill" maxlength="5" /></div><div class="furnText">Grill</div></div>
 		<div class="formText wide nomargin">Other Outdoor Items<div>
 		<input type="text" class="other_text" name="cust_furniture_outside_other" />
-
-<!--
-
-OTHER HOUSEWARES
-
--->
-
-		<div class="formText"><b>Others</b><div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_tv" maxlength="5" /></div><div class="furnText">Tv</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_tvstand" maxlength="5" /></div><div class="furnText">Tv Stand</div></div>
-		<div class="furnRow"><div class="furnInput_nocheck"><input type="text" name="cust_furniture_entertainmentcenter" maxlength="10" /></div><div class="furnText">Ent. Stand (Qty & Sizes)</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_lamp_floor" maxlength="5" /></div><div class="furnText">Floor Lamp</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_lamp_table" maxlength="5" /></div><div class="furnText">Table Lamp</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_rug" maxlength="5" /></div><div class="furnText">Rug</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_toys" maxlength="5" /></div><div class="furnText">Lg. Children's Toys</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_crib" maxlength="5" /></div><div class="furnText">Crib</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_safe" maxlength="5" /></div><div class="furnText">Safe</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_piano" maxlength="5" /></div><div class="furnText">Piano</div></div>
 
 
 <!--

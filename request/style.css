@@ -257,12 +257,18 @@ a { color: #f7941d; }
 
 .furnRow.wide { width: 100%; }
 
+.furnRow.box { 
+	border: 3px solid #fc911d; 
+}
+
+.furnRow.box.wide {
+    width: 99%;
+    padding-left: 2px;
+}
 
 .furnText {
 
 	position: relative;
-
-/*	width:85%;*/
 
 	display: inline-block;
 
@@ -274,11 +280,13 @@ a { color: #f7941d; }
 
 	position: relative;
 
-	width:10%;
+	width: 20px;
 
 	display: inline-block;
 
 	padding: 3px;
+
+	margin-right: 5px;
 
 }
 
@@ -482,6 +490,13 @@ textarea.cust_otherinfo { height: 100px; }
 
 }
 
+
+#entertainment_center_dimensions,
+#fordesks {
+	display: none;
+}
+
+.cust_furniture_bed_other { display: none; }
 @media print {
 	body {
 		color: #000;
@@ -542,6 +557,10 @@ textarea.cust_otherinfo { height: 100px; }
 	#recaptcha_area { zoom: 0.95;}
 	
 	textarea.cust_otherinfo, textarea.cust_importantinfo { font-family: 'Ropa Sans', sans-serif; font-size: 18px; line-height: 20px; width: 97%; resize:none;}
+
+	.furnRow.box select, input {
+		margin-left: 2px;
+	}
 }
 
 input::-webkit-outer-spin-button,
