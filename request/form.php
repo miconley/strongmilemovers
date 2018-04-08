@@ -26,72 +26,78 @@ USER INFO
 			<label for="username">Username</label>
       		<input type="text" name="username">
       	</div>
-      	<div class="formText">Full Name</div>
+      	<div class="formText"><b>FULL NAME</b></div>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Name" placeholder="Name" type="text" name="cust_name" id="cust_name" maxlength="50" class="required"/>
-		<div class="formText">Contact</div>
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Email" placeholder="Email" type="email" name="cust_email" id="cust_email" maxlength="50" />		
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Phone" placeholder="Phone" type="tel" name="cust_phone" id="cust_phone" maxlength="50" class="required" style="width: 200px"/>
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Ext." placeholder="Ext." type="text" name="cust_ext" id="cust_ext" maxlength="50" style="width: 70px" />
+		<div class="formText"><b>PHONE</b></div>
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Phone" placeholder="Phone" type="tel" name="cust_phone" id="cust_phone" maxlength="50" class="required"/>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Alt Phone" placeholder="Alt Phone" type="tel" id="cust_phone_alt" name="cust_phone_alt" maxlength="50" />
+		<div class="formText"><b>EMAIL</b></div>
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Email" placeholder="Email" type="email" name="cust_email" id="cust_email" maxlength="50" />
 		<div class="formText"><b>LOADING</b> Address / Current Residence / Origin</div>
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr_from" id="cust_addr_from" maxlength="50" />
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2_from" id="cust_addr_2_from" maxlength="50" />
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="City" placeholder="City" type="text" name="cust_city_from" id="cust_city_from" maxlength="50" />
-		<select name="cust_state_from" class="cust_state_from"> 
-			<option value="">Select a State</option> 
-			<option value="AL">Alabama</option> 
-			<option value="AK">Alaska</option> 
-			<option value="AZ">Arizona</option> 
-			<option value="AR">Arkansas</option> 
-			<option value="CA">California</option> 
-			<option value="CO">Colorado</option> 
-			<option value="CT">Connecticut</option> 
-			<option value="DE">Delaware</option> 
-			<option value="DC">District Of Columbia</option> 
-			<option value="FL">Florida</option> 
-			<option value="GA">Georgia</option> 
-			<option value="HI">Hawaii</option> 
-			<option value="ID">Idaho</option> 
-			<option value="IL">Illinois</option> 
-			<option value="IN">Indiana</option> 
-			<option value="IA">Iowa</option> 
-			<option value="KS">Kansas</option> 
-			<option value="KY">Kentucky</option> 
-			<option value="LA">Louisiana</option> 
-			<option value="ME">Maine</option> 
-			<option value="MD">Maryland</option> 
-			<option value="MA">Massachusetts</option> 
-			<option value="MI">Michigan</option> 
-			<option value="MN">Minnesota</option> 
-			<option value="MS">Mississippi</option> 
-			<option value="MO">Missouri</option> 
-			<option value="MT">Montana</option> 
-			<option value="NE">Nebraska</option> 
-			<option value="NV">Nevada</option> 
-			<option value="NH">New Hampshire</option> 
-			<option value="NJ">New Jersey</option> 
-			<option value="NM">New Mexico</option> 
-			<option value="NY">New York</option> 
-			<option value="NC">North Carolina</option> 
-			<option value="ND">North Dakota</option> 
-			<option value="OH">Ohio</option> 
-			<option value="OK">Oklahoma</option> 
-			<option value="OR">Oregon</option> 
-			<option value="PA">Pennsylvania</option> 
-			<option value="RI">Rhode Island</option> 
-			<option value="SC">South Carolina</option> 
-			<option value="SD">South Dakota</option> 
-			<option value="TN">Tennessee</option> 
-			<option value="TX">Texas</option> 
-			<option value="UT">Utah</option> 
-			<option value="VT">Vermont</option> 
-			<option value="VA">Virginia</option> 
-			<option value="WA">Washington</option> 
-			<option value="WV">West Virginia</option> 
-			<option value="WI">Wisconsin</option> 
-			<option value="WY">Wyoming</option>
-		</select>
-
+		<div class="furnRow wide">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr_from" id="cust_addr_from" maxlength="50" class="address" />
+		</div>
+		<div class="furnRow wide">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="City" placeholder="City" type="text" name="cust_city_from" id="cust_city_from" maxlength="50" />
+		
+			<select name="cust_state_from" class="cust_state_from"> 
+				<option value="">Select a State</option> 
+				<option value="AL">Alabama</option> 
+				<option value="AK">Alaska</option> 
+				<option value="AZ">Arizona</option> 
+				<option value="AR">Arkansas</option> 
+				<option value="CA">California</option> 
+				<option value="CO">Colorado</option> 
+				<option value="CT">Connecticut</option> 
+				<option value="DE">Delaware</option> 
+				<option value="DC">District Of Columbia</option> 
+				<option value="FL">Florida</option> 
+				<option value="GA">Georgia</option> 
+				<option value="HI">Hawaii</option> 
+				<option value="ID">Idaho</option> 
+				<option value="IL">Illinois</option> 
+				<option value="IN">Indiana</option> 
+				<option value="IA">Iowa</option> 
+				<option value="KS">Kansas</option> 
+				<option value="KY">Kentucky</option> 
+				<option value="LA">Louisiana</option> 
+				<option value="ME">Maine</option> 
+				<option value="MD">Maryland</option> 
+				<option value="MA">Massachusetts</option> 
+				<option value="MI">Michigan</option> 
+				<option value="MN">Minnesota</option> 
+				<option value="MS">Mississippi</option> 
+				<option value="MO">Missouri</option> 
+				<option value="MT">Montana</option> 
+				<option value="NE">Nebraska</option> 
+				<option value="NV">Nevada</option> 
+				<option value="NH">New Hampshire</option> 
+				<option value="NJ">New Jersey</option> 
+				<option value="NM">New Mexico</option> 
+				<option value="NY">New York</option> 
+				<option value="NC">North Carolina</option> 
+				<option value="ND">North Dakota</option> 
+				<option value="OH">Ohio</option> 
+				<option value="OK">Oklahoma</option> 
+				<option value="OR">Oregon</option> 
+				<option value="PA">Pennsylvania</option> 
+				<option value="RI">Rhode Island</option> 
+				<option value="SC">South Carolina</option> 
+				<option value="SD">South Dakota</option> 
+				<option value="TN">Tennessee</option> 
+				<option value="TX">Texas</option> 
+				<option value="UT">Utah</option> 
+				<option value="VT">Vermont</option> 
+				<option value="VA">Virginia</option> 
+				<option value="WA">Washington</option> 
+				<option value="WV">West Virginia</option> 
+				<option value="WI">Wisconsin</option> 
+				<option value="WY">Wyoming</option>
+			</select>
+		</div>
+		<div class="furnRow wide">
+			<br/><input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2_from" id="cust_addr_2_from" maxlength="50" />
+		</div>
 <!-- 
 
 RES TYPE From 
@@ -229,65 +235,70 @@ UNLOADING INFO
 
 
 		<div class="formText"><b>UNLOADING</b> Address / Desintation</div>
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr" id="cust_addr" maxlength="50" />
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2" id="cust_addr_2" maxlength="50" />
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="City" placeholder="City" type="text" name="cust_city" id="cust_city" maxlength="50" />
-		
-		<select name="cust_state" class="cust_state"> 
-			<option value="">Select a State</option> 
-			<option value="AL">Alabama</option> 
-			<option value="AK">Alaska</option> 
-			<option value="AZ">Arizona</option> 
-			<option value="AR">Arkansas</option> 
-			<option value="CA">California</option> 
-			<option value="CO">Colorado</option> 
-			<option value="CT">Connecticut</option> 
-			<option value="DE">Delaware</option> 
-			<option value="DC">District Of Columbia</option> 
-			<option value="FL">Florida</option> 
-			<option value="GA">Georgia</option> 
-			<option value="HI">Hawaii</option> 
-			<option value="ID">Idaho</option> 
-			<option value="IL">Illinois</option> 
-			<option value="IN">Indiana</option> 
-			<option value="IA">Iowa</option> 
-			<option value="KS">Kansas</option> 
-			<option value="KY">Kentucky</option> 
-			<option value="LA">Louisiana</option> 
-			<option value="ME">Maine</option> 
-			<option value="MD">Maryland</option> 
-			<option value="MA">Massachusetts</option> 
-			<option value="MI">Michigan</option> 
-			<option value="MN">Minnesota</option> 
-			<option value="MS">Mississippi</option> 
-			<option value="MO">Missouri</option> 
-			<option value="MT">Montana</option> 
-			<option value="NE">Nebraska</option> 
-			<option value="NV">Nevada</option> 
-			<option value="NH">New Hampshire</option> 
-			<option value="NJ">New Jersey</option> 
-			<option value="NM">New Mexico</option> 
-			<option value="NY">New York</option> 
-			<option value="NC">North Carolina</option> 
-			<option value="ND">North Dakota</option> 
-			<option value="OH">Ohio</option> 
-			<option value="OK">Oklahoma</option> 
-			<option value="OR">Oregon</option> 
-			<option value="PA">Pennsylvania</option> 
-			<option value="RI">Rhode Island</option> 
-			<option value="SC">South Carolina</option> 
-			<option value="SD">South Dakota</option> 
-			<option value="TN">Tennessee</option> 
-			<option value="TX">Texas</option> 
-			<option value="UT">Utah</option> 
-			<option value="VT">Vermont</option> 
-			<option value="VA">Virginia</option> 
-			<option value="WA">Washington</option> 
-			<option value="WV">West Virginia</option> 
-			<option value="WI">Wisconsin</option> 
-			<option value="WY">Wyoming</option>
-		</select>
-
+		<div class="furnRow wide">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr" id="cust_addr" maxlength="50" class="address" />
+		</div>
+		<div class="furnRow wide">
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="City" placeholder="City" type="text" name="cust_city" id="cust_city" maxlength="50" />
+			
+			<select name="cust_state" class="cust_state"> 
+				<option value="">Select a State</option> 
+				<option value="AL">Alabama</option> 
+				<option value="AK">Alaska</option> 
+				<option value="AZ">Arizona</option> 
+				<option value="AR">Arkansas</option> 
+				<option value="CA">California</option> 
+				<option value="CO">Colorado</option> 
+				<option value="CT">Connecticut</option> 
+				<option value="DE">Delaware</option> 
+				<option value="DC">District Of Columbia</option> 
+				<option value="FL">Florida</option> 
+				<option value="GA">Georgia</option> 
+				<option value="HI">Hawaii</option> 
+				<option value="ID">Idaho</option> 
+				<option value="IL">Illinois</option> 
+				<option value="IN">Indiana</option> 
+				<option value="IA">Iowa</option> 
+				<option value="KS">Kansas</option> 
+				<option value="KY">Kentucky</option> 
+				<option value="LA">Louisiana</option> 
+				<option value="ME">Maine</option> 
+				<option value="MD">Maryland</option> 
+				<option value="MA">Massachusetts</option> 
+				<option value="MI">Michigan</option> 
+				<option value="MN">Minnesota</option> 
+				<option value="MS">Mississippi</option> 
+				<option value="MO">Missouri</option> 
+				<option value="MT">Montana</option> 
+				<option value="NE">Nebraska</option> 
+				<option value="NV">Nevada</option> 
+				<option value="NH">New Hampshire</option> 
+				<option value="NJ">New Jersey</option> 
+				<option value="NM">New Mexico</option> 
+				<option value="NY">New York</option> 
+				<option value="NC">North Carolina</option> 
+				<option value="ND">North Dakota</option> 
+				<option value="OH">Ohio</option> 
+				<option value="OK">Oklahoma</option> 
+				<option value="OR">Oregon</option> 
+				<option value="PA">Pennsylvania</option> 
+				<option value="RI">Rhode Island</option> 
+				<option value="SC">South Carolina</option> 
+				<option value="SD">South Dakota</option> 
+				<option value="TN">Tennessee</option> 
+				<option value="TX">Texas</option> 
+				<option value="UT">Utah</option> 
+				<option value="VT">Vermont</option> 
+				<option value="VA">Virginia</option> 
+				<option value="WA">Washington</option> 
+				<option value="WV">West Virginia</option> 
+				<option value="WI">Wisconsin</option> 
+				<option value="WY">Wyoming</option>
+			</select>
+		</div>
+		<div class="furnRow wide">
+				<br/><input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2" id="cust_addr_2" maxlength="50" />
+		</div>
 <!-- 
 
 RES TYPE To 
@@ -527,15 +538,15 @@ HELP TYPE
 		</div>		
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_inhome" name="help_inhome" value="1"><label for="help_inhome">In-Home Assistance</label>
-			<span class="help_desc"> - Relocating furniture on-site, room to room only</span>
+			<span class="help_desc"> - Relocating furniture on-site, room to room</span>
 		</div>	
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_inapt" name="help_inapt" value="1"><label for="help_inapt">In-Building</label>
-			<span class="help_desc"> - Apartment, condo or office move floor to floor or within the same building</span>
+			<span class="help_desc"> - Apt, condo or office moves floor to floor or on the same level</span>
 		</div>
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_incomplex" name="help_incomplex" value="1"><label for="help_incomplex">In-Complex</label>
-			<span class="help_desc"> - Building to building, walking distance moves less than 200 ft. that don't require a truck</span>
+			<span class="help_desc"> - Building to building moves less than 200 ft. not requiring a truck</span>
 		</div>
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Packing services complete</label>
@@ -556,7 +567,7 @@ TYPES & QUANTITIES OF POSSESSIONS
 		<div class="formText"><b>FURNITURE INVENTORY</b></div>
 
 
-		<div class="formText">Indicate <b>NUMERICAL QUANTITY ONLY</b><br/>Leave <b>BLANK</b> if you have none</div>
+		<div class="formText"><b>NUMERICAL QUANTITY ONLY</b><br/>Leave <b>BLANK</b> if you have none</div>
 
 <!-- 
 
@@ -666,10 +677,10 @@ OFFICE
 		<div class="furnRow box wide">
 			<div class="furnRow wide"><div class="furnInput"><input id="cust_furniture_desk" type="number" name="cust_furniture_desk" maxlength="5" /></div><div class="furnText">Desks</div></div>
 			<div class="furnRow wide" id="fordesks">
-				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_simple" maxlength="5" /></div><div class="furnText">Simple rectangular</div></div>
-				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_lshape" maxlength="5" /></div><div class="furnText">L-Shape</div></div>
-				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_hutch" maxlength="5" /></div><div class="furnText">Hutch top (Shelf backing)</div></div>
-				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_cubicle" maxlength="5" /></div><div class="furnText">Cubicle</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_simple" maxlength="5" /></div><div class="furnText"># Simple rectangular</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_lshape" maxlength="5" /></div><div class="furnText"># L-Shape</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_hutch" maxlength="5" /></div><div class="furnText"># Hutch top (Shelf backing)</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_cubicle" maxlength="5" /></div><div class="furnText"># Cubicle</div></div>
 			</div>
 		</div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_office_chair" maxlength="5" /></div><div class="furnText">Office Chairs</div></div>	
@@ -687,15 +698,21 @@ BEDROOMS
 
 		<div class="formText"><b>Bedrooms</b><div>
 		<?php include('beds.php'); ?>
+		<div class="furnRow">
+			<div class="formText">Additional beds with more info</div>
+		</div>
+  		<div class="furnRow">
+			<input type="text" name="cust_furniture_bathroom_other" />
+		</div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_nightstand" maxlength="5" /></div><div class="furnText">Night Stand</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_mirror" maxlength="5" /></div><div class="furnText">Mirrors</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_dresser" maxlength="5" /></div><div class="furnText top-align">Standard Dresser <font color="#a3a3a3">(Waist high,<br/>Lower and longer dressers)</font></div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_chestofdrawers" maxlength="5" /></div><div class="furnText top-align">Chest Of Drawers <font color="#a3a3a3">(Chest high,<br/>Narrower and taller dressers)</font></div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_trunk" maxlength="5" /></div><div class="furnText">Trunks</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bedroom_chair" maxlength="5" /></div><div class="furnText">Chairs</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_armoire" maxlength="5" /></div><div class="furnText">Armoire </div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_armoire_dimensions" maxlength="20" /></div><div class="furnText">Dimensions</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_armoire" maxlength="5" /></div><div class="furnText">Armoire </div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_armoire_dimensions" /></div><div class="furnText">Dimensions</div></div>
 		<div class="furnRow"><input type="checkbox" class="help_cb" id="cust_furniture_armoire_assembled" name="cust_furniture_armoire_assembled" value="1"><label for="cust_furniture_armoire_assembled">Assembed in room?</label></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_wardrobe" maxlength="5" /></div><div class="furnText">Wardrobe</div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_wardrobe_dimensions" maxlength="20" /></div><div class="furnText">Dimensions</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_wardrobe" maxlength="5" /></div><div class="furnText">Wardrobe</div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_wardrobe_dimensions" /></div><div class="furnText">Dimensions</div></div>
 		<div class="furnRow"><input type="checkbox" class="help_cb" id="cust_furniture_wardrobe_assembled" name="cust_furniture_wardrobe_assembled" value="1"><label for="cust_furniture_wardrobe_assembled">Assembed in room?</label></div>
 
 		<div class="furnRow wide"><div class="formText nomargin">Other Bedroom Items<div>
@@ -877,7 +894,7 @@ GLASS
 
 -->
 
-		<div class="formText">List any GLASS items? (Examples: Tops, shelves, doors etc.)</div>
+		<div class="formText">List any GLASS items - (Examples: Tops, shelves, doors etc.)</div>
 		<input type="text" class="cust_furniture_glass" name="cust_furniture_glass" />
 
 <!--

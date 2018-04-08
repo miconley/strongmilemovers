@@ -53,6 +53,10 @@
 					$tempMessage .= "Mechanical";
 					break;
 
+				case "noframe":
+					$tempMessage .= "No frame at all";
+					break;
+
 				case "other":
 					$tempMessage .= "Other frame: ". $_POST['cust_furniture_bed_other'][$alt_count];
 			}				

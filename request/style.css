@@ -401,7 +401,7 @@ input[type="checkbox"] {
 
 }
 
-.other_text, .cust_furniture_other, .cust_furniture_glass, .cust_addr_other { width: 98%;}
+.other_text, .cust_furniture_other, .cust_furniture_glass, .cust_addr_other, .address { width: 97%;}
 
 textarea { height: 200px; }
 textarea.cust_otherinfo, textarea.cust_addr_other, textarea.cust_importantinfo { font-family: 'Ropa Sans', sans-serif; font-size: 18px; line-height: 20px; width: 99%; resize:none;}
@@ -544,7 +544,7 @@ textarea.cust_otherinfo { height: 100px; }
 
 	select { width: 99%; }
 
-	.other_text, .cust_furniture_other, .cust_furniture_glass { width: 96% }
+	.other_text, .cust_furniture_other, .cust_furniture_glass, .address { width: 96% }
 
 	.help_checkbox, .specialty_checkbox { width: 47.5%;}
 

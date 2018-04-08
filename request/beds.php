@@ -32,7 +32,8 @@ for ($bedCount = 1; $bedCount < 5; $bedCount++) {
 				<option value="trundle">Trundle</option>
 				<option value="daybed">Daybed</option>
 				<option value="sleep_number">Sleep Number</option>
-				<option value="machanical">Mechanical</option>
+				<option value="mechanical">Mechanical</option>
+				<option value="noframe">No Frame At All</option>
 				<option value="other">Other</option>
 			</select>
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What do we need to know?" placeholder="What do we need to know?" type="text" class="cust_furniture_bed_other" name="cust_furniture_bed_other[]" />
