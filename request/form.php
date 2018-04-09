@@ -2,14 +2,14 @@
 		<div id="byline" class="top">
 			Professional Moving With A Modern Twist
 		</div>
-		<div class="headerhome"><a href="http://www.strongmilemovers.com" target="_self"><img src="../images/spacer.gif" width="100%" height="100%" border="0"/></a></div>
+		<div class="headerhome"><a target="_parent" href="http://www.strongmilemovers.com"><img src="../images/spacer.gif" width="100%" height="100%" border="0"/></a></div>
 
 		<div id="byline" class="bottom">
 			PLEASE FILL IN AS MUCH INFORMATION AS POSSIBLE TO RECEIVE AN ACCURATE QUOTE:
 		</div>
 	</div>
 	<div id="headerMobile">
-		<img src="../images/header_mobile.jpg" />
+		<img src="images/header_mobile.jpg" />
 		Professional Moving<br />With A Modern Twist<br/>
 		732-754-3626<br/><br/>
 		PLEASE FILL IN AS MUCH INFORMATION AS POSSIBLE TO RECEIVE AN ACCURATE QUOTE:
@@ -523,7 +523,7 @@ HELP TYPE
 
 -->
 
-		<div class="formText">What are you looking for help with?</div>
+		<div class="formText"><b>What are you looking for help with?</b></div>
 		<div class="help_checkbox wide">
 			<input type="checkbox" class="help_cb" id="help_loading_all" name="help_loading_all" value="1"><label for="help_loading_all">Full Transport Move</label>
 			<span class="help_desc"> - Load truck, transport & unload truck</span>
@@ -558,13 +558,13 @@ HELP TYPE
 		</div>
 
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Specify other help needed not listed above" placeholder="Specify other help needed not listed above" type="text" class="other_text" name="other_text" maxlength="30" />
-		<div class="formText nomargin"><font color="#a3a3a3">Only brief service topic here.  Further explanation allowed in open box at bottom of this page.</font></div>
+		<div class="formText nomargin"><font color="#a3a3a3">Only brief service topic here.  Further explanation allowed at bottom of this form.</font></div>
 <!--
 
 TYPES & QUANTITIES OF POSSESSIONS
 
 -->		
-		<div class="formText"><b>FURNITURE INVENTORY</b></div>
+		<div class="formText largeText"><b>FURNITURE INVENTORY</b></div>
 
 
 		<div class="formText"><b>NUMERICAL QUANTITY ONLY</b><br/>Leave <b>BLANK</b> if you have none</div>
@@ -850,8 +850,8 @@ Specialy Items
 		</div>
 
 		<div class="formText">
-			<b>BOXES</b><br />
-			How to pack boxes<br/>
+			<div class="formText largeText"><b>BOXES</b></div>
+			<br/>How to pack boxes<br/>
 			<div class="howtopack_content">
 			<ul>
 			<li><b>Small (16 x 12 x 12)</b><br/>

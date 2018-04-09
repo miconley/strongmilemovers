@@ -36,12 +36,14 @@
 	</div>
 	<div class="listing">
 <?php
-	$dbhost = "requestdb.db.10746628.hostedresource.com";
+	//$dbhost = "requestdb.db.10746628.hostedresource.com";
+	$dbhost = "127.0.0.1";
 	$dbuser = "requestdb";
 	$dbname = "requestdb";
 	$dbpass = "theRinse!2";
-   	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
-   	mysql_select_db($dbname);
+   	//$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   	$mysqli = new mysqli($dbhost , $dbuser, $dbpass, $dbname);
+   //	mysql_select_db($dbname);
 	if(isset($_GET['action'])){
 		switch($_GET['action']) {
 			case "complete":
@@ -74,8 +76,8 @@
 	} else {
 		$sql = "SELECT * FROM requests ORDER BY entrydate DESC";
 	}
+	if ($result = $mysqli->query($sql)) {
 
-	$result = mysql_query( $sql, $conn );
 	?>
 	<table width="100%" cellspacing="4" cellpadding="0" border=1>
 		<tr valign="top">
@@ -87,7 +89,7 @@
 			<td></td>
 		</tr>
 	<?php
-	while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+	while ($row = $result->fetch_assoc()) {
 	?>
 		<tr valign="top">
 			<td><?php echo $row['id'];?></td>
@@ -117,8 +119,10 @@
 	?>
 	</table>
 	<?php
-	mysql_close($conn);
-	
+
+	$result->free();
+	$mysqli->close();
+	}
 ?>
 	</div>
 </div>

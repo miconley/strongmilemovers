@@ -1873,6 +1873,15 @@ $('.add_address').on("click", function() {
 	setTimeout(function() { setFocus(); }, 500);
 });
 
+var otherbed_count = 1;
+$('.add_otherbed').on("click", function() { 
+	$('.otherbeds_container').append('<div class="cont_'+otherbed_count+'">');
+	$('.cont_'+addr_count).append('<div class="formText">Additional Bed - <a href="javascript:void(0);" onclick="removeOtherBed(this.parentNode);" style="text-decoration: none">(X) Remove</a></div>');
+	$('.cont_'+addr_count).append($('<div class="other_bed_'+ otherbed_count +'" id="cust_furniture_bedroom_other" style="padding-bottom: 20px">').load('otherbed.html'));
+	otherbed_count++;
+	setTimeout(function() { setFocus(); }, 500);
+});
+
 function findFocus(obj, className) {
 	setTimeout(function(){
 		console.log(obj);
@@ -1944,6 +1953,11 @@ else if(x.value == x.placeholder)
 }
 
 function removeAddr(div) {
+	console.log(div.parentNode);
+	div.parentNode.remove();
+}
+
+function removeOtherBed(div) {
 	console.log(div.parentNode);
 	div.parentNode.remove();
 }

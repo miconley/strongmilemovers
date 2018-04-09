@@ -53,25 +53,24 @@
 
 	function save_request($name, $entrydate, $info) {
 
-		$dbhost = "requestdb.db.10746628.hostedresource.com";
+		//$dbhost = "requestdb.db.10746628.hostedresource.com";
+		$dbhost = "127.0.0.1";
 		$dbuser = "requestdb";
 		$dbname = "requestdb";
 		$dbpass = "theRinse!2";
-	   	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
-
-		if($conn)
+	   	// $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+	   	$mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+		if(!mysqli_connect_errno())
 		{
-			$name = mysql_real_escape_string($name);
+			$name = $mysqli->real_escape_string($name);
 			$edate = date("Y-m-d H:i:s");
-			$info = mysql_real_escape_string(strip_tags(htmlentities($info), '<br /><br><p><h1><a>'));
+			$info = $mysqli->real_escape_string(strip_tags(htmlentities($info), '<br /><br><p><h1><a>'));
 
 			$sql = "INSERT INTO requests (entrydate, name, info) VALUES ( '". $edate ."', '". $name ."', '". $info ."')";
-			  
-			mysql_select_db($dbname);
+			
+			$mysqli->query($sql);
 
-			mysql_query( $sql, $conn );
-
-			$id = mysql_insert_id();
+			$id = $mysqli->insert_id;
 
 			return $id;
 		}

@@ -1,6 +1,6 @@
 html, body, a {	cursor:  auto;
 
-    cursor:  url(../images/cursor.png) 0 0, pointer;}
+    cursor:  url(images/cursor.png) 0 0, pointer;}
 
 body
 
@@ -16,7 +16,7 @@ body
 
 	line-height: 22px;
 
-	background-image: url("../images/background.jpg");
+	background-image: url("images/background.jpg");
 
 	background-repeat: no-repeat;
 
@@ -235,7 +235,7 @@ a { color: #f7941d; }
 
 .formText.nomargin { margin: 3px 0px;}
 
-
+.formText.largeText { font-size: 35px;}
 
 .halfcont { width: 49%; display: inline-block;}
 
