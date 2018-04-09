@@ -155,7 +155,7 @@ APT From
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs_from" name="apt_brs_from" maxlength="10" />
 			<input type="checkbox" class="apt_elevator_from" name="apt_elevator_from" value="1">Elevator&nbsp;
 			<input type="checkbox" class="apt_stairs_from" name="apt_stairs_from" value="1">Stairs
-			<input type="checkbox" class="apt_multilevel_from" name="apt_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+			<input type="checkbox" class="apt_multilevel_from" name="apt_multilevel_from" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
 		</div>
 
 <!-- 
@@ -506,7 +506,7 @@ REFERRAL
 			<option value="bc">Business Card</option>
 			<option value="uhaul">U-Haul Dealer</option>
 			<option value="mcoc">Metuchen Chamber of Commerce</option>
-			<option value="mcda">Metuchen Downtown Alliance</option>
+			<option value="mda">Metuchen Downtown Alliance</option>
 			<option value="mm">Metuchen Mirror</option>
 			<option value="mll">Metuchen Little League</option>
 			<option value="mccn">Metuchen Classic Car Night</option>

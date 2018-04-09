@@ -163,16 +163,8 @@
 						$message .="<b>Previous Customer:</b> ". $_SAFE_POST['referral_val'];
 						break;
 
-					case "movinghelper":
-						$message .="<b>Website:</b> Moving Helper";
-						break;
-
-					case "movingstaffers":
-						$message .="<b>Website:</b> Moving Staffers";
-						break;
-
-					case "hireahelper":
-						$message .="<b>Website:</b> Hire A Helper";
+					case "facebook":
+						$message .="<b>Website:</b> Facebook Group";
 						break;
 
 					case "angieslist":

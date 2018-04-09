@@ -705,8 +705,6 @@ function fSubmit()
 
 			if(findObj("cust_addr_2").value == "Unit #") $("#cust_addr_2").val("");
 
-			if(findObj("cust_ext").value == "Ext.") $("#cust_ext").val("");
-
 			if(findObj("cust_city").value == "City") $("#cust_city").val("");
 
 			if(findObj("cust_state").value == "State (2 letter abbr.)") $("#cust_state").val("");
