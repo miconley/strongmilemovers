@@ -9,7 +9,7 @@
 			$furnCount = true;
 			$tempMessage .="<b>Bed ". $sub_count . "</b><br />\r\n" ;
 			$tempMessage .= "Size: ". $_POST['cust_furniture_bed_size'][$alt_count] ."<br />\r\n"; 
-			if(isset($_POST['cust_furniture_bed_has_matress'][$alt_count])) $tempMessage .="<b>Matress:</b> Y<br/>\r\n";
+			if(isset($_POST['cust_furniture_bed_has_matress'][$alt_count])) $tempMessage .="<b>Mattress:</b> Y<br/>\r\n";
 			if(isset($_POST['cust_furniture_bed_has_boxspring'][$alt_count])) $tempMessage .="<b>Box Spring:</b> Y<br/>\r\n";				
 
 			switch($_POST['cust_furniture_bed_frame'][$alt_count]){

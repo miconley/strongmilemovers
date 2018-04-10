@@ -74,7 +74,7 @@
 				break;
 		}
 	} else {
-		$sql = "SELECT * FROM requests ORDER BY entrydate DESC";
+		$sql = "SELECT * FROM requests ORDER BY entrydate DESC LIMIT 500";
 	}
 	if ($result = $mysqli->query($sql)) {
 

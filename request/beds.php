@@ -15,7 +15,7 @@ for ($bedCount = 1; $bedCount < 5; $bedCount++) {
 			</select>
 		</div>
 		<div class="furnRow">
-			<input type="checkbox" id="cust_furniture_bed_has_matress<?php echo $bedCount;?>" class="cust_furniture_bed_has_matress" name="cust_furniture_bed_has_matress[]" value="1"><label for="cust_furniture_bed_has_matress<?php echo $bedCount;?>">Matress</label>
+			<input type="checkbox" id="cust_furniture_bed_has_matress<?php echo $bedCount;?>" class="cust_furniture_bed_has_matress" name="cust_furniture_bed_has_matress[]" value="1"><label for="cust_furniture_bed_has_matress<?php echo $bedCount;?>">Mattress</label>
 			<input type="checkbox" id="cust_furniture_bed_has_boxspring<?php echo $bedCount;?>" class="cust_furniture_bed_has_matress" name="cust_furniture_bed_has_boxspring[]" value="1"><label for="cust_furniture_bed_has_boxspring<?php echo $bedCount;?>">Box Spring</label>
 		</div>
 
