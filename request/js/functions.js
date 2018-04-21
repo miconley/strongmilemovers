@@ -4,6 +4,8 @@ var isAndroid = navigator.userAgent.match(/Android/i) != null;
 
 var isWindowsPhone = navigator.userAgent.match(/Windows Phone/i) != null;
 
+var specialtyCheck = true;
+
 var debug = false;
 
 $(function() { 
@@ -1735,37 +1737,56 @@ function ValidateForm()
 			return false;
 		}
 
-		// if($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
+		if($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
 			
-		// 	alert("Please specify an amount of boxes or tubs.");
+			alert("Please specify an amount of boxes or tubs.");
 
-		// 	setTimeout(function(){findObj("cust_furniture_boxtubs").focus();}, 500);
+			setTimeout(function(){findObj("cust_furniture_boxtubs").focus();}, 500);
 
-		// 	return false;
+			return false;
 
-		// }
+		}
 
 		var bedCheck = true;
+
 
 		$('.cust_furniture_bed_frame').each(function() { 
 			switch($(this).val()) {
 				case "other":
-				if($(this).siblings('input').val() == "" || $(this).siblings('input').val() == "What do we need to know?") {
+					if($(this).siblings('input').val() == "" || $(this).siblings('input').val() == "What do we need to know?") {
 
-					alert("Please tell us about your bed frame.");
+						alert("Please tell us about your bed frame.");
 
-					findFocus($(this).parent(), '.cust_furniture_bed_other');
+						findFocus($(this).parent(), '.cust_furniture_bed_other');
 
-					bedCheck = false;
+						bedCheck = false;
 
-					return false;
+						return false;
 
-				}					
+					}		
+				case "":
+					if($(this).parent().parent().find('.cust_furniture_bed_size').val() != "") {
+
+						alert("Please specify a bed frame");
+
+						$(this).focus();
+
+						bedCheck = false;
+
+						return false;
+					}
+
 				break;
 			}
 		})
 
 		if(bedCheck == false) {
+			return false;
+		}
+
+		checkSpecialityItems();
+
+		if(specialtyCheck == false) {
 			return false;
 		}
 	}
@@ -1953,11 +1974,35 @@ else if(x.value == x.placeholder)
 }
 
 function removeAddr(div) {
-	console.log(div.parentNode);
+
 	div.parentNode.remove();
 }
 
 function removeOtherBed(div) {
-	console.log(div.parentNode);
+
 	div.parentNode.remove();
+}
+
+function checkSpecialityItems() {
+	$('.specialty_checkbox').each(function() {
+
+		if($(this).find('input[type="checkbox"]').is(':checked')) {
+			$input = $(this).find('input[type="text"]');
+			$moreInfo = $input.val();
+
+			if($moreInfo == "") {
+				
+				alert("Please tell us about your specialty item.");
+
+				setTimeout(function(){findObj($input.attr('name')).focus();}, 500);
+
+				specialtyCheck = false;
+
+				return false;
+
+			} else {
+				specialtyCheck = true;
+			}			
+		}
+	})
 }

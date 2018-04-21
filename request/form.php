@@ -1,19 +1,4 @@
-	<div id="header">
-		<div id="byline" class="top">
-			Professional Moving With A Modern Twist
-		</div>
-		<div class="headerhome"><a target="_parent" href="http://www.strongmilemovers.com"><img src="../images/spacer.gif" width="100%" height="100%" border="0"/></a></div>
 
-		<div id="byline" class="bottom">
-			PLEASE FILL IN AS MUCH INFORMATION AS POSSIBLE TO RECEIVE AN ACCURATE QUOTE:
-		</div>
-	</div>
-	<div id="headerMobile">
-		<img src="images/header_mobile.jpg" />
-		Professional Moving<br />With A Modern Twist<br/>
-		732-754-3626<br/><br/>
-		PLEASE FILL IN AS MUCH INFORMATION AS POSSIBLE TO RECEIVE AN ACCURATE QUOTE:
-	</div>
 	<form id="strongmile_form" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="strongmile_form" method="post" autocomplete="on">
 
 <!-- 
@@ -579,8 +564,11 @@ MISCELLANEOUS
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_shelves" maxlength="5" /></div><div class="furnText">Book Shelves</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_floorlamps" maxlength="5" /></div><div class="furnText">Floor Lamps</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_tablelamps" maxlength="5" /></div><div class="furnText">Table Lamps</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_pictures" maxlength="5" /></div><div class="furnText">Pictures</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_pictures" maxlength="5" /></div><div class="furnText">Framed Pictures</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_paintings" maxlength="5" /></div><div class="furnText">Paintings</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_misc_rugs" maxlength="5" /></div><div class="furnText">Rugs</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_mirror" maxlength="5" /></div><div class="furnText">Mirrors</div></div>
+
 
 <!--
 
@@ -681,6 +669,8 @@ OFFICE
 				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_lshape" maxlength="5" /></div><div class="furnText"># L-Shape</div></div>
 				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_hutch" maxlength="5" /></div><div class="furnText"># Hutch top (Shelf backing)</div></div>
 				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_cubicle" maxlength="5" /></div><div class="furnText"># Cubicle</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_antique" maxlength="5" /></div><div class="furnText"># Antique</div></div>
+				<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_desk_rolltop" maxlength="5" /></div><div class="furnText"># Roll Top</div></div>
 			</div>
 		</div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_office_chair" maxlength="5" /></div><div class="furnText">Office Chairs</div></div>	
@@ -705,14 +695,13 @@ BEDROOMS
 			<input type="text" name="cust_furniture_bathroom_other" />
 		</div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_nightstand" maxlength="5" /></div><div class="furnText">Night Stand</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_mirror" maxlength="5" /></div><div class="furnText">Mirrors</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_dresser" maxlength="5" /></div><div class="furnText top-align">Standard Dresser <font color="#a3a3a3">(Waist high,<br/>Lower and longer dressers)</font></div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_chestofdrawers" maxlength="5" /></div><div class="furnText top-align">Chest Of Drawers <font color="#a3a3a3">(Chest high,<br/>Narrower and taller dressers)</font></div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_trunk" maxlength="5" /></div><div class="furnText">Trunks</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bedroom_chair" maxlength="5" /></div><div class="furnText">Chairs</div></div>
+		<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_bedroom_chair" maxlength="5" /></div><div class="furnText">Chairs</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_armoire" maxlength="5" /></div><div class="furnText">Armoire </div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_armoire_dimensions" /></div><div class="furnText">Dimensions</div></div>
 		<div class="furnRow"><input type="checkbox" class="help_cb" id="cust_furniture_armoire_assembled" name="cust_furniture_armoire_assembled" value="1"><label for="cust_furniture_armoire_assembled">Assembed in room?</label></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_wardrobe" maxlength="5" /></div><div class="furnText">Wardrobe</div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_wardrobe_dimensions" /></div><div class="furnText">Dimensions</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_wardrobe" maxlength="5" /></div><div class="furnText top-align">Wardrobe<br/>Closet</div><div class="furnInput_nocheck"><input type="text" name="cust_furniture_wardrobe_dimensions" /></div><div class="furnText">Dimensions</div></div>
 		<div class="furnRow"><input type="checkbox" class="help_cb" id="cust_furniture_wardrobe_assembled" name="cust_furniture_wardrobe_assembled" value="1"><label for="cust_furniture_wardrobe_assembled">Assembed in room?</label></div>
 
 		<div class="furnRow wide"><div class="formText nomargin">Other Bedroom Items<div>
@@ -758,8 +747,10 @@ GYM & EXCERCISE
 -->
 
 		<div class="formText"><b>Exercise Equipment</b></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_treadmill" maxlength="5" /></div><div class="furnText">Treadmill</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_elliptical" maxlength="5" /></div><div class="furnText">Elliptical</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_treadmill" maxlength="5" /></div><div class="furnText">Treadmill</div><input type="checkbox" class="help_cb" id="cust_furniture_armoire_assembled" name="cust_furniture_treadmill_assembled" value="1"><label for="cust_furniture_treadmill_assembled">Assembed in room?</label>
+		</div>
+		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_elliptical" maxlength="5" /></div><div class="furnText">Elliptical</div><input type="checkbox" class="help_cb" id="cust_furniture_armoire_assembled" name="cust_furniture_elliptical_assembled" value="1"><label for="cust_furniture_elliptical_assembled">Assembed in room?</label>
+		</div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_stationarybike" maxlength="5" /></div><div class="furnText">Stationary Bike</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_weightbenches" maxlength="5" /></div><div class="furnText">Weight Benches</div></div>
 		<div class="formText nomargin">Other Exercise Equipment<div>
@@ -812,7 +803,8 @@ Specialy Items
 -->
 
 		<div class="formText"><b>Specialty Items</b> - Additional Fees may apply</div>
-		<div class="help_checkbox wide">
+
+		<div class="specialty_checkbox wide">
 			<input type="checkbox" class="specialty_cb" id="specialty_pianos" name="specialty_pianos" value="1"><label for="specialty_pianos">Pianos</label>
 			<span class="specialty_desc">More Info: <input type="text" name="specialty_pianos_more" /></span>
 		</div>		
@@ -878,7 +870,7 @@ Specialy Items
 Box Totals
 
 -->
-		<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_boxtubs" id="cust_furniture_boxtubs" maxlength="5" placeholder="0" /></div><label for="cust_furniture_boxtubs">ESTIMATED TOTAL BOX COUNT </label> <br/> This may be difficult to know precisely.   Try to OVERESTIMATE your box count.</div><br/><Br/>
+		<div class="furnRow wide"><div class="furnInput"><input type="number" name="cust_furniture_boxtubs" id="cust_furniture_boxtubs" maxlength="5"/></div><label for="cust_furniture_boxtubs">ESTIMATED TOTAL BOX COUNT </label> <br/> This may be difficult to know precisely.   Try to OVERESTIMATE your box count.</div><br/><Br/>
 
 <!--
 
@@ -894,7 +886,7 @@ GLASS
 
 -->
 
-		<div class="formText">List any GLASS items - (Examples: Tops, shelves, doors etc.)</div>
+		<div class="formText">List any inventory from above that has GLASS (Examples: Tops, shelves, doors etc.)</div>
 		<input type="text" class="cust_furniture_glass" name="cust_furniture_glass" />
 
 <!--
@@ -902,16 +894,8 @@ GLASS
 PRESS BOARD
 
 -->
-		<div class="formText">List any presswood, pressboard, IKEA style furniture not made of solid wood</div>
+		<div class="formText">List any inventory from above that is presswood, pressboard, IKEA-style furniture that is not made of solid wood</div>
 		<input type="text" class="cust_furniture_glass" name="cust_furniture_ikea" />
-
-<!--
-
-High Value
-
--->
-		<div class="formText">List any high-value items of concern</div>
-		<input type="text" class="cust_furniture_glass" name="cust_furniture_highvalue" />
 
 <!--
 
