@@ -416,6 +416,8 @@
 		if(isset($_SAFE_POST['help_inhome'])) { $helpCount = 1; $helpMessage .="In-Home<br />\r\n"; }
 		if(isset($_SAFE_POST['help_inapt'])) { $helpCount = 1; $helpMessage .="In-Building<br />\r\n"; }
 		if(isset($_SAFE_POST['help_incomplex'])) { $helpCount = 1; $helpMessage .="In-Complex<br />\r\n"; }	
+		if(isset($_SAFE_POST['help_disassembly'])) { $helpCount = 1; $helpMessage .="Disassembly<br />\r\n"; }
+		if(isset($_SAFE_POST['help_assembly'])) { $helpCount = 1; $helpMessage .="Assembly<br />\r\n"; }
 		if(isset($_SAFE_POST['help_packing'])) { $helpCount = 1; $helpMessage .="Box packing (complete)<br />\r\n"; }
 		if(isset($_SAFE_POST['help_packing_partial'])) { $helpCount = 1; $helpMessage .="Box packing (partial)<br />\r\n"; }
 		
@@ -597,7 +599,12 @@
 	    if($_SAFE_POST['cust_furniture_bike'] != "" && $_SAFE_POST['cust_furniture_bike'] > 0) { $furnCount = true;  $tempMessage .="Bicycles: ". $_SAFE_POST['cust_furniture_bike'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_ladder'] != "" && $_SAFE_POST['cust_furniture_ladder'] > 0) { $furnCount = true;  $tempMessage .="Ladders: ". $_SAFE_POST['cust_furniture_ladder'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_snowblower'] != "" && $_SAFE_POST['cust_furniture_snowblower'] > 0) { $furnCount = true;  $tempMessage .="Snow Blower: ". $_SAFE_POST['cust_furniture_snowblower'] ."<br />\r\n" ;} 
-	    if($_SAFE_POST['cust_furniture_lawnmower'] != "" && $_SAFE_POST['cust_furniture_lawnmower'] > 0) { $furnCount = true;  $tempMessage .="Lawn Mower: ". $_SAFE_POST['cust_furniture_lawnmower'] ."<br />\r\n" ;} 
+	    if($_SAFE_POST['cust_furniture_lawnmower'] != "" && $_SAFE_POST['cust_furniture_lawnmower'] > 0) { 
+	    	$furnCount = true;  
+	    	$tempMessage .="Lawn Mower: ". $_SAFE_POST['cust_furniture_lawnmower'];
+	    	if(isset($_SAFE_POST['cust_furniture_lawnmower_push'] )) { $tempMessage .=" - Push: Y<br />\r\n" ; }
+	    	if(isset($_SAFE_POST['cust_furniture_lawnmower_riding'] )) { $tempMessage .=" - Riding: Y<br />\r\n" ; }
+	    } 
 	    if($_SAFE_POST['cust_furniture_outdoor_generator'] != "" && $_SAFE_POST['cust_furniture_outdoor_generator'] > 0) { $furnCount = true;  $tempMessage .="Generators: ". $_SAFE_POST['cust_furniture_outdoor_generator'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_outdoor_boats'] != "" && $_SAFE_POST['cust_furniture_outdoor_boats'] > 0) { $furnCount = true;  $tempMessage .="Boats / Canoes / Kayaks: ". $_SAFE_POST['cust_furniture_outdoor_boats'] ."<br />\r\n" ;} 
 	    if($_SAFE_POST['cust_furniture_outdoor_shelves'] != "" && $_SAFE_POST['cust_furniture_outdoor_shelves'] > 0) { $furnCount = true;  $tempMessage .="Shelves: ". $_SAFE_POST['cust_furniture_outdoor_shelves'] ."<br />\r\n" ;} 

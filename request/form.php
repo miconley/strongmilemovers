@@ -534,14 +534,21 @@ HELP TYPE
 			<span class="help_desc"> - Building to building moves less than 200 ft. not requiring a truck</span>
 		</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Packing services complete</label>
-			<span class="help_desc"> - Packing of ALL loose items throughout your home</span>
+			<input type="checkbox" class="help_cb" id="help_disassembly" name="help_disassembly" value="1"><label for="help_disassembly">Disassembly and reassembly of furniture</label>
 		</div>
 		<div class="help_checkbox wide">
-			<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing">Packing services partial</label>
-			<span class="help_desc"> - Packing of SOME loose items throughout your home</span>
+			<input type="checkbox" class="help_cb" id="help_assembly" name="help_assembly" value="1"><label for="help_assembly">Brand new, out-of-the box initial furniture assembly</label>
 		</div>
-
+		<div class="help_checkbox wide"></div>
+		<div class="help_checkbox wide">
+			<input type="checkbox" class="help_cb" id="help_packing" name="help_packing" value="1"><label for="help_packing">Box packing COMPLETE</label>
+			<span class="help_desc"> - Box packing of ALL loose items</span>
+		</div>
+		<div class="help_checkbox wide">
+			<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing">Box packing PARTIAL</label>
+			<span class="help_desc"> - Box packing of SOME loose items</span>
+		</div>
+		<div class="help_checkbox wide"></div>
 		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Specify other help needed not listed above" placeholder="Specify other help needed not listed above" type="text" class="other_text" name="other_text" maxlength="30" />
 		<div class="formText nomargin"><font color="#a3a3a3">Only brief service topic here.  Further explanation allowed at bottom of this form.</font></div>
 <!--
@@ -765,7 +772,10 @@ OUTDOOR / GARAGE
 		<div class="formText"><b>Outdoor/Garage/Shed</b></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_bike" maxlength="5" /></div><div class="furnText">Bikes</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_ladder" maxlength="5" /></div><div class="furnText">Ladders</div></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_lawnmower" maxlength="5" /></div><div class="furnText">Lawn Mower</div></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_lawnmower" name="cust_furniture_lawnmower" maxlength="5" /></div><div class="furnText">Lawn Mower</div>
+		<input type="checkbox" id="cust_furniture_lawnmower_push" name="cust_furniture_lawnmower_push" value="1"><label for="cust_furniture_lawnmower_push">Push</label>
+			<input type="checkbox" id="cust_furniture_lawnmower_riding" name="cust_furniture_lawnmower_riding" value="1"><label for="cust_furniture_lawnmower_riding">Riding</label>
+		</div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_snowblower" maxlength="5" /></div><div class="furnText">Snow Blower</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_generator" maxlength="5" /></div><div class="furnText">Generators</div></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_outdoor_boats" maxlength="5" /></div><div class="furnText">Boats / Canoes / Kayaks</div></div>
@@ -902,7 +912,8 @@ PRESS BOARD
 IMPORTANT
 
 -->
-		<div class="formText">Tell us more important information about your move</div>
+		<div class="formText">Any additional information regarding your move?<br/>
+PLEASE DO NOT LIST INVENTORY HERE.  FILL OUT FORM ABOVE AS DESIGNED.</div>
 		<textarea class="cust_importantinfo" name="cust_importantinfo" wrap="soft"></textarea>
 
 <!--

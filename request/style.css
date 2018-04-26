@@ -1,12 +1,12 @@
 html, body, a {	cursor:  auto;
 
-    cursor:  url(images/cursor.png) 0 0, pointer;}
+    cursor:  url(images/326.png) 0 0, pointer;}
 
 body
 
 {
 
-	background-color: #000000;
+	background-color: rgba(35,31,32,0.70);
 
 	font-family: 'Ropa Sans', sans-serif;
 
@@ -225,7 +225,7 @@ a { color: #f7941d; }
 
 .formText.nomargin { margin: 3px 0px;}
 
-.formText.largeText { font-size: 35px;}
+.formText.largeText { font-size: 35px; line-height: 35px;}
 
 .halfcont { width: 49%; display: inline-block;}
 

@@ -1737,16 +1737,6 @@ function ValidateForm()
 			return false;
 		}
 
-		if($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
-			
-			alert("Please specify an amount of boxes or tubs.");
-
-			setTimeout(function(){findObj("cust_furniture_boxtubs").focus();}, 500);
-
-			return false;
-
-		}
-
 		var bedCheck = true;
 
 
@@ -1789,6 +1779,34 @@ function ValidateForm()
 		if(specialtyCheck == false) {
 			return false;
 		}
+		
+
+		if($("#cust_furniture_lawnmower").val() != "" && $("#cust_furniture_lawnmower").val() > 0) {
+			
+			if(!$("#cust_furniture_lawnmower_push").is(":checked") && !$("#cust_furniture_lawnmower_riding").is(":checked")) {
+				
+				alert("Please specify the type of lawn mower.");
+
+				setTimeout(function(){ 
+					$("#cust_furniture_lawnmower_push").focus();
+				}, 500);
+
+				return false;
+
+			}
+
+		}
+
+		if($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
+			
+			alert("Please specify an amount of boxes or tubs.");
+
+			setTimeout(function(){findObj("cust_furniture_boxtubs").focus();}, 500);
+
+			return false;
+
+		}
+
 	}
 
 	return true;
