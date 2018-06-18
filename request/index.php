@@ -416,8 +416,8 @@
 		if(isset($_SAFE_POST['help_inhome'])) { $helpCount = 1; $helpMessage .="In-Home<br />\r\n"; }
 		if(isset($_SAFE_POST['help_inapt'])) { $helpCount = 1; $helpMessage .="In-Building<br />\r\n"; }
 		if(isset($_SAFE_POST['help_incomplex'])) { $helpCount = 1; $helpMessage .="In-Complex<br />\r\n"; }	
-		if(isset($_SAFE_POST['help_disassembly'])) { $helpCount = 1; $helpMessage .="Disassembly<br />\r\n"; }
-		if(isset($_SAFE_POST['help_assembly'])) { $helpCount = 1; $helpMessage .="Assembly<br />\r\n"; }
+		if(isset($_SAFE_POST['help_disassembly'])) { $helpCount = 1; $helpMessage .="Disassembly and reassembly of furniture<br />\r\n"; }
+		if(isset($_SAFE_POST['help_assembly'])) { $helpCount = 1; $helpMessage .="Brand new, out-of-the box initial furniture assembly<br />\r\n"; }
 		if(isset($_SAFE_POST['help_packing'])) { $helpCount = 1; $helpMessage .="Box packing (complete)<br />\r\n"; }
 		if(isset($_SAFE_POST['help_packing_partial'])) { $helpCount = 1; $helpMessage .="Box packing (partial)<br />\r\n"; }
 		
@@ -700,6 +700,10 @@
 	    if($_SAFE_POST['cust_importantinfo'] != "") $message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;\">Important Information:</h1><span style=\"color: #000000; font-size: 15px;\">". nl2br($_SAFE_POST['cust_importantinfo']) ."</span><br /><br />\r\n";
 
 		if(isset($_SAFE_POST['furn_move_only'])) $message .="<span style=\"color: #000000; font-size: 15px;\"><b>FURNITURE MOVE ONLY</b><br /><br /></span>";		
+
+		$message .="<span style=\"color: #000000; font-size: 15px;\"><b>Customer form experience:</b>". $_SAFE_POST['experience_type'] ."<br /></span>";
+		
+	    if($_SAFE_POST['experience_moreinfo'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>More info on form experience:</b> ". $_SAFE_POST['experience_moreinfo'] ."<br /><br /></span>";
 
 		$message .= '</div>';
 		$headers = "MIME-Version: 1.0" . "\r\n";

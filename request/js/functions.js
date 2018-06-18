@@ -10,6 +10,8 @@ var debug = false;
 
 $(function() { 
 
+	scrollToTop();
+
 	setFocus();						
 
 	// $('.howtopack').on('click', function(e) { 
@@ -2023,4 +2025,11 @@ function checkSpecialityItems() {
 			}			
 		}
 	})
+}
+
+function scrollToTop() {
+	setTimeout(function() { 
+		window.scrollTo(0, 0);
+		$0parent.scrollTo(0, 0); 
+	}, 500);
 }

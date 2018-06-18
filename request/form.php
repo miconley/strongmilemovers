@@ -918,6 +918,24 @@ PLEASE DO NOT LIST INVENTORY HERE.  FILL OUT FORM ABOVE AS DESIGNED.</div>
 
 <!--
 
+rating
+
+-->
+		<div class="formText"></div>
+		<div class="formText">
+			<fieldset>
+				<legend>Was your experience completing this request form positive?</legend>
+				<input type="radio" name="experience_type" id="experience_good" value="good" checked="checked"><label for="experience_good">Yes</label>
+				<input type="radio" name="experience_type" id="experience_poor" value="poor"><label for="experience_poor">No</label>
+			</fieldset>
+		</div>
+		<div class="furnRow wide">
+			<div class="formText">More info:<input type="text" class="other_text right" name="experience_moreinfo" /></div> 
+		</div>
+
+<!--
+
+
 HUMAN CHECK
 
 -->
