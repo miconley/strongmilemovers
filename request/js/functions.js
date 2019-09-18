@@ -59,7 +59,7 @@ $(function() {
 
 	$('.specialty_cb').each(function() { 
 		$(this).on('change', function()  {
-			$(this).siblings('span').toggle();
+			$(this).siblings('.specialty_desc').toggle();
 		});
 	})
 
