@@ -417,7 +417,7 @@ fieldset legend {
 .other_text, .cust_furniture_other, .cust_furniture_glass, .cust_addr_other, .cust_addr_alt, .address { width: 97%;}
 
 .other_text.right {
-	width: 85%;
+	width: 81%;
     margin-left: 10px;
 }
 
@@ -461,6 +461,8 @@ textarea.cust_otherinfo { height: 100px; }
 	padding: 20px;
 
 	font-size: 35px;
+
+	line-height: 40px;
 
 	background-color: #f7941d;
 

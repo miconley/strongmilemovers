@@ -1742,10 +1742,11 @@ function ValidateForm()
 		var bedCheck = true;
 
 
-		$('.cust_furniture_bed_frame').each(function() { 
+		$('.cust_furniture_bed_frame').each(function() {
+			console.log($(this).val(), $(this));
 			switch($(this).val()) {
 				case "other":
-					if($(this).siblings('input').val() == "" || $(this).siblings('input').val() == "What do we need to know?") {
+					if($(this).siblings('input').val() == "What do we need to know?") {
 
 						alert("Please tell us about your bed frame.");
 
@@ -1757,7 +1758,7 @@ function ValidateForm()
 
 					}		
 				case "":
-					if($(this).parent().parent().find('.cust_furniture_bed_size').val() != "") {
+					if($(this).parent().parent().find('.cust_furniture_bed_size').val() != "" && $(this).val() !== "other") {
 
 						alert("Please specify a bed frame");
 
@@ -2030,6 +2031,6 @@ function checkSpecialityItems() {
 function scrollToTop() {
 	setTimeout(function() { 
 		window.scrollTo(0, 0);
-		$0parent.scrollTo(0, 0); 
+		// $parent.scrollTo(0, 0); 
 	}, 500);
 }

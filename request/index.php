@@ -700,8 +700,6 @@
 	    if($_SAFE_POST['cust_importantinfo'] != "") $message .="<h1 style=\"font-family: Arial, sans-serif; padding: 10px; font-size: 15px; background-color: #f7941d; color: #000000; text-transform: uppercase; margin: 0px 0px 10px 0px; font-weight: bold;\">Important Information:</h1><span style=\"color: #000000; font-size: 15px;\">". nl2br($_SAFE_POST['cust_importantinfo']) ."</span><br /><br />\r\n";
 
 		if(isset($_SAFE_POST['furn_move_only'])) $message .="<span style=\"color: #000000; font-size: 15px;\"><b>FURNITURE MOVE ONLY</b><br /><br /></span>";		
-
-		$message .="<span style=\"color: #000000; font-size: 15px;\"><b>Customer form experience:</b>". $_SAFE_POST['experience_type'] ."<br /></span>";
 		
 	    if($_SAFE_POST['experience_moreinfo'] != "") $message .="<span style=\"color: #000000; font-size: 15px;\"><b>More info on form experience:</b> ". $_SAFE_POST['experience_moreinfo'] ."<br /><br /></span>";
 
