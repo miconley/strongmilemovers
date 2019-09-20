@@ -206,7 +206,8 @@ Other From
 -->
 
 		<div class="other_from">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="More Info Here" placeholder="More Info Here" type="text" class="other_text_from" name="other_text_from" />
+			<label for="other_text_from" class="screen-reader-text">More info Here</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="More Info Here" placeholder="More Info Here" type="text" class="other_text_from"  id="other_text_from" name="other_text_from" />
 		</div>		
 
 		<label for="misc_text_from" class="formText nomargin"><font color="#a3a3a3">Anything else we need to know about this residence? (optional)</font></label>	
@@ -221,12 +222,15 @@ UNLOADING INFO
 
 		<div class="formText"><b>UNLOADING</b> Address / Desintation</div>
 		<div class="furnRow wide">
+			<label for="cust_addr" class="screen-reader-text">Unloading address</label>
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Address" placeholder="Address" type="text" name="cust_addr" id="cust_addr" maxlength="50" class="address" />
 		</div>
 		<div class="furnRow wide">
+			<label for="cust_city" class="screen-reader-text">City</label>
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="City" placeholder="City" type="text" name="cust_city" id="cust_city" maxlength="50" />
 			
-			<select name="cust_state" class="cust_state"> 
+			<label for="cust_state" class="screen-reader-text">State</label>
+			<select id="cust_state" name="cust_state" class="cust_state"> 
 				<option value="">Select a State</option> 
 				<option value="AL">Alabama</option> 
 				<option value="AK">Alaska</option> 
@@ -282,15 +286,16 @@ UNLOADING INFO
 			</select>
 		</div>
 		<div class="furnRow wide">
-				<br/><input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" name="cust_addr_2" id="cust_addr_2" maxlength="50" />
+			<label for="cust_addr_2" class="screen-reader-text">Unit Number</label>
+			<br/><input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit #" placeholder="Unit #" type="text" id="cust_addr_2" name="cust_addr_2" id="cust_addr_2" maxlength="50" />
 		</div>
 <!-- 
 
 RES TYPE To 
 
 -->
-
-		<select class="cust_residence_type" name="cust_residence_type" onchange="show_element(this.name, this.selectedIndex);">
+		<label for="cust_residence_type" class="screen-reader-text">Residence Type</label>
+		<select class="cust_residence_type" id="cust_residence_type" name="cust_residence_type" onchange="show_element(this.name, this.selectedIndex);">
 			<option value="">Select Residence Type / Storage Unit</option>
 			<option value="apt_studio">Studio Apartment</option>
 			<option value="apt">Apartment</option>
@@ -310,12 +315,14 @@ HOME To
 -->
 
 		<div class="home">
-			<input onfocus="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="number" class="home_floor" name="home_floor" maxlength="10" />
-			<input onfocus="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="home_brs" name="home_brs" maxlength="10" />
-			<input type="checkbox" class="home_attic" name="home_attic" value="1">Attic&nbsp;
-			<input type="checkbox" class="home_basement" name="home_basement" value="1">Basement&nbsp;
-			<input type="checkbox" class="home_garage" name="home_garage" value="1">Garage&nbsp;
-			<input type="checkbox" class="home_shed" name="home_shed" value="1">Shed&nbsp;
+			<label for="home_floor" class="screen-reader-text">How Many Floors?</label>
+			<input onfocus="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="number" id="home_floor" class="home_floor" name="home_floor" maxlength="10" />
+			<label for="home_brs" class="screen-reader-text">Number of Bedrooms?</label>
+			<input onfocus="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" id="home_brs" class="home_brs" name="home_brs" maxlength="10" />
+			<input type="checkbox" class="home_attic" id="home_attic" name="home_attic" value="1"><label for="home_attic">Attic&nbsp;</label>
+			<input type="checkbox" class="home_basement" id="home_basement" name="home_basement" value="1"><label for="home_basement">Basement&nbsp;</label>
+			<input type="checkbox" class="home_garage" id="home_garage"name="home_garage" value="1"><label for="home_garage">Garage&nbsp;</label>
+			<input type="checkbox" class="home_shed" id="home_shed" name="home_shed" value="1"><label for="home_shed">Shed&nbsp;</label>
 		</div>
 
 <!-- 
@@ -325,9 +332,10 @@ STUDIO APT To
 -->
 
 		<div class="apt_studio">
+			<label for="apt_studio_floor" class="screen-reader-text">What Floor?</label>
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="apt_studio_floor" name="apt_studio_floor" maxlength="10" />
-			<input type="checkbox" class="apt_studio_elevator" name="apt_studio_elevator" value="1">Elevator&nbsp;
-			<input type="checkbox" class="apt_studio_stairs" name="apt_studio_stairs" value="1">Stairs
+			<input type="checkbox" class="apt_studio_elevator" id="apt_studio_elevator" name="apt_studio_elevator" value="1"><label for="apt_studio_elevator">Elevator&nbsp;</label>
+			<input type="checkbox" class="apt_studio_stairs" id="apt_studio_stairs" name="apt_studio_stairs" value="1"><label for="apt_studio_stairs">Stairs</label>
 		</div>
 
 <!-- 
@@ -337,11 +345,13 @@ APT To
 -->
 
 		<div class="apt">
+			<label for="apt_floor" class="screen-reader-text">What Floor?</label>
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="apt_floor" name="apt_floor" maxlength="10" />
+			<label for="apt_brs" class="screen-reader-text">Number of bedrooms?</label>
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="apt_brs" name="apt_brs" maxlength="10" />
-			<input type="checkbox" class="apt_elevator" name="apt_elevator" value="1">Elevator&nbsp;
-			<input type="checkbox" class="apt_stairs" name="apt_stairs" value="1">Stairs
-			<input type="checkbox" class="apt_multilevel" name="apt_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+			<input type="checkbox" class="apt_elevator" id="apt_elevator" name="apt_elevator" value="1"><label for="apt_elevator">Elevator&nbsp;</label>
+			<input type="checkbox" class="apt_stairs" id="apt_stairs"  name="apt_stairs" value="1"><label for="apt_stairs" >Stairs</label>
+			<input type="checkbox" class="apt_multilevel" id="apt_multilevel" name="apt_multilevel" value="1"><label for="apt_multilevel">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font></label>
 		</div>
 
 <!-- 
@@ -351,11 +361,13 @@ CONDO From
 -->
 
 		<div class="condo">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="condo_floor" name="condo_floor" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="condo_brs" name="condo_brs" maxlength="10" />
-			<input type="checkbox" class="condo_elevator" name="condo_elevator" value="1">Elevator&nbsp;
-			<input type="checkbox" class="condo_stairs" name="condo_stairs" value="1">Stairs<br/>
-			<input type="checkbox" class="condo_multilevel" name="condo_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font>
+			<label for="condo_floor" class="screen-reader-text">What Floor?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="condo_floor" id="condo_floor" name="condo_floor" maxlength="10" />
+			<label for="condo_brs" class="screen-reader-text">Number of bedrooms?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="condo_brs" id="condo_brs" name="condo_brs" maxlength="10" />
+			<input type="checkbox" class="condo_elevator" id="condo_elevator" name="condo_elevator" value="1"><label for="condo_elevator">Elevator&nbsp;</label>
+			<input type="checkbox" class="condo_stairs" id="condo_stairs" name="condo_stairs" value="1"><label for="condo_stairs">Stairs</label><br/>
+			<input type="checkbox" class="condo_multilevel" id="condo_multilevel" name="condo_multilevel" value="1"><label for="condo_multilevel">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font></label>
 		</div>
 
 <!-- 
@@ -365,13 +377,15 @@ THS To
 -->
 
 		<div class="ths">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="number" class="ths_floor" name="ths_floor" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="ths_brs" name="ths_brs" maxlength="10" />
-			<input type="checkbox" class="ths_multilevel" name="ths_multilevel" value="1">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font><br/>
-			<input type="checkbox" class="tha_attic" name="ths_attic" value="1">Attic&nbsp;
-			<input type="checkbox" class="ths_basement" name="ths_basement" value="1">Basement&nbsp;
-			<input type="checkbox" class="ths_garage" name="ths_garage" value="1">Garage&nbsp;
-			<input type="checkbox" class="ths_shed" name="ths_shed" value="1">Shed&nbsp;
+			<label for="ths_floor" class="screen-reader-text">How many Floors?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="How many floors?" placeholder="How many floors?" type="number" class="ths_floor" id="ths_floor" name="ths_floor" maxlength="10" />
+			<label for="ths_brs" class="screen-reader-text">Number of bedrooms?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of bedrooms?" placeholder="# of bedrooms?" type="number" class="ths_brs" id="ths_brs" name="ths_brs" maxlength="10" />
+			<input type="checkbox" class="ths_multilevel" id="ths_multilevel" name="ths_multilevel" value="1"><label for="ths_multilevel">Multi-levels <font color="#a3a3a3">- Multiple floors within unit </font></label><br/>
+			<input type="checkbox" class="tha_attic" id="ths_attic" name="ths_attic" value="1"><label for="ths_attic">Attic&nbsp;</label>
+			<input type="checkbox" class="ths_basement" id="ths_basement" name="ths_basement" value="1"><label for="ths_basement">Basement&nbsp;</label>
+			<input type="checkbox" class="ths_garage" id="ths_garage" name="ths_garage" value="1"><label for="ths_garage">Garage&nbsp;</label>
+			<input type="checkbox" class="ths_shed" id="ths_shed" name="ths_shed" value="1"><label for="ths_shed">Shed&nbsp;</label>
 		</div>	
 
 <!-- 
@@ -381,10 +395,12 @@ OFFICE To
 -->
 
 		<div class="office">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of rooms?" placeholder="# of rooms?" type="number" class="office_rooms" name="office_rooms" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="office_floor" name="office_floor" maxlength="10" />
-			<input type="checkbox" class="office_elevator" name="office_elevator" value="1">Elevator&nbsp;
-			<input type="checkbox" class="office_stairs" name="office_stairs" value="1">Stairs
+			<label for="office_rooms" class="screen-reader-text">Number of rooms?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="# of rooms?" placeholder="# of rooms?" type="number" class="office_rooms" id="office_rooms" name="office_rooms" maxlength="10" />
+			<label for="office_floor" class="screen-reader-text">What Floor?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What floor?" placeholder="What floor?" type="text" class="office_floor" id="office_floor" name="office_floor" maxlength="10" />
+			<input type="checkbox" class="office_elevator" id="office_elevator" name="office_elevator" value="1"><label for="office_elevator">Elevator&nbsp;</label>
+			<input type="checkbox" class="office_stairs" id="office_stairs" name="office_stairs" value="1"><label for="office_stairs">Stairs</label>
 		</div>			
 
 <!-- 
@@ -394,10 +410,12 @@ STORAGE To
 -->
 
 		<div class="storage">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What Floor?" placeholder="What Floor?" type="text" class="storage_floor" name="storage_floor" maxlength="10" />
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit Size (ie 10x10)" placeholder="Unit Size (ie 10x10)" type="text" class="storage_size" name="storage_size" maxlength="30" />
-			<input type="checkbox" class="storage_elevator" name="storage_elevator" value="1">Elevator&nbsp;
-			<input type="checkbox" class="storage_stairs" name="storage_stairs" value="1">Stairs
+			<label for="storage_floor" class="screen-reader-text">What Floor?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="What Floor?" placeholder="What Floor?" type="text" class="storage_floor" id="storage_floor" name="storage_floor" maxlength="10" />
+			<label for="storage_size" class="screen-reader-text">Unit Size (ie 10 by 10)?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Unit Size (ie 10x10)" placeholder="Unit Size (ie 10x10)" type="text" class="storage_size" id="storage_size" name="storage_size" maxlength="30" />
+			<input type="checkbox" class="storage_elevator" id="storage_elevator" name="storage_elevator" value="1"><label for="storage_elevator">Elevator&nbsp;</label>
+			<input type="checkbox" class="storage_stairs" id="storage_stairs" name="storage_stairs" value="1"><label for="storage_stairs">Stairs</label>
 		</div>		
 
 		<br/>
@@ -409,11 +427,12 @@ Other To
 -->
 
 		<div class="other_to">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="More Info Here" placeholder="More Info Here" type="text" class="other_text_to" name="other_text_to" />
+			<label for="other_text_to" class="screen-reader-text">More info Here</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="More Info Here" placeholder="More Info Here" type="text" class="other_text_to" id="other_text_to" name="other_text_to" />
 		</div>	
 
-		<div class="formText nomargin"><font color="#a3a3a3">Anything else we need to know about this residence? (optional)</font></div>	
-		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="" type="text" class="other_text" name="misc_text_to" />
+		<label for="misc_text_to" class="formText nomargin"><font color="#a3a3a3">Anything else we need to know about this residence? (optional)</font></label>	
+		<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="" type="text" class="other_text" id="misc_text_to" name="misc_text_to" />
 
 <!-- 
 
@@ -424,7 +443,7 @@ ALTERNATE ADDRESSES
 
  		<div class="formText"><b>ADDITIONAL ADDRESSES</b> associated with your move</div>
 		<div class="alt_addresses"></div>
-		<div class="add_address">Click here to add an additional address</div>
+		<button class="add_address">Click here to add an additional address</button>
 		<!--<textarea class="cust_addr_other" name="cust_addr_other" wrap="soft"></textarea>
 		<br/> -->
 	</fieldset>
@@ -437,7 +456,7 @@ DATE SERVICE
 	<fieldset aria-label="Service Specifics">
 		<legend class="screen-reader-text">Please provide the following information when you would like us to help you move, how you found out about us, and what kind of help you require</legend>
 		<div class="halfcont">
-			<div class="formText">Preferred date of service:</div>
+			<label for="date_of_service" class="formText">Preferred date of service:</label>
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="text" id="date_of_service" name="date_of_service" />
 		</div>
 
@@ -447,8 +466,8 @@ START TIME
 
 -->
 		<div class="halfcont">
-			<div class="formText">Preferred <b>START TIME</b> of service:</div>
-			<select class="time_of_service" name="time_of_service" >
+			<label for="time_of_service" class="formText">Preferred <b>START TIME</b> of service:</label>
+			<select class="time_of_service" id="time_of_service" name="time_of_service" >
 				<option value="">Please select</option>
 				<option value="morning">Morning 8-9</option>
 				<option value="afternoon">Afternoon 1-3</option>
@@ -461,7 +480,7 @@ ALTERNATE DATE SERVICE
 
 -->
 		<div class="halfcont">
-			<div class="formText">Alternate date of service:</div>
+			<label for="date_of_service_alt" class="formText">Alternate date of service:</label>
 			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="Please select" placeholder="Please select" type="text" id="date_of_service_alt" name="date_of_service_alt" />
 		</div>
 
@@ -497,7 +516,8 @@ REFERRAL
 			<option value="other">Other</option>
 		</select>	
 		<div class="referral">
-			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="" type="text" class="referral_val" name="referral_val" maxlength="255" />
+			<label for="referral_val" class="screen-reader-text">Referred by another?</label>
+			<input onfocus="pHolder(this)" onblur="pHolder(this)" value="" placeholder="" type="text" class="referral_val" id="referral_val" name="referral_val" maxlength="255" />
 		</div>		
 
 <!-- 
@@ -543,7 +563,7 @@ HELP TYPE
 				<span class="help_desc"> - Box packing of ALL loose items</span></label>
 			</div>
 			<div class="help_checkbox wide">
-				<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing">Box packing PARTIAL
+				<input type="checkbox" class="help_cb" id="help_packing_partial" name="help_packing_partial" value="1"><label for="help_packing_partial">Box packing PARTIAL
 				<span class="help_desc"> - Box packing of SOME loose items</span></label>
 			</div>
 		</fieldset>
@@ -701,19 +721,19 @@ BEDROOMS
 		<div class="formText"><b>Bedrooms</b><div>
 		<?php include('beds.php'); ?>
 		<div class="furnRow">
-			<div class="formText">Additional beds with more info</div>
+			<label for="cust_furniture_bathroom_other" class="formText">Additional beds with more info</label>
 		</div>
   		<div class="furnRow">
-			<input type="text" name="cust_furniture_bathroom_other" />
+			<input type="text" id="cust_furniture_bathroom_other" name="cust_furniture_bathroom_other" />
 		</div>
 		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_nightstand"name="cust_furniture_nightstand" maxlength="5" /></div><label for="cust_furniture_nightstand"class="furnText">Night Stand</label></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_dresser" name="cust_furniture_dresser" maxlength="5" /></div><label for="cust_furniture_dresser" class="furnText top-align">Standard Dresser <font color="#a3a3a3">(Waist high,<br/>Lower and longer dressers)</font></label></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_chestofdrawers" name="cust_furniture_chestofdrawers" maxlength="5" /></div><label for="cust_furniture_chestofdrawers" class="furnText top-align">Chest Of Drawers <font color="#a3a3a3">(Chest high,<br/>Narrower and taller dressers)</font></label></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_trunk" name="cust_furniture_trunk" maxlength="5" /></div><label for="cust_furniture_trunk" class="furnText">Trunks</label></div>
 		<div class="furnRow wide"><div class="furnInput"><input type="number" id="cust_furniture_bedroom_chair" ="cust_furniture_bedroom_chair" maxlength="5" /></div><label for="cust_furniture_bedroom_chair" class="furnText">Chairs</label></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_armoire" maxlength="5" /></div><label class="furnText">Armoire </label><div class="furnInput_nocheck"><input type="text" id="cust_furniture_armoire_dimensions" name="cust_furniture_armoire_dimensions" /></div><label for="cust_furniture_armoire_dimensions" class="furnText">Dimensions</label></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_armoire" name="cust_furniture_armoire" maxlength="5" /></div><label for="cust_furniture_armoire" class="furnText">Armoire </label><div class="furnInput_nocheck"><input type="text" id="cust_furniture_armoire_dimensions" name="cust_furniture_armoire_dimensions" /></div><label for="cust_furniture_armoire_dimensions" class="furnText">Dimensions</label></div>
 		<div class="furnRow"><input type="checkbox" class="help_cb" id="cust_furniture_armoire_assembled" name="cust_furniture_armoire_assembled" value="1"><label for="cust_furniture_armoire_assembled">Assembed in room?</label></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" name="cust_furniture_wardrobe" maxlength="5" /></div><label class="furnText top-align">Wardrobe<br/>Closet</label><div class="furnInput_nocheck"><input type="text" id="cust_furniture_armoire_dimensions" name="cust_furniture_armoire_dimensions" name="cust_furniture_armoire_dimensions" /></div><label for="cust_furniture_armoire_dimensions" class="furnText">Dimensions</label></div>
+		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_wardrobe" name="cust_furniture_wardrobe" maxlength="5" /></div><label for="cust_furniture_wardrobe" class="furnText top-align">Wardrobe<br/>Closet</label><div class="furnInput_nocheck"><input type="text" id="cust_furniture_armoire_dimensions" name="cust_furniture_armoire_dimensions" name="cust_furniture_armoire_dimensions" /></div><label for="cust_furniture_armoire_dimensions" class="furnText">Dimensions</label></div>
 		<div class="furnRow"><input type="checkbox" class="help_cb" id="cust_furniture_wardrobe_assembled" name="cust_furniture_wardrobe_assembled" value="1"><label for="cust_furniture_wardrobe_assembled">Assembed in room?</label></div>
 
 		<div class="furnRow wide"><label for="cust_furniture_bedroom_other" class="formText nomargin">Other Bedroom Items</label>
@@ -777,7 +797,7 @@ OUTDOOR / GARAGE
 		<legend class="formText"><b>Outdoor/Garage/Shed</b></legend>
 		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_bike" name="cust_furniture_bike" maxlength="5" /></div><label for="cust_furniture_bike" class="furnText">Bikes</label></div>
 		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_ladder" name="cust_furniture_ladder" maxlength="5" /></div><label for="cust_furniture_ladder" class="furnText">Ladders</label></div>
-		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_lawnmower" name="cust_furniture_lawnmower" maxlength="5" /></div><label class="furnText">Lawn Mower</label>
+		<div class="furnRow"><div class="furnInput"><input type="number" id="cust_furniture_lawnmower" name="cust_furniture_lawnmower" maxlength="5" /></div><label for="cust_furniture_lawnmower" class="furnText">Lawn Mower</label>
 		<input type="checkbox" id="cust_furniture_lawnmower_push" name="cust_furniture_lawnmower_push" value="1"><label for="cust_furniture_lawnmower_push">Push</label>
 			<input type="checkbox" id="cust_furniture_lawnmower_riding" name="cust_furniture_lawnmower_riding" value="1"><label for="cust_furniture_lawnmower_riding">Riding</label>
 		</div>
