@@ -730,8 +730,8 @@
 		    require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 		    $from = "strongmilemovers@gmail.com";
-		    ///$to = "strongmilemovers@gmail.com";
-		    $to = "michaeljconley@gmail.com";	
+		    $to = "strongmilemovers@gmail.com";
+		    // $to = "michaeljconley@gmail.com";	
 		    $headers = "From:" . $from;
 		 
 		    /*
@@ -748,10 +748,10 @@
 		    $mail->SMTPAuth   = TRUE;
 		    $mail->SMTPSecure = "tls";
 		    $mail->Port       = 587;
-		    $mail->Host       = "ssl://smtp.gmail.com";
+		    $mail->Host       = "smtp.gmail.com";
 		    $mail->Username   = "strongmilemovers@gmail.com";
-		    $mail->Password   = "Forgiveness703";
-			// $mail->Password   = "ruxgugtqralcysmh";
+		    $mail->Password   = "ruxgugtqralcysmh";
+
 		    $mail->IsHTML(true);
 		    $mail->AddAddress($to, "Strongmile Movers");
 		    $mail->SetFrom($from, "Strongmile Quote Request");

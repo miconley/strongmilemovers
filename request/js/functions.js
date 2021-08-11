@@ -6,6 +6,8 @@ var isWindowsPhone = navigator.userAgent.match(/Windows Phone/i) != null;
 
 var specialtyCheck = true;
 
+var bedCheck = true;
+
 var debug = false;
 
 $(function() { 
@@ -24,9 +26,23 @@ $(function() {
 	// 	e.preventDefault(); 
 	// 	$('.boxcounts_content').toggle();
 	// });
+	document.querySelector(".submit").addEventListener("click", function(event) {
+		event.preventDefault();
+		fSubmit();
+	}, false);
 
-	setTimeout(function() { $('#captchaDiv').html('<input type="checkbox" name="itshuman" id="itshuman" />'); }, 5000);
+	$('#strongmile_form').on('keyup keypress', function(e) {
+		var keyCode = e.keyCode || e.which;
+		if (keyCode === 13) { 
+		  e.preventDefault();
+		  fSubmit();
+		  return false;
+		}
+	});
 
+
+	setTimeout(function() { 
+		$('#captchaDiv').html('<input type="checkbox" name="itshuman" id="itshuman" />'); }, 5000);
 	});
 
 	var dateToday = new Date();
@@ -38,6 +54,7 @@ $(function() {
 
 	thisVal = obj.val();
 
+	console.log('thisVal', thisVal);
 	var numbers = thisVal.replace(/\D/g, ''),
 
 		char = {0:'(',3:') ',6:' - '};
@@ -55,7 +72,6 @@ $(function() {
 	obj.val(newVal);
 
 	}
-
 
 	$('.specialty_cb').each(function() { 
 		$(this).on('change', function()  {
@@ -125,7 +141,6 @@ $(function() {
 
 		case "cust_residence_type":
 
-			//console.log($('.cust_residence_type').val());
 
 			var val = $('.'+selectedName).val();
 			if(val != "")
@@ -245,7 +260,6 @@ $(function() {
 
 		case "cust_residence_type_from":
 
-			//console.log($('.cust_residence_type_from').val());
 
 			var val = $('.'+selectedName).val();
 
@@ -374,8 +388,6 @@ $(function() {
 
 
 		case "cust_referral":
-
-			//console.log($('.cust_residence_type').val());
 
 			var val = $('.'+selectedName).val();
 
@@ -588,71 +600,14 @@ function show_element_alt(selectedName, selectedAddr){
 
 }
 
-// function validateCaptcha()
-
-// {
-
-//     challengeField = $("input#recaptcha_challenge_field").val();
-
-//     responseField = $("input#recaptcha_response_field").val();
-
-//     console.log(challengeField + ' ' + responseField)
-
-//     var html = $.ajax({
-
-//     type: "POST",
-
-//     url: "recaptcha/captcha.php",
-
-// 	data: { 
-
-//         'challenge': challengeField ,
-
-//         'response': responseField
-
-//     },
-
-//     async: false
-
-//     }).responseText;
-
-//     console.log(html);
-
-//     if(html != "Valid")
-
-//     {
-
-// 		alert("Incorrect captcha answer, please try again!  Sorry, we need to make sure you're a real person.");
-
-// 		findObj("recaptcha_response_field").focus();
-
-// 		$('.captcha').animate({ backgroundColor: "red" }, 1500);
-
-// 		return false;
-
-//     }
-
-//     else
-
-//     {
-
-//         return true;
-
-//     }
-
-// }
-
-
 
 function validateTick()
 
 {
 
-
     if($("#itshuman").attr('checked'))
 
     {
-
     	return true;
 
     }
@@ -677,17 +632,18 @@ function fSubmit()
 
   {
 
-
-
 	  if(ValidateForm())
 
 	  {
-
 	  	//var baz ="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>";
 
 	  	//$('form').get(0).setAttribute('action', 'baz'); //this works
 
 	  	if(validateTick()) {
+
+	  		$(".submit").html('Processing, please wait');
+
+	  		$(".submit").removeAttr('onclick');
 
 	  		if($("#date_of_service_alt").val() == "Please select") $("#date_of_service_alt").val("");
 
@@ -719,6 +675,8 @@ function fSubmit()
 
 	  	}
 
+	  } else {
+		  return false;
 	  }
 
   }
@@ -729,1036 +687,65 @@ function ValidateForm()
 
 {
 
-
 	if(!debug) {
+		if(!valName()) return false;
 
-
-		if (findObj("cust_name").value == "" || findObj("cust_name").value == "Name") {
-
-			alert("You must enter your name.");
-
-			setTimeout(function(){$("#cust_name").focus();}, 500);
-
-			return false;
-
-		}
-
-
+		if(!valPhone()) return false;
 
 		if(!testEmail($("#cust_email"))) return false;
 
+		if(!valFromAddr()) return false;
 
+		if(!valToAddr()) return false;
+		
+		if(!valAltAddr()) return false;
+		
+		if(!valDateOfService()) return false;
+		
+		if(!valTimeOfService()) return false;
 
-		if (findObj("cust_phone").value == "" || findObj("cust_phone").value == "Phone") {
+		if(!valReferral()) return false;
 
+		if(!valHelpType()) return false;
+	}
 
+	var itemNaN = "false";
+	var itemNaNslot;
 
-				alert("You must enter a phone number.");
+	$(".furnInput > input").each(function() { 
+		if($(this).val() != ""  && isNaN($(this).val())) { setTimeout(function(){$(this).focus();}, 500); itemNaN = "true"; itemNaNslot = $(this).attr('name'); return false;}
+	});
 
-				setTimeout(function(){$("#cust_phone").focus();}, 500);
+	if(itemNaN == "true") { 
+		alert("Please enter a numerical value.");  
+		setTimeout(function(){findObj(itemNaNslot).focus();}, 500);
+		return false;
+	}
 
-				return false;
+	bedCheck = true;
+	var bedCount = 1;
+	$('.cust_furniture_bed_frame').each(function() {
+		var bedSize = $(this).parent().parent().find('.cust_furniture_bed_size_'+ bedCount).val();
 
-		}						
+		var allBeds = document.querySelectorAll("[id^='cust_furniture_bed_size']");
 
+		switch($(this).val()) {
+			case "other":
+				if($(this).siblings('input').val() == "What do we need to know?") {
 
+					alert("Please tell us about your bed frame.");
 
+					findFocus($(this).parent(), '.cust_furniture_bed_other');
 
+					bedCheck = false;
 
-		// if (findObj("cust_email").value == "" || findObj("cust_email").value == "Email"){
+					return false;
 
-		// 	alert("Your email is required and appears to be incorrect. Please try again.");
+				}		
+			case "":
+				if(bedSize != "") {
 
-		// 	setTimeout(function(){findObj("cust_email").focus();}, 500);
-
-		// 	return false;
-
-		// } 
-
-
-
-		if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
-
-			if(findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
-
-				alert("You must enter at least one address.");
-
-				setTimeout(function(){findObj("cust_addr_from").focus();}, 500);
-
-				return false;
-
-			}
-
-		} else {
-
-			if(findObj("cust_city_from").value == "" || findObj("cust_city_from").value == "City") {
-
-				alert("You must enter the city of origin.");
-
-				setTimeout(function(){findObj("cust_city_from").focus();}, 500);
-
-				return false;
-
-			}
-
-			if($('.cust_state_from').val() == "") {
-
-				alert("You must enter the state of origin.");
-
-				setTimeout(function(){findObj("cust_state_from").focus();}, 500);
-
-				return false;
-
-			}
-
-
-
-			if($('.cust_residence_type_from').val() != "")
-
-			{
-
-
-
-				var val = $('.cust_residence_type_from').val();
-
-				switch(val){
-
-					case "home_from":
-
-						if (findObj("home_floor_from").value == "" || findObj("home_floor_from").value == "How many floors?") {
-
-								alert("Please specify how many floors you have in your home.");
-
-								setTimeout(function(){findObj("home_floor_from").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("home_brs_from").value == "" || findObj("home_brs_from").value == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your home.");
-
-								setTimeout(function(){findObj("home_brs_from").focus();}, 500);
-
-								return false;
-
-						}								
-
-						break;	
-
-
-					case "apt_studio_from":
-
-						if (findObj("apt_studio_floor_from").value == "" || findObj("apt_studio_floor_from").value == "What floor?") {
-
-								alert("Please specify what floor your studio apartment is on.");
-
-								setTimeout(function(){findObj("apt_studio_floor_from").focus();}, 500);
-
-								return false;
-
-						}
-									
-
-						break;	
-
-
-					case "apt_from":
-
-						if (findObj("apt_floor_from").value == "" || findObj("apt_floor_from").value == "What floor?") {
-
-
-
-								alert("Please specify what floor your apartment is on.");
-
-								setTimeout(function(){findObj("apt_floor_from").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("apt_brs_from").value == "" || findObj("apt_brs_from").value == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your apartment.");
-
-								setTimeout(function(){findObj("apt_brs_from").focus();}, 500);
-
-								return false;
-
-						}										
-
-						break;										
-
-
-					case "condo_from":
-
-						if (findObj("condo_floor_from").value == "" || findObj("condo_floor_from").value == "What floor?") {
-
-								alert("Please specify what floor your condominium is on.");
-
-								setTimeout(function(){findObj("condo_floor_from").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("condo_brs_from").value == "" || findObj("condo_brs_from").value == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your condominium.");
-
-								setTimeout(function(){findObj("condo_brs_from").focus();}, 500);
-
-								return false;
-
-						}										
-
-						break;	
-
-
-					case "ths_from":
-
-						if (findObj("ths_floor_from").value == "" || findObj("ths_floor_from").value == "How many floors?") {
-
-								alert("Please specify how many floors you have in your townhouse.");
-
-								setTimeout(function(){findObj("ths_floor_from").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("ths_brs_from").value == "" || findObj("ths_brs_from").value == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your townhouse.");
-
-								setTimeout(function(){findObj("ths_brs_from").focus();}, 500);
-
-								return false;
-
-						}										
-
-						break;		
-
-
-
-					case "office_from":
-
-						if (findObj("office_rooms_from").value == "" || findObj("office_rooms_from").value == "# of rooms?") {
-
-								alert("Please specify how many rooms your office has.");
-
-								setTimeout(function(){findObj("office_rooms_from").focus();}, 500);
-
-								return false;
-
-						}
-
-						if (findObj("office_floor_from").value == "" || findObj("office_floor_from").value == "What floor?") {
-
-								alert("Please specify what floor your office is on.");
-
-								setTimeout(function(){findObj("office_floor_from").focus();}, 500);
-
-								return false;
-
-						}
-
-						
-
-						break;		
-
-
-
-					case "storage_from":
-
-						if (findObj("storage_floor_from").value == " " || findObj("storage_floor_from").value == "What Floor?") {
-
-								alert("Please specify what floor your storage unit is on.");
-
-								setTimeout(function(){findObj("storage_floor_from").focus();}, 500);
-
-								return false;
-
-						} 
-
-						if (findObj("storage_size_from").value == " " || findObj("storage_size_from").value == "Unit Size (ie 10x10)") {
-
-								alert("Please approximate how large your storage unit is.  For example 10x10");
-
-								setTimeout(function(){findObj("storage_size_from").focus();}, 500);
-
-								return false;
-
-						} 
-
-						break;		
-
-
-					case "other_from":
-
-						if (findObj("other_text_from").value == " " || findObj("other_text_from").value == "More Info Here") {
-
-								alert("Please provide specific about this property.");
-
-								setTimeout(function(){findObj("other_text_from").focus();}, 500);
-
-								return false;
-
-						}
-
-						break;		
-
-				}
-
-			} else {
-
-				alert("You must specify if it's a residence or a storage unit.");
-
-				setTimeout(function(){findObj("cust_residence_type_from").focus();}, 500);
-
-				return false;						
-
-			}
-
-		}
-
-
-		if(findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
-
-			if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
-
-				alert("You must enter at least one address.");
-
-				setTimeout(function(){findObj("cust_addr_from").focus();}, 500);
-
-				return false;
-
-			}
-
-		} else {
-
-			if(findObj("cust_city").value == "" || findObj("cust_city").value == "City") {
-
-				alert("You must enter the destination city.");
-
-				setTimeout(function(){findObj("cust_city").focus();}, 500);
-
-				return false;
-
-			}
-
-			if($('.cust_state').val() == "")
-
-			{
-
-				alert("You must enter the destination state.");
-
-				setTimeout(function(){findObj("cust_state").focus();}, 500);
-
-				return false;
-
-			}
-
-
-
-			if($('.cust_residence_type').val() != "")
-
-			{
-
-
-
-				var val = $('.cust_residence_type').val();
-
-				switch(val){
-
-					case "home":
-
-						if (findObj("home_floor").value == "" || findObj("home_floor").value == "How many floors?") {
-
-								alert("Please specify how many floors you have in your home.");
-
-								setTimeout(function(){findObj("home_floor").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("home_brs").value == "" || findObj("home_brs").value == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your home.");
-
-								setTimeout(function(){findObj("home_brs").focus();}, 500);
-
-								return false;
-
-						}								
-
-						break;	
-
-
-					case "apt_studio":
-
-						if (findObj("apt_studio_floor").value == "" || findObj("apt_studio_floor").value == "What floor?") {
-
-								alert("Please specify what floor your studio apartment is on.");
-
-								setTimeout(function(){findObj("apt_studio_floor").focus();}, 500);
-
-								return false;
-
-						}
-									
-
-						break;	
-
-
-					case "apt":
-
-						if (findObj("apt_floor").value == "" || findObj("apt_floor").value == "What floor?") {
-
-
-
-								alert("Please specify what floor your apartment is on.");
-
-								setTimeout(function(){findObj("apt_floor").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("apt_brs").value == "" || findObj("apt_brs").value == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your apartment.");
-
-								setTimeout(function(){findObj("apt_brs").focus();}, 500);
-
-								return false;
-
-						}										
-
-						break;										
-
-
-					case "condo":
-
-						if (findObj("condo_floor").value == "" || findObj("condo_floor").value == "What floor?") {
-
-								alert("Please specify what floor your condominium is on.");
-
-								setTimeout(function(){findObj("condo_floor").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("condo_brs").value == "" || findObj("condo_brs").value == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your condominium.");
-
-								setTimeout(function(){findObj("condo_brs").focus();}, 500);
-
-								return false;
-
-						}										
-
-						break;	
-
-
-					case "ths":
-
-						if (findObj("ths_floor").value == "" || findObj("ths_floor").value == "How many floors?") {
-
-								alert("Please specify how many floors you have in your townhouse.");
-
-								setTimeout(function(){findObj("ths_floor").focus();}, 500);
-
-								return false;
-
-						}
-
-
-
-						if (findObj("ths_brs").value == "" || findObj("ths_brs").value == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your townhouse.");
-
-								setTimeout(function(){findObj("ths_brs").focus();}, 500);
-
-								return false;
-
-						}										
-
-						break;		
-
-
-
-					case "office":
-
-						if (findObj("office_rooms").value == "" || findObj("office_rooms").value == "# of rooms?") {
-
-								alert("Please specify how many rooms your office has.");
-
-								setTimeout(function(){findObj("office_rooms").focus();}, 500);
-
-								return false;
-
-						}
-
-						if (findObj("office_floor").value == "" || findObj("office_floor").value == "What floor?") {
-
-								alert("Please specify what floor your office is on.");
-
-								setTimeout(function(){findObj("office_floor").focus();}, 500);
-
-								return false;
-
-						}
-
-						
-
-						break;		
-
-
-
-					case "storage":
-
-						if (findObj("storage_floor").value == " " || findObj("storage_floor").value == "What floor?") {
-
-								alert("Please specify what floor your storage unit is on.");
-
-								setTimeout(function(){findObj("storage_floor").focus();}, 500);
-
-								return false;
-
-						}
-
-						if (findObj("storage_size").value == " " || findObj("storage_size").value == "Unit size (ie 10x10)") {
-
-								alert("Please approximate how large your storage unit is.  For example 10x10");
-
-								setTimeout(function(){findObj("storage_size").focus();}, 500);
-
-								return false;
-
-						}
-
-						break;	
-
-					case "other_to":
-
-						if (findObj("other_text_to").value == " " || findObj("other_text_to").value == "More Info Here") {
-
-								alert("Please provide specific about this property.");
-
-								setTimeout(function(){findObj("other_text_to").focus();}, 500);
-
-								return false;
-
-						}
-
-						break;	
-
-				}
-
-			} else{
-
-				alert("You must specify if it's a residence or a storage unit.");
-
-				setTimeout(function(){findObj("cust_residence_type").focus();}, 500);
-
-				return false;										
-
-			}
-
-		}
-
-		for(x = 1; x <= $('div[id^="cust_addr_alt"]').length; x ++) {
-
-			var $that = $('.alt_addr_'+x);
-
-
-			if($that.find(".cust_addr_alt").val() == "" || $that.find(".cust_addr_alt").val() == "Address") {
-
-				alert("You must enter an address.");
-
-				findFocus($that, '.cust_addr_alt');
-
-				return false;
-
-			}
-
-			if($that.find(".cust_city_alt").val() == "" || $that.find(".cust_city_alt").val() == "City") {
-
-				alert("You must enter a city.");
-
-				findFocus($that, '.cust_city_alt');
-
-				return false;
-
-			}
-
-			if($that.find('.cust_state_alt').val() == "")
-
-			{
-
-				alert("You must enter a state.");
-
-				findFocus($that, '.cust_state_alt');
-
-				return false;
-
-			}
-
-
-			var val = $that.find('.cust_res_type_alt').val();
-
-			if(val != "")
-
-			{
-
-				switch(val){
-
-					case "home_alt":
-
-						if ($that.find(".home_floor_alt").val() == "" || $that.find(".home_floor_alt").val() == "How many floors?") {
-
-
-
-								alert("Please specify how many floors you have in your home.");
-
-								findFocus($that, '.home_floor_alt');
-
-								return false;
-
-						}
-
-
-
-						if ($that.find(".home_brs_alt").val() == "" || $that.find(".home_brs_alt").val() == "# of bedrooms?") {
-
-
-
-								alert("Please specify how many bedrooms you have in your home.");
-
-								findFocus($that, '.home_brs_alt');
-
-								return false;
-
-						}											
-
-						break;	
-
-
-					case "apt_studio_alt":
-
-						if ($that.find(".apt_studio_floor_alt").val() == "" || $that.find(".apt_studio_floor_alt").val() == "What floor?") {
-
-								alert("Please specify what floor your studio apartment is on.");
-
-								findFocus($that, '.apt_studio_floor_alt');
-
-								return false;
-
-						}
-
-						break;
-
-
-					case "apt_alt":
-
-						if ($that.find(".apt_floor_alt").val() == "" || $that.find(".apt_floor_alt").val() == "What floor?") {
-
-								alert("Please specify what floor your apartment is on.");
-
-								findFocus($that, '.apt_floor_alt');
-
-								return false;
-
-						}
-
-
-
-						if ($that.find(".apt_brs_alt").val() == "" || $that.find(".apt_brs_alt").val() == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your apartment.");
-
-								findFocus($that, '.apt_brs_alt');
-
-								return false;
-
-						}											
-
-						break;										
-
-
-					case "condo_alt":
-
-						if ($that.find(".condo_floor_alt").val() == "" || $that.find(".condo_floor_alt").val() == "What floor?") {
-
-								alert("Please specify what floor your condominium is on.");
-
-								findFocus($that, '.condo_floor_alt');
-
-								return false;
-
-						}
-
-
-						if ($that.find(".condo_brs_alt").val() == "" || $that.find(".condo_brs_alt").val() == "# of bedrooms?") {
-
-								alert("Please specify how many bedrooms you have in your condominium.");
-
-								findFocus($that, '.condo_brs_alt');
-
-								return false;
-
-						}	
-
-						break;
-
-
-					case "ths_alt":
-
-						if ($that.find(".ths_floor_alt").val() == "" || $that.find(".ths_floor_alt").val() == "How many floors?") {
-
-
-
-								alert("Please specify how many floors you have in your townhouse/duplex.");
-
-								findFocus($that, '.ths_brs_alt');
-
-								return false;
-
-						}
-
-
-
-						if ($that.find(".ths_brs_alt").val() == "" || $that.find(".ths_brs_alt").val() == "# of bedrooms?") {
-
-
-								alert("Please specify how many bedrooms you have in your townhouse/duplex.");
-
-								findFocus($that, '.ths_brs_alt');
-
-								return false;
-
-						}										
-
-						break;		
-
-
-
-					case "office_alt":
-
-						if ($that.find(".office_rooms_alt").val() == "" || $that.find(".office_rooms_alt").val() == "# of rooms?") {
-
-
-								alert("Please specify how many rooms you have in your office.");
-
-								findFocus($that, '.office_rooms_alt');
-
-								return false;
-
-						}		
-
-						if ($that.find(".office_floor_alt").val() == "" || $that.find(".office_floor_alt").val() == "What floor?") {
-
-
-
-								alert("Please specify what floor your office is on.");
-
-								findFocus($that, '.office_brs_alt');
-
-								return false;
-
-						}
-
-						
-						break;
-
-
-
-					case "storage_alt":
-
-
-						if ($that.find(".storage_floor_alt").val() == " " || $that.find(".storage_floor_alt").val() == "What floor?") {
-
-
-
-								alert("Please specify what floor your storage unit is on.");
-
-								findFocus($that, '.storage_floor_alt');
-
-								return false;
-
-						}
-
-						if ($that.find(".storage_size_alt").val() == " " || $that.find(".storage_size_alt").val() == "Unit size (ie 10x10)") {
-
-
-
-								alert("Please approximate how large your storage unit is.  For example 10x10");
-
-								findFocus($that, '.storage_size_alt');
-
-								return false;
-
-						}
-
-
-						break;		
-
-					case "other_alt":
-
-						if (findObj("other_text_alt").value == " " || findObj("other_text_alt").value == "More Info Here") {
-
-								alert("Please provide specific about this property.");
-
-								setTimeout(function(){findObj("other_text_alt").focus();}, 500);
-
-								return false;
-
-						}
-
-						break;	
-
-				}
-			} else{
-
-				alert("You must specify if it's a residence or a storage unit.");
-
-				findFocus($that, '.cust_res_type_alt');
-
-				return false;										
-
-			}
-
-			if ($that.find(".action_alt").val() == "" || $that.find(".action_alt").val() == "Loading/Unloading?") {
-
-				alert("Please specify if we are loading or unloading at this location.");
-
-				findFocus($that, '.action_alt');
-
-				return false;
-
-			}
-		}
-
-
-		if($('#date_of_service').val() == "Please select" || $('#date_of_service').val() == "") {
-
-			alert("Please specify a date of service.");
-
-			setTimeout(function(){findObj("date_of_service").focus();}, 500);
-
-			return false;					
-
-		}
-
-
-
-		if($('.time_of_service').val() == "") {
-
-			alert("Please specify a time of service.");
-
-			setTimeout(function(){findObj("time_of_service").focus();}, 500);
-
-			return false;					
-
-		}
-
-
-
-		if($('.cust_referral').val() != "")
-
-		{
-
-			var val = $('.cust_referral').val();
-
-			switch(val){
-
-				case "sm":
-				case "ff":
-	            case "bc":
-	            case "referredby":
-	            case "uhaul":
-
-					if (findObj("referral_val").value == "" || findObj("referral_val").value == "Who?") {
-
-						alert("Please specify a referral.");
-
-						setTimeout(function(){findObj("referral_val").focus();}, 500);
-
-						return false;
-
-					}
-
-					break;
-
-	            case "iknowjoe":
-
-					if (findObj("referral_val").value == "" || findObj("referral_val").value == "How?") {
-
-						alert("Please specify how you know Joe.");
-
-						setTimeout(function(){findObj("referral_val").focus();}, 500);
-
-						return false;
-
-					}
-
-					break;
-
-				case "previouscustomer":
-
-					if (findObj("referral_val").value == "" || findObj("referral_val").value == "When?") {
-
-						alert("Please specify when we last worked with you.");
-
-						setTimeout(function(){findObj("referral_val").focus();}, 500);
-
-						return false;
-
-					}
-
-					break;
-
-				case "other":
-
-					if (findObj("referral_val").value == "" || findObj("referral_val").value == "Please Specify") {
-
-						alert("Please specify a referral.");
-
-						setTimeout(function(){findObj("referral_val").focus();}, 500);
-
-						return false;
-
-					}
-
-					break;
-
-			}
-
-		} else {
-
-			alert("Please specify a referral.");
-
-			setTimeout(function(){findObj("cust_referral").focus();}, 500);
-
-			return false;
-
-		}
-
-		//if(!testEmail()) { return false } 
-
-
-
-		//if($('#date_of_service').val() == "Please select") $('#date_of_service').val("");
-
-
-// CHECK ADDRESSES ARE PRESENT FOR HELP TYPE
-
-		if($('#help_loading_all').is(":checked") || $('#help_incomplex').is(":checked") || $('#help_inapt').is(":checked")) {
-
-			if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address" || findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
-
-				alert("You must enter both a loading and unloading address.");
-
-				if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
-					var focusTo = "cust_addr_from";
-				} else {
-					var focusTo = "cust_addr";
-				}
-
-				setTimeout(function(){findObj(focusTo).focus();}, 500);
-
-				return false;
-
-			}	
-
-		} else if($('#help_loading').is(":checked")) {
-
-			if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
-
-				alert("You must enter a loading address.");
-				
-				var focusTo = "cust_addr_from";
-				
-				setTimeout(function(){findObj(focusTo).focus();}, 500);
-
-				return false;
-
-			}	
-
-		} else if($('#help_unloading').is(":checked")) {
-
-			if(findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
-
-				alert("You must enter a unloading address.");
-				
-				var focusTo = "cust_addr";
-				
-				setTimeout(function(){findObj(focusTo).focus();}, 500);
-
-				return false;
-
-			}	
-
-		}
-
-
-		var itemNaN = "false";
-		var itemNaNslot;
-
-		$(".furnInput > input").each(function() { 
-
-
-
-			if($(this).val() != ""  && isNaN($(this).val())) { setTimeout(function(){$(this).focus();}, 500); itemNaN = "true"; itemNaNslot = $(this).attr('name'); return false;}
-
-		});
-
-		if(itemNaN == "true") { 
-			alert("Please enter a numerical value.");  
-			setTimeout(function(){findObj(itemNaNslot).focus();}, 500);
-			return false;
-		}
-
-		var bedCheck = true;
-
-
-		$('.cust_furniture_bed_frame').each(function() {
-			console.log($(this).val(), $(this));
-			switch($(this).val()) {
-				case "other":
-					if($(this).siblings('input').val() == "What do we need to know?") {
-
-						alert("Please tell us about your bed frame.");
-
-						findFocus($(this).parent(), '.cust_furniture_bed_other');
-
-						bedCheck = false;
-
-						return false;
-
-					}		
-				case "":
-					if($(this).parent().parent().find('.cust_furniture_bed_size').val() != "" && $(this).val() !== "other") {
+					if($(this).val() !== "other") {
 
 						alert("Please specify a bed frame");
 
@@ -1768,49 +755,27 @@ function ValidateForm()
 
 						return false;
 					}
+				}
 
-				break;
-			}
-		})
-
-		if(bedCheck == false) {
-			return false;
+			break;
 		}
+		bedCount++;
+	})
 
-		checkSpecialityItems();
-
-		if(specialtyCheck == false) {
-			return false;
-		}
-		
-
-		if($("#cust_furniture_lawnmower").val() != "" && $("#cust_furniture_lawnmower").val() > 0) {
-			
-			if(!$("#cust_furniture_lawnmower_push").is(":checked") && !$("#cust_furniture_lawnmower_riding").is(":checked")) {
-				
-				alert("Please specify the type of lawn mower.");
-
-				setTimeout(function(){ 
-					$("#cust_furniture_lawnmower_push").focus();
-				}, 500);
-
-				return false;
-
-			}
-
-		}
-
-		if($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
-			
-			alert("Please specify an amount of boxes or tubs.");
-
-			setTimeout(function(){findObj("cust_furniture_boxtubs").focus();}, 500);
-
-			return false;
-
-		}
-
+	if(!bedCheck) {
+		return false;
 	}
+
+	checkSpecialityItems();
+
+	if(!specialtyCheck) {
+		return false;
+	}
+	
+
+	if(!valMower()) return false;
+
+	if(!valBoxTubs()) return false;
 
 	return true;
 
@@ -1863,8 +828,6 @@ function findObj(n, d) {
 
 
 function testEmail(obj){
-
-
 
 	var email = obj.val();
 
@@ -1926,8 +889,6 @@ $('.add_otherbed').on("click", function() {
 
 function findFocus(obj, className) {
 	setTimeout(function(){
-		console.log(obj);
-		console.log(className);
 		$(obj).find(className).focus();
 	}, 500);
 }
@@ -2030,7 +991,1020 @@ function checkSpecialityItems() {
 
 function scrollToTop() {
 	setTimeout(function() { 
-		window.scrollTo(0, 0);
-		// $parent.scrollTo(0, 0); 
+	parent.postMessage(
+		{
+			pageLoaded: "loaded"
+		},
+		"https://strongmilemovers.com"
+	);
 	}, 500);
+}
+
+function valFromAddr() {
+	if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
+
+		if(findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
+
+			alert("You must enter at least one address.");
+
+			setTimeout(function(){findObj("cust_addr_from").focus();}, 500);
+
+			return false;
+
+		}
+
+	} else {
+
+		if(findObj("cust_city_from").value == "" || findObj("cust_city_from").value == "City") {
+
+			alert("You must enter the city of origin.");
+
+			setTimeout(function(){findObj("cust_city_from").focus();}, 500);
+
+			return false;
+
+		}
+
+		if($('.cust_state_from').val() == "") {
+
+			alert("You must enter the state of origin.");
+
+			setTimeout(function(){findObj("cust_state_from").focus();}, 500);
+
+			return false;
+
+		}
+
+
+
+		if($('.cust_residence_type_from').val() != "")
+
+		{
+
+
+
+			var val = $('.cust_residence_type_from').val();
+
+			switch(val){
+
+				case "home_from":
+
+					if (findObj("home_floor_from").value == "" || findObj("home_floor_from").value == "How many floors?") {
+
+							alert("Please specify how many floors you have in your home.");
+
+							setTimeout(function(){findObj("home_floor_from").focus();}, 500);
+
+							return false;
+
+					}
+
+
+
+					if (findObj("home_brs_from").value == "" || findObj("home_brs_from").value == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your home.");
+
+							setTimeout(function(){findObj("home_brs_from").focus();}, 500);
+
+							return false;
+
+					}								
+
+					break;	
+
+
+				case "apt_studio_from":
+
+					if (findObj("apt_studio_floor_from").value == "" || findObj("apt_studio_floor_from").value == "What floor?") {
+
+							alert("Please specify what floor your studio apartment is on.");
+
+							setTimeout(function(){findObj("apt_studio_floor_from").focus();}, 500);
+
+							return false;
+
+					}
+								
+
+					break;	
+
+
+				case "apt_from":
+
+					if (findObj("apt_floor_from").value == "" || findObj("apt_floor_from").value == "What floor?") {
+
+
+
+							alert("Please specify what floor your apartment is on.");
+
+							setTimeout(function(){findObj("apt_floor_from").focus();}, 500);
+
+							return false;
+
+					}
+
+
+
+					if (findObj("apt_brs_from").value == "" || findObj("apt_brs_from").value == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your apartment.");
+
+							setTimeout(function(){findObj("apt_brs_from").focus();}, 500);
+
+							return false;
+
+					}										
+
+					break;										
+
+
+				case "condo_from":
+
+					if (findObj("condo_floor_from").value == "" || findObj("condo_floor_from").value == "What floor?") {
+
+							alert("Please specify what floor your condominium is on.");
+
+							setTimeout(function(){findObj("condo_floor_from").focus();}, 500);
+
+							return false;
+
+					}
+
+
+
+					if (findObj("condo_brs_from").value == "" || findObj("condo_brs_from").value == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your condominium.");
+
+							setTimeout(function(){findObj("condo_brs_from").focus();}, 500);
+
+							return false;
+
+					}										
+
+					break;	
+
+
+				case "ths_from":
+
+					if (findObj("ths_floor_from").value == "" || findObj("ths_floor_from").value == "How many floors?") {
+
+							alert("Please specify how many floors you have in your townhouse.");
+
+							setTimeout(function(){findObj("ths_floor_from").focus();}, 500);
+
+							return false;
+
+					}
+
+
+
+					if (findObj("ths_brs_from").value == "" || findObj("ths_brs_from").value == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your townhouse.");
+
+							setTimeout(function(){findObj("ths_brs_from").focus();}, 500);
+
+							return false;
+
+					}										
+
+					break;		
+
+
+
+				case "office_from":
+
+					if (findObj("office_rooms_from").value == "" || findObj("office_rooms_from").value == "# of rooms?") {
+
+							alert("Please specify how many rooms your office has.");
+
+							setTimeout(function(){findObj("office_rooms_from").focus();}, 500);
+
+							return false;
+
+					}
+
+					if (findObj("office_floor_from").value == "" || findObj("office_floor_from").value == "What floor?") {
+
+							alert("Please specify what floor your office is on.");
+
+							setTimeout(function(){findObj("office_floor_from").focus();}, 500);
+
+							return false;
+
+					}
+
+					
+
+					break;		
+
+
+
+				case "storage_from":
+
+					if (findObj("storage_floor_from").value == " " || findObj("storage_floor_from").value == "What Floor?") {
+
+							alert("Please specify what floor your storage unit is on.");
+
+							setTimeout(function(){findObj("storage_floor_from").focus();}, 500);
+
+							return false;
+
+					} 
+
+					if (findObj("storage_size_from").value == " " || findObj("storage_size_from").value == "Unit Size (ie 10x10)") {
+
+							alert("Please approximate how large your storage unit is.  For example 10x10");
+
+							setTimeout(function(){findObj("storage_size_from").focus();}, 500);
+
+							return false;
+
+					} 
+
+					break;		
+
+
+				case "other_from":
+
+					if (findObj("other_text_from").value == " " || findObj("other_text_from").value == "More Info Here") {
+
+							alert("Please provide specific about this property.");
+
+							setTimeout(function(){findObj("other_text_from").focus();}, 500);
+
+							return false;
+
+					}
+
+					break;		
+
+			}
+
+		} else {
+
+			alert("You must specify if it's a residence or a storage unit.");
+
+			setTimeout(function(){findObj("cust_residence_type_from").focus();}, 500);
+
+			return false;						
+
+		}
+
+	}
+	return true;
+}
+
+function valToAddr(){
+	if(findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
+
+		if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
+
+			alert("You must enter at least one address.");
+
+			setTimeout(function(){findObj("cust_addr_from").focus();}, 500);
+
+			return false;
+
+		}
+
+	} else {
+
+		if(findObj("cust_city").value == "" || findObj("cust_city").value == "City") {
+
+			alert("You must enter the destination city.");
+
+			setTimeout(function(){findObj("cust_city").focus();}, 500);
+
+			return false;
+
+		}
+
+		if($('.cust_state').val() == "")
+
+		{
+
+			alert("You must enter the destination state.");
+
+			setTimeout(function(){findObj("cust_state").focus();}, 500);
+
+			return false;
+
+		}
+
+
+
+		if($('.cust_residence_type').val() != "")
+
+		{
+
+
+
+			var val = $('.cust_residence_type').val();
+
+			switch(val){
+
+				case "home":
+
+					if (findObj("home_floor").value == "" || findObj("home_floor").value == "How many floors?") {
+
+							alert("Please specify how many floors you have in your home.");
+
+							setTimeout(function(){findObj("home_floor").focus();}, 500);
+
+							return false;
+
+					}
+
+
+
+					if (findObj("home_brs").value == "" || findObj("home_brs").value == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your home.");
+
+							setTimeout(function(){findObj("home_brs").focus();}, 500);
+
+							return false;
+
+					}								
+
+					break;	
+
+
+				case "apt_studio":
+
+					if (findObj("apt_studio_floor").value == "" || findObj("apt_studio_floor").value == "What floor?") {
+
+							alert("Please specify what floor your studio apartment is on.");
+
+							setTimeout(function(){findObj("apt_studio_floor").focus();}, 500);
+
+							return false;
+
+					}
+								
+
+					break;	
+
+
+				case "apt":
+
+					if (findObj("apt_floor").value == "" || findObj("apt_floor").value == "What floor?") {
+
+
+
+							alert("Please specify what floor your apartment is on.");
+
+							setTimeout(function(){findObj("apt_floor").focus();}, 500);
+
+							return false;
+
+					}
+
+
+
+					if (findObj("apt_brs").value == "" || findObj("apt_brs").value == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your apartment.");
+
+							setTimeout(function(){findObj("apt_brs").focus();}, 500);
+
+							return false;
+
+					}										
+
+					break;										
+
+
+				case "condo":
+
+					if (findObj("condo_floor").value == "" || findObj("condo_floor").value == "What floor?") {
+
+							alert("Please specify what floor your condominium is on.");
+
+							setTimeout(function(){findObj("condo_floor").focus();}, 500);
+
+							return false;
+
+					}
+
+
+
+					if (findObj("condo_brs").value == "" || findObj("condo_brs").value == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your condominium.");
+
+							setTimeout(function(){findObj("condo_brs").focus();}, 500);
+
+							return false;
+
+					}										
+
+					break;	
+
+
+				case "ths":
+
+					if (findObj("ths_floor").value == "" || findObj("ths_floor").value == "How many floors?") {
+
+							alert("Please specify how many floors you have in your townhouse.");
+
+							setTimeout(function(){findObj("ths_floor").focus();}, 500);
+
+							return false;
+
+					}
+
+
+
+					if (findObj("ths_brs").value == "" || findObj("ths_brs").value == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your townhouse.");
+
+							setTimeout(function(){findObj("ths_brs").focus();}, 500);
+
+							return false;
+
+					}										
+
+					break;		
+
+
+
+				case "office":
+
+					if (findObj("office_rooms").value == "" || findObj("office_rooms").value == "# of rooms?") {
+
+							alert("Please specify how many rooms your office has.");
+
+							setTimeout(function(){findObj("office_rooms").focus();}, 500);
+
+							return false;
+
+					}
+
+					if (findObj("office_floor").value == "" || findObj("office_floor").value == "What floor?") {
+
+							alert("Please specify what floor your office is on.");
+
+							setTimeout(function(){findObj("office_floor").focus();}, 500);
+
+							return false;
+
+					}
+
+					
+
+					break;		
+
+
+
+				case "storage":
+
+					if (findObj("storage_floor").value == " " || findObj("storage_floor").value == "What floor?") {
+
+							alert("Please specify what floor your storage unit is on.");
+
+							setTimeout(function(){findObj("storage_floor").focus();}, 500);
+
+							return false;
+
+					}
+
+					if (findObj("storage_size").value == " " || findObj("storage_size").value == "Unit size (ie 10x10)") {
+
+							alert("Please approximate how large your storage unit is.  For example 10x10");
+
+							setTimeout(function(){findObj("storage_size").focus();}, 500);
+
+							return false;
+
+					}
+
+					break;	
+
+				case "other_to":
+
+					if (findObj("other_text_to").value == " " || findObj("other_text_to").value == "More Info Here") {
+
+							alert("Please provide specific about this property.");
+
+							setTimeout(function(){findObj("other_text_to").focus();}, 500);
+
+							return false;
+
+					}
+
+					break;	
+
+			}
+
+		} else{
+
+			alert("You must specify if it's a residence or a storage unit.");
+
+			setTimeout(function(){findObj("cust_residence_type").focus();}, 500);
+
+			return false;										
+
+		}
+
+	}
+	return true;
+}
+
+function valAltAddr() {
+	for(x = 1; x <= $('div[id^="cust_addr_alt"]').length; x ++) {
+
+		var $that = $('.alt_addr_'+x);
+
+
+		if($that.find(".cust_addr_alt").val() == "" || $that.find(".cust_addr_alt").val() == "Address") {
+
+			alert("You must enter an address.");
+
+			findFocus($that, '.cust_addr_alt');
+
+			return false;
+
+		}
+
+		if($that.find(".cust_city_alt").val() == "" || $that.find(".cust_city_alt").val() == "City") {
+
+			alert("You must enter a city.");
+
+			findFocus($that, '.cust_city_alt');
+
+			return false;
+
+		}
+
+		if($that.find('.cust_state_alt').val() == "")
+
+		{
+
+			alert("You must enter a state.");
+
+			findFocus($that, '.cust_state_alt');
+
+			return false;
+
+		}
+
+
+		var val = $that.find('.cust_res_type_alt').val();
+
+		if(val != "")
+
+		{
+
+			switch(val){
+
+				case "home_alt":
+
+					if ($that.find(".home_floor_alt").val() == "" || $that.find(".home_floor_alt").val() == "How many floors?") {
+
+
+
+							alert("Please specify how many floors you have in your home.");
+
+							findFocus($that, '.home_floor_alt');
+
+							return false;
+
+					}
+
+
+
+					if ($that.find(".home_brs_alt").val() == "" || $that.find(".home_brs_alt").val() == "# of bedrooms?") {
+
+
+
+							alert("Please specify how many bedrooms you have in your home.");
+
+							findFocus($that, '.home_brs_alt');
+
+							return false;
+
+					}											
+
+					break;	
+
+
+				case "apt_studio_alt":
+
+					if ($that.find(".apt_studio_floor_alt").val() == "" || $that.find(".apt_studio_floor_alt").val() == "What floor?") {
+
+							alert("Please specify what floor your studio apartment is on.");
+
+							findFocus($that, '.apt_studio_floor_alt');
+
+							return false;
+
+					}
+
+					break;
+
+
+				case "apt_alt":
+
+					if ($that.find(".apt_floor_alt").val() == "" || $that.find(".apt_floor_alt").val() == "What floor?") {
+
+							alert("Please specify what floor your apartment is on.");
+
+							findFocus($that, '.apt_floor_alt');
+
+							return false;
+
+					}
+
+
+
+					if ($that.find(".apt_brs_alt").val() == "" || $that.find(".apt_brs_alt").val() == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your apartment.");
+
+							findFocus($that, '.apt_brs_alt');
+
+							return false;
+
+					}											
+
+					break;										
+
+
+				case "condo_alt":
+
+					if ($that.find(".condo_floor_alt").val() == "" || $that.find(".condo_floor_alt").val() == "What floor?") {
+
+							alert("Please specify what floor your condominium is on.");
+
+							findFocus($that, '.condo_floor_alt');
+
+							return false;
+
+					}
+
+
+					if ($that.find(".condo_brs_alt").val() == "" || $that.find(".condo_brs_alt").val() == "# of bedrooms?") {
+
+							alert("Please specify how many bedrooms you have in your condominium.");
+
+							findFocus($that, '.condo_brs_alt');
+
+							return false;
+
+					}	
+
+					break;
+
+
+				case "ths_alt":
+
+					if ($that.find(".ths_floor_alt").val() == "" || $that.find(".ths_floor_alt").val() == "How many floors?") {
+
+
+
+							alert("Please specify how many floors you have in your townhouse/duplex.");
+
+							findFocus($that, '.ths_brs_alt');
+
+							return false;
+
+					}
+
+
+
+					if ($that.find(".ths_brs_alt").val() == "" || $that.find(".ths_brs_alt").val() == "# of bedrooms?") {
+
+
+							alert("Please specify how many bedrooms you have in your townhouse/duplex.");
+
+							findFocus($that, '.ths_brs_alt');
+
+							return false;
+
+					}										
+
+					break;		
+
+
+
+				case "office_alt":
+
+					if ($that.find(".office_rooms_alt").val() == "" || $that.find(".office_rooms_alt").val() == "# of rooms?") {
+
+
+							alert("Please specify how many rooms you have in your office.");
+
+							findFocus($that, '.office_rooms_alt');
+
+							return false;
+
+					}		
+
+					if ($that.find(".office_floor_alt").val() == "" || $that.find(".office_floor_alt").val() == "What floor?") {
+
+
+
+							alert("Please specify what floor your office is on.");
+
+							findFocus($that, '.office_brs_alt');
+
+							return false;
+
+					}
+
+					
+					break;
+
+
+
+				case "storage_alt":
+
+
+					if ($that.find(".storage_floor_alt").val() == " " || $that.find(".storage_floor_alt").val() == "What floor?") {
+
+
+
+							alert("Please specify what floor your storage unit is on.");
+
+							findFocus($that, '.storage_floor_alt');
+
+							return false;
+
+					}
+
+					if ($that.find(".storage_size_alt").val() == " " || $that.find(".storage_size_alt").val() == "Unit size (ie 10x10)") {
+
+
+
+							alert("Please approximate how large your storage unit is.  For example 10x10");
+
+							findFocus($that, '.storage_size_alt');
+
+							return false;
+
+					}
+
+
+					break;		
+
+				case "other_alt":
+
+					if (findObj("other_text_alt").value == " " || findObj("other_text_alt").value == "More Info Here") {
+
+							alert("Please provide specific about this property.");
+
+							setTimeout(function(){findObj("other_text_alt").focus();}, 500);
+
+							return false;
+
+					}
+
+					break;	
+
+			}
+		} else{
+
+			alert("You must specify if it's a residence or a storage unit.");
+
+			findFocus($that, '.cust_res_type_alt');
+
+			return false;										
+
+		}
+
+		if ($that.find(".action_alt").val() == "" || $that.find(".action_alt").val() == "Loading/Unloading?") {
+
+			alert("Please specify if we are loading or unloading at this location.");
+
+			findFocus($that, '.action_alt');
+
+			return false;
+
+		}
+	}
+
+	return true;
+}
+
+function valReferral() {
+	if($('.cust_referral').val() != "")
+
+		{
+
+			var val = $('.cust_referral').val();
+
+			switch(val){
+
+				case "sm":
+				case "ff":
+				case "bc":
+				case "referredby":
+				case "uhaul":
+
+					if (findObj("referral_val").value == "" || findObj("referral_val").value == "Who?") {
+
+						alert("Please specify a referral.");
+
+						setTimeout(function(){findObj("referral_val").focus();}, 500);
+
+						return false;
+
+					}
+
+					break;
+
+				case "iknowjoe":
+
+					if (findObj("referral_val").value == "" || findObj("referral_val").value == "How?") {
+
+						alert("Please specify how you know Joe.");
+
+						setTimeout(function(){findObj("referral_val").focus();}, 500);
+
+						return false;
+
+					}
+
+					break;
+
+				case "previouscustomer":
+
+					if (findObj("referral_val").value == "" || findObj("referral_val").value == "When?") {
+
+						alert("Please specify when we last worked with you.");
+
+						setTimeout(function(){findObj("referral_val").focus();}, 500);
+
+						return false;
+
+					}
+
+					break;
+
+				case "other":
+
+					if (findObj("referral_val").value == "" || findObj("referral_val").value == "Please Specify") {
+
+						alert("Please specify a referral.");
+
+						setTimeout(function(){findObj("referral_val").focus();}, 500);
+
+						return false;
+
+					}
+
+					break;
+
+			}
+
+		} else {
+
+			alert("Please specify a referral.");
+
+			setTimeout(function(){findObj("cust_referral").focus();}, 500);
+
+			return false;
+
+		}
+		return true;
+}
+
+function valHelpType() {
+	if($('#help_loading_all').is(":checked") || $('#help_incomplex').is(":checked") || $('#help_inapt').is(":checked")) {
+
+		if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address" || findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
+
+			alert("You must enter both a loading and unloading address.");
+
+			if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
+				var focusTo = "cust_addr_from";
+			} else {
+				var focusTo = "cust_addr";
+			}
+
+			setTimeout(function(){findObj(focusTo).focus();}, 500);
+
+			return false;
+
+		}	
+
+	} else if($('#help_loading').is(":checked")) {
+
+		if(findObj("cust_addr_from").value == "" || findObj("cust_addr_from").value == "Address") {
+
+			alert("You must enter a loading address.");
+			
+			var focusTo = "cust_addr_from";
+			
+			setTimeout(function(){findObj(focusTo).focus();}, 500);
+
+			return false;
+
+		}	
+
+	} else if($('#help_unloading').is(":checked")) {
+
+		if(findObj("cust_addr").value == "" || findObj("cust_addr").value == "Address") {
+
+			alert("You must enter a unloading address.");
+			
+			var focusTo = "cust_addr";
+			
+			setTimeout(function(){findObj(focusTo).focus();}, 500);
+
+			return false;
+
+		}	
+
+	}
+	return true;
+}
+
+function valName() {
+	if (findObj("cust_name").value == "" || findObj("cust_name").value == "Name") {
+
+		alert("You must enter your name.");
+
+		setTimeout(function(){$("#cust_name").focus();}, 500);
+
+		return false;
+
+	}
+
+	return true;
+}
+
+function valPhone() {
+	if (findObj("cust_phone").value == "" || findObj("cust_phone").value == "Phone") {
+
+		alert("You must enter a phone number.");
+
+		setTimeout(function(){$("#cust_phone").focus();}, 500);
+
+		return false;
+
+	}		
+	return true;
+}
+
+function valDateOfService(){
+	if($('#date_of_service').val() == "Please select" || $('#date_of_service').val() == "") {
+
+		alert("Please specify a date of service.");
+
+		setTimeout(function(){findObj("date_of_service").focus();}, 500);
+
+		return false;					
+
+	}
+	return true;
+}
+
+function valTimeOfService() {
+	if($('.time_of_service').val() == "") {
+
+		alert("Please specify a time of service.");
+
+		setTimeout(function(){findObj("time_of_service").focus();}, 500);
+
+		return false;					
+
+	}
+	return true;
+}
+
+function valMower(){
+	if($("#cust_furniture_lawnmower").val() != "" && $("#cust_furniture_lawnmower").val() > 0) {
+		
+		if(!$("#cust_furniture_lawnmower_push").is(":checked") && !$("#cust_furniture_lawnmower_riding").is(":checked")) {
+			
+			alert("Please specify the type of lawn mower.");
+
+			setTimeout(function(){ 
+				$("#cust_furniture_lawnmower_push").focus();
+			}, 500);
+
+			return false;
+
+		}
+	}
+	return true;
+}
+
+function valBoxTubs(){
+	if($("#cust_furniture_boxtubs").val() == "" || isNaN($("#cust_furniture_boxtubs").val())) {
+		
+		alert("Please specify an amount of boxes or tubs.");
+
+		setTimeout(function(){findObj("cust_furniture_boxtubs").focus();}, 500);
+
+		return false;
+
+	}
+	return true;
 }

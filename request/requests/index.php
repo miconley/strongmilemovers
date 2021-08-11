@@ -36,6 +36,7 @@
 	</div>
 	<div class="listing">
 <?php
+	date_default_timezone_set('America/New_York');
 	//$dbhost = "requestdb.db.10746628.hostedresource.com";
 	$dbhost = "127.0.0.1";
 	$dbuser = "requestdb";
@@ -55,9 +56,9 @@
 				break;
 
 			case "update":
-				$id = mysql_real_escape_string($_GET['id']);
+				$id = $mysqli->real_escape_string($_GET['id']);
 				$sql = "UPDATE requests SET complete = IF(complete=1, 0, 1) WHERE id = ".$id;
-				$result = mysql_query( $sql, $conn );
+				$result = $mysqli->query( $sql );
 				$sql = "SELECT * FROM requests ORDER BY entrydate DESC";
 				break;
 
